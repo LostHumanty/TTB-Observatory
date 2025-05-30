@@ -1,21 +1,76 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <title>Поиск Талантов</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <title>TTB Observatory</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Фильтр талантов</h1>
-  <form id="filterForm">
-    <label>Might: <input type="number" name="strength" /></label>
-    <label>Speed: <input type="number" name="agility" /></label>
-    <label>Stealth (Skill): <input type="number" name="stealth" /></label>
-    <label>Destiny Steps: <input type="number" name="fate_steps" /></label>
-    <button type="submit">Найти таланты</button>
-  </form>
-  <hr />
-  <div id="results"></div>
+  <div class="main">
+    <h1>Talent Filter</h1>
+    <form id="filterForm">
+
+    <!-- ASPECTS -->
+    <div class="top_tab">
+        <div class="aspects">
+            <div class="section physical_tab">
+                <h2>PHYSICAL ASPECTS</h2>
+                <div class="grid">
+                <label>Might <input type="number" name="might" /></label>
+                <label>Grace <input type="number" name="grace" /></label>
+                <label>Speed <input type="number" name="speed" /></label>
+                <label>Resilience <input type="number" name="resilience" /></label>
+                </div>
+            </div>
+
+            <div class="section mental_tab">
+                <h2>MENTAL ASPECTS</h2>
+                <div class="grid">
+                <label>Intellect <input type="number" name="intellect" /></label>
+                <label>Charm <input type="number" name="charm" /></label>
+                <label>Cunning <input type="number" name="cunning" /></label>
+                <label>Tenacity <input type="number" name="tenacity" /></label>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="left-half"> -->
+            <!-- DESTINY STEPS -->
+            <div class="section destiny_tab">
+                <h2>Destiny Steps</h2>
+                <div class="step-selector" data-name="destiny_steps"></div>
+            </div>
+
+        <!-- TRAITS -->
+            <div class="section traits_tab">
+            <h2>Traits</h2>
+                <div class="checkbox-grid">
+                    <label><input type="checkbox" name="traits" value="Guild Training" /> Guild Training</label>
+                    <label><input type="checkbox" name="traits" value="Stitched" /> Stitched</label>
+                    <label><input type="checkbox" name="traits" value="Invested" /> Invested</label>
+                    <label><input type="checkbox" name="traits" value="Kin" /> Kin</label>
+                    <label><input type="checkbox" name="traits" value="Construct" /> Construct</label>
+                    <label><input type="checkbox" name="traits" value="Mimic" /> Mimic</label>
+                    <label><input type="checkbox" name="traits" value="Woe" /> Woe</label>
+                    <label><input type="checkbox" name="traits" value="Nephilim" /> Nephilim</label>
+                    <label><input type="checkbox" name="traits" value="Half-Blood" /> Half-Blood</label>
+                    <label><input type="checkbox" name="traits" value="Nightmare" /> Nightmare</label>
+                </div>
+            </div>
+        <!-- </div> -->
+    </div>
+
+        <!-- SKILLS -->
+        <div class="section skills_tab">
+        <h2>Skills</h2>
+        <div id="skillsContainer"></div>
+        </div>
+
+        <button type="submit">Apply Filter</button>
+    </form>
+
+    <div id="results"></div>
+</div>
 
   <script src="script.js"></script>
 </body>
