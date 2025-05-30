@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Advanced Training",
+    "description": "Choose a Skill that meets this Talent’s requirement. When performing a duel using the chosen Skill, the character increases her final duel total by +1.",
+    "requirements": [
+      { "type": "skill", "name": "any", "operator": ">=", "value": 5 }
+    ],
+    "tags": ["repeatable", "chooseSkill"]
+  },
+  {
+    "name": "Armor Training",
+    "description": "Reduces the penalty to Defense from wearing armor by 1, to a minimum of 0.",
+    "requirements": [],
+    "tags": ["repeatable"]
+  },
+  {
+    "name": "Back to the Wall",
+    "description": "When within 1 yard of a solid object at least as tall as the character, she gains +1 Defense.",
+    "requirements": [
+      { "type": "attribute", "name": "tenacity", "operator": ">=", "value": 2 }
+    ]
+  },
+  {
+    "name": "Better Part of Valor",
+    "description": "Charge becomes unavailable, but gain +2 Walk Aspect.",
+    "requirements": [
+      { "type": "attribute", "name": "tenacity", "operator": "<=", "value": -1 }
+    ]
+  },
+  {
+    "name": "Blissful Ignorance",
+    "description": "When failing a Horror Duel: if it is the character's turn, action fails but no Paralysis; if not, becomes Slow instead.",
+    "requirements": [
+      { "type": "attribute", "name": "cunning", "operator": "<=", "value": -1 }
+    ]
+  }
+]
