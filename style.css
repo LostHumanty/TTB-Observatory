@@ -75,6 +75,13 @@ button {
   margin-top: 10px;
 }
 
+.special {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+}
+
 .checkbox-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

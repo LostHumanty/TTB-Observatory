@@ -1,3 +1,43 @@
+let allTalents = [];
+
+fetch("talents.json")
+  .then(res => res.json())
+  .then(data => {
+    allTalents = data;
+    console.log("Talents loaded:", allTalents.length);
+  })
+  .catch(err => {
+    console.error("Failed to load talents.json", err);
+  });
+
+function createRoundSelector(container, name) {
+  for (let i = 1; i <= 5; i++) {
+    const btn = document.createElement("div");
+    btn.className = "round-button";
+    btn.dataset.value = i;
+
+    btn.addEventListener("click", () => {
+      let current = parseInt(container.dataset.selected || 0);
+      const selected = parseInt(btn.dataset.value);
+      container.dataset.selected = (current === selected) ? 0 : selected;
+      updateButtons(container, selected, current === selected);
+    });
+
+    container.appendChild(btn);
+  }
+}
+
+function updateButtons(container, count, reset = false) {
+  const buttons = container.querySelectorAll(".round-button");
+  buttons.forEach((btn, idx) => {
+    if (reset || idx + 1 > count) {
+      btn.classList.remove("active");
+    } else {
+      btn.classList.add("active");
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const destinySteps = document.querySelector('[data-name="destiny_steps"]');
   createRoundSelector(destinySteps, "destiny_steps");
@@ -14,10 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const skillsContainer = document.getElementById("skillsContainer");
-
   const column1 = document.createElement("div");
-  column1.classList.add("skills-column");
   const column2 = document.createElement("div");
+  column1.classList.add("skills-column");
   column2.classList.add("skills-column");
 
   const categories = Object.entries(skillCategories);
@@ -54,98 +93,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     wrapper.appendChild(title);
     wrapper.appendChild(content);
-
-    if (index < half) {
-      column1.appendChild(wrapper);
-    } else {
-      column2.appendChild(wrapper);
-    }
+    if (index < half) column1.appendChild(wrapper);
+    else column2.appendChild(wrapper);
   });
 
   skillsContainer.appendChild(column1);
   skillsContainer.appendChild(column2);
-});
-
-function createRoundSelector(container, name) {
-  for (let i = 1; i <= 5; i++) {
-    const btn = document.createElement("div");
-    btn.className = "round-button";
-    btn.dataset.value = i;
-
-    btn.addEventListener("click", () => {
-      let current = parseInt(container.dataset.selected || 0);
-      const selected = parseInt(btn.dataset.value);
-      container.dataset.selected = (current === selected) ? 0 : selected;
-      updateButtons(container, selected, current === selected);
-    });
-
-    container.appendChild(btn);
-  }
-}
-
-function updateButtons(container, count, reset = false) {
-  const buttons = container.querySelectorAll(".round-button");
-  buttons.forEach((btn, idx) => {
-    if (reset || idx + 1 > count) {
-      btn.classList.remove("active");
-    } else {
-      btn.classList.add("active");
-    }
-  });
-}
-
-
-document.getElementById("filterForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const form = e.target;
-  const results = document.getElementById("results");
-
-  const formData = new FormData(form);
-  const filters = Object.fromEntries(formData.entries());
-  for (let key in filters) {
-    filters[key] = Number(filters[key]);
-  }
-
-  const destinySteps = document.querySelector('.step-selector').dataset.selected;
-  filters["destiny_steps"] = Number(destinySteps || 0);
-
-  document.querySelectorAll(".skill-selector").forEach(div => {
-    const name = div.dataset.name;
-    const value = Number(div.dataset.selected || 0);
-    if (value > 0) filters[name] = value;
-  });
-
-  const traits = Array.from(document.querySelectorAll('input[name="traits"]:checked')).map(i => i.value);
-  filters["traits"] = traits;
-
-  const matched = allTalents.filter(talent => {
-    return talent.requirements.every(req => {
-      if (req.type === "attribute") {
-        const val = filters[req.name] ?? 0;
-        return compare(val, req.operator, req.value);
-      }
-      if (req.type === "skill") {
-        if (req.name === "any") {
-          return Object.entries(filters).some(([key, val]) => {
-            return skillCategoriesFlat.has(key) && compare(val, req.operator, req.value);
-          });
-        } else {
-          const val = filters[req.name] ?? 0;
-          return compare(val, req.operator, req.value);
-        }
-      }
-      return true;
-    });
-  });
-
-  if (matched.length === 0) {
-    results.innerHTML = `<p>No matching talents found.</p>`;
-  } else {
-    results.innerHTML = matched.map(t =>
-      `<div class="talent-block"><b>${t.name}</b><br><span>${t.description}</span></div>`
-    ).join("");
-  }
 });
 
 document.querySelectorAll('input[type="number"]').forEach(input => {
@@ -155,30 +108,6 @@ document.querySelectorAll('input[type="number"]').forEach(input => {
     }
   }, { passive: true });
 });
-
-let allTalents = [];
-
-fetch("talents.json")
-  .then(res => res.json())
-  .then(data => {
-    allTalents = data;
-    console.log("Talents loaded:", allTalents.length);
-  })
-  .catch(err => {
-    console.error("Failed to load talents.json", err);
-  });
-
-
-const skillCategoriesFlat = new Set([
-  "Bureaucracy", "Engineering", "History", "Literacy", "Mathematics", "Music",
-  "Flexible", "Grappling", "Heavy Melee", "Martial Arts", "Melee", "Pneumatic", "Pugilism",
-  "Alchemistry", "Art", "Artefacting", "Blacksmithing", "Culinary", "Explosives", "Homesteading", "Printing", "Stitching",
-  "Doctor", "Forgery", "Gambling", "Husbandry", "Lockpicking", "Notice", "Track", "Wilderness",
-  "Counter-Spelling", "Enchanting", "Necromancy", "Sorcery", "Prestidigitation",
-  "Archery", "Heavy Guns", "Long Arms", "Pistol", "Shotgun", "Thrown Weapons",
-  "Barter", "Bewitch", "Convince", "Deceive", "Intimidate", "Leadership", "Scrutiny",
-  "Acrobatics", "Athletics", "Carouse", "Centering", "Evade", "Pickpocket", "Stealth", "Toughness"
-]);
 
 function compare(a, op, b) {
   switch (op) {
@@ -190,3 +119,65 @@ function compare(a, op, b) {
     default: return false;
   }
 }
+
+document.getElementById("filterForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const resultsDiv = document.getElementById("results");
+  resultsDiv.innerHTML = "";
+
+  const formData = new FormData(e.target);
+  const filters = Object.fromEntries(formData.entries());
+  Object.keys(filters).forEach(k => filters[k] = Number(filters[k]));
+
+  const destinySteps = parseInt(document.querySelector('[data-name="destiny_steps"]').dataset.selected || "0");
+  const includeNoReq = document.querySelector('input[name="reqNoneOnly"]').checked;
+
+  const selectedSkills = {};
+  document.querySelectorAll(".skill-selector").forEach(skillDiv => {
+    const name = skillDiv.dataset.name;
+    const level = parseInt(skillDiv.dataset.selected || "0");
+    if (level > 0) {
+      selectedSkills[name.toLowerCase()] = level;
+    }
+  });
+
+  const matched = allTalents.filter(talent => {
+    if (!talent.requirements || talent.requirements.length === 0) {
+      return includeNoReq;
+    }
+
+    return talent.requirements.every(req => {
+      const { type, name, operator, value } = req;
+
+      let compareValue;
+
+      if (type === "attribute") {
+        compareValue = filters[name] ?? 0;
+      } else if (type === "destiny") {
+        compareValue = destinySteps;
+      } else if (type === "skill") {
+        if (name === "any") {
+          return Object.values(selectedSkills).some(val => compare(val, operator, value));
+        } else {
+          compareValue = selectedSkills[name.toLowerCase()] || 0;
+        }
+      } else {
+        return false;
+      }
+
+      return compare(compareValue, operator, value);
+    });
+  });
+
+  if (matched.length === 0) {
+    resultsDiv.innerHTML = "<p>No matching talents found.</p>";
+  } else {
+    matched.forEach(t => {
+      const div = document.createElement("div");
+      div.classList.add("talent-block");
+      div.innerHTML = `<strong>${t.name}</strong><p>${t.description}</p>`;
+      resultsDiv.appendChild(div);
+    });
+  }
+});
