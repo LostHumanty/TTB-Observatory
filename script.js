@@ -1,5 +1,6 @@
 let allTalents = [];
 
+// Load talents.json
 fetch("talents.json")
   .then(res => res.json())
   .then(data => {
@@ -10,6 +11,7 @@ fetch("talents.json")
     console.error("Failed to load talents.json", err);
   });
 
+// Create round button selector (0–5 scale)
 function createRoundSelector(container, name) {
   for (let i = 1; i <= 5; i++) {
     const btn = document.createElement("div");
@@ -27,6 +29,7 @@ function createRoundSelector(container, name) {
   }
 }
 
+// Update round button styles
 function updateButtons(container, count, reset = false) {
   const buttons = container.querySelectorAll(".round-button");
   buttons.forEach((btn, idx) => {
@@ -38,6 +41,7 @@ function updateButtons(container, count, reset = false) {
   });
 }
 
+// Initialize on DOM ready
 document.addEventListener("DOMContentLoaded", () => {
   const destinySteps = document.querySelector('[data-name="destiny_steps"]');
   createRoundSelector(destinySteps, "destiny_steps");
@@ -101,14 +105,34 @@ document.addEventListener("DOMContentLoaded", () => {
   skillsContainer.appendChild(column2);
 });
 
+// Prevent page scroll while using mouse wheel on number inputs
 document.querySelectorAll('input[type="number"]').forEach(input => {
   input.addEventListener("wheel", function (e) {
     if (document.activeElement === input) {
-      e.stopPropagation();
+      e.preventDefault();
+
+      const step = Number(input.step) || 1;
+      const direction = e.deltaY < 0 ? 1 : -1;
+      const current = Number(input.value) || 0;
+
+      input.value = current + direction * step;
+      input.dispatchEvent(new Event('input', { bubbles: true }));
     }
-  }, { passive: true });
+  }, { passive: false });
 });
 
+
+// Show/hide rare requirements section
+document.getElementById("toggleRare").addEventListener("click", () => {
+  const section = document.getElementById("rareRequirements");
+  const btn = document.getElementById("toggleRare");
+  section.classList.toggle("hidden");
+  btn.textContent = section.classList.contains("hidden")
+    ? "Show rare requirements ▼"
+    : "Hide rare requirements ▲";
+});
+
+// Evaluate conditions
 function compare(a, op, b) {
   switch (op) {
     case ">=": return a >= b;
@@ -120,6 +144,7 @@ function compare(a, op, b) {
   }
 }
 
+// Filter logic
 document.getElementById("filterForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -131,8 +156,13 @@ document.getElementById("filterForm").addEventListener("submit", function (e) {
   Object.keys(filters).forEach(k => filters[k] = Number(filters[k]));
 
   const destinySteps = parseInt(document.querySelector('[data-name="destiny_steps"]').dataset.selected || "0");
-  const includeNoReq = document.querySelector('input[name="reqNoneOnly"]').checked;
+  const includeNoReq = document.querySelector('input[name="reqNoneOnly"]')?.checked;
 
+  // Rare requirement checkboxes
+  const selectedRare = Array.from(document.querySelectorAll('input[name="rare[]"]:checked'))
+    .map(cb => cb.value);
+
+  // Gather selected skill levels
   const selectedSkills = {};
   document.querySelectorAll(".skill-selector").forEach(skillDiv => {
     const name = skillDiv.dataset.name;
@@ -143,33 +173,43 @@ document.getElementById("filterForm").addEventListener("submit", function (e) {
   });
 
   const matched = allTalents.filter(talent => {
-    if (!talent.requirements || talent.requirements.length === 0) {
+    const requirements = talent.requirements || [];
+
+    // If there are no requirements at all
+    if (requirements.length === 0) {
       return includeNoReq;
     }
 
-    return talent.requirements.every(req => {
+    return requirements.every(req => {
       const { type, name, operator, value } = req;
 
-      let compareValue;
-
       if (type === "attribute") {
-        compareValue = filters[name] ?? 0;
-      } else if (type === "destiny") {
-        compareValue = destinySteps;
-      } else if (type === "skill") {
+        const val = filters[name] ?? 0;
+        return compare(val, operator, value);
+      }
+
+      if (type === "destiny") {
+        return compare(destinySteps, operator, value);
+      }
+
+      if (type === "skill") {
         if (name === "any") {
           return Object.values(selectedSkills).some(val => compare(val, operator, value));
         } else {
-          compareValue = selectedSkills[name.toLowerCase()] || 0;
+          const skillVal = selectedSkills[name.toLowerCase()] || 0;
+          return compare(skillVal, operator, value);
         }
-      } else {
-        return false;
       }
 
-      return compare(compareValue, operator, value);
+      if (type === "custom") {
+        return selectedRare.includes(name);
+      }
+
+      return false;
     });
   });
 
+  // Show results
   if (matched.length === 0) {
     resultsDiv.innerHTML = "<p>No matching talents found.</p>";
   } else {

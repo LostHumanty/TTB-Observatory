@@ -33,5 +33,12 @@
     "requirements": [
       { "type": "attribute", "name": "cunning", "operator": "<=", "value": -1 }
     ]
+  },
+  {
+  "name": "Touched by the Grave Spirit",
+  "description": "When this character fails an unconsciousness challenge, she heals 1/2/3 damage. She still remains unconscious until the Fatemaster determines otherwise (generally until the end of Dramatic Time or until she is revived with the Doctor Skill).",
+  "requirements": [
+      { "type": "custom", "name": "died_or_minus10" }
+    ]
   }
 ]
