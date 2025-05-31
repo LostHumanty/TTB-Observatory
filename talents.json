@@ -1,37 +1,99 @@
 [
   {
     "name": "Advanced Training",
-    "description": "Choose a Skill that meets this Talent’s requirement. When performing a duel using the chosen Skill, the character increases her final duel total by +1.",
+    "displayedReqs": "Requirement: Chosen Skill Rank 5.",
+    "description": "Choose a Skill that meets this Talent’s requirement. When performing a duel using the chosen Skill, the character increases her final duel total by +1. A character can take this Talent multiple times, but each time a different Skill must be chosen.",
     "requirements": [
       { "type": "skill", "name": "any", "operator": ">=", "value": 5 }
     ],
-    "tags": ["repeatable", "chooseSkill"]
+    "book": "Core Book"
   },
   {
     "name": "Armor Training",
-    "description": "Reduces the penalty to Defense from wearing armor by 1, to a minimum of 0.",
+    "displayedReqs": "Requirement: None.",
+    "description": "This character reduces the penalty to Defense from wearing armor by 1, to a minimum of 0. A character can take this Talent multiple times.",
     "requirements": [],
-    "tags": ["repeatable"]
+    "book": "Core Book"
   },
   {
     "name": "Back to the Wall",
-    "description": "When within 1 yard of a solid object at least as tall as the character, she gains +1 Defense.",
+    "displayedReqs": "Requirement: Tenacity 2 or higher.",
+    "description": "When this character is within 1 yard of a wall or other solid object at least as tall as she is, she gains +1 Defense.",
     "requirements": [
-      { "type": "attribute", "name": "tenacity", "operator": ">=", "value": 2 }
-    ]
+      { "type": "attribute", "name": "Tenacity", "operator": ">=", "value": 2 }
+    ],
+    "book": "Core Book"
   },
   {
     "name": "Better Part of Valor",
-    "description": "Charge becomes unavailable, but gain +2 Walk Aspect.",
+    "displayedReqs": "Requirement: Tenacity -1 or lower.",
+    "description": "This character’s Charge Aspect becomes “—” (rendering her unable to take the Charge Action), but she gains a +2 to her Walk Aspect.",
     "requirements": [
-      { "type": "attribute", "name": "tenacity", "operator": "<=", "value": -1 }
-    ]
+      { "type": "attribute", "name": "Tenacity", "operator": "<=", "value": -1 }
+    ],
+    "book": "Core Book"
+  },
+    {
+    "name": "Blissful Ignorance",
+    "displayedReqs": "Requirement: Cunning -1 or lower.",
+    "description": "When this character fails a Horror Duel, if it is her turn, her current Action immediately fails, but she does not become Paralyzed. If it is not her turn, she becomes Slow instead of Paralyzed.",
+    "requirements": [
+      { "type": "attribute", "name": "Cunning", "operator": "<=", "value": -1 }
+    ],
+    "book": "Core Book"
   },
   {
-    "name": "Blissful Ignorance",
-    "description": "When failing a Horror Duel: if it is the character's turn, action fails but no Paralysis; if not, becomes Slow instead.",
+    "name": "Call Shot",
+    "displayedReqs": "Requirement: Fated.",
+    "description": "Choose a Skill. When this character generates a Critical Effect with an attack that used the chosen Skill, she may discard a card to change the suit of the Critical Effect to the suit of the discarded card. A character may take this Talent multiple times, but each time a different Skill must be chosen.",
     "requirements": [
-      { "type": "attribute", "name": "cunning", "operator": "<=", "value": -1 }
-    ]
+      { "type": "custom", "name": "fated" }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Calm And Collected",
+    "displayedReqs": "Requirement: Speed -1 or lower.",
+    "description": "This character adds +1 to the value of any Focused condition that she receives, to a maximum of Focused +3.",
+    "requirements": [
+      { "type": "attribute", "name": "Speed", "operator": "<=", "value": -1 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Clear Orders",
+    "displayedReqs": "Requirement: Leadership 3 or higher.",
+    "description": "When this character takes the Order Action to give commands to one or more subordinate characters, she may Cheat Fate for those characters.",
+    "requirements": [
+      { "type": "skill", "name": "Leadership", "operator": ">=", "value": 3 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Combat Reading",
+    "displayedReqs": "Requirement: Cunning 1 or higher.",
+    "description": "When making disengaging strikes, this character adds her Scrutiny Skill Ranks to her final duel total.",
+    "requirements": [
+      { "type": "attribute", "name": "Cunning", "operator": ">=", "value": 1 }
+    ],
+    "book": "Core Book"
+  }, 
+  {
+    "name": "Will of Ages",
+    "displayedReqs": "Requirement: Counter-Spelling 3 or higher.",
+    "description": "When this character uses Magical Shielding, she may shield a number of additional friendly characters (including herself) equal to her Tenacity.",
+    "requirements": [
+      { "type": "skill", "name": "Counter-Spelling", "operator": ">=", "value": 3 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Touched by the Grave Spirit",
+    "displayedReqs": "Requirements: The character has either died or been at -10 Wounds or below.",
+    "description": "When this character fails an unconsciousness challenge, she heals 1/2/3 damage. She still remains unconscious until the Fatemaster determines otherwise (generally until the end of Dramatic Time or until she is revived with the Doctor Skill).",
+    "requirements": [
+      { "type": "custom", "name": "died_or_minus10" }
+    ],
+    "book": "Under Quarantine"
   }
 ]

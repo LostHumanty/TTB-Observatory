@@ -16,20 +16,20 @@
             <div class="section physical_tab">
                 <h2>PHYSICAL ASPECTS</h2>
                 <div class="grid">
-                <label>Might <input type="number" name="might" /></label>
-                <label>Grace <input type="number" name="grace" /></label>
-                <label>Speed <input type="number" name="speed" /></label>
-                <label>Resilience <input type="number" name="resilience" /></label>
+                    <label>Might <input type="number" name="might" /></label>
+                    <label>Grace <input type="number" name="grace" /></label>
+                    <label>Speed <input type="number" name="speed" /></label>
+                    <label>Resilience <input type="number" name="resilience" /></label>
                 </div>
             </div>
 
             <div class="section mental_tab">
                 <h2>MENTAL ASPECTS</h2>
                 <div class="grid">
-                <label>Intellect <input type="number" name="intellect" /></label>
-                <label>Charm <input type="number" name="charm" /></label>
-                <label>Cunning <input type="number" name="cunning" /></label>
-                <label>Tenacity <input type="number" name="tenacity" /></label>
+                    <label>Intellect <input type="number" name="intellect" /></label>
+                    <label>Charm <input type="number" name="charm" /></label>
+                    <label>Cunning <input type="number" name="cunning" /></label>
+                    <label>Tenacity <input type="number" name="tenacity" /></label>
                 </div>
             </div>
         </div>
@@ -42,26 +42,43 @@
             </div>
             <div class="special">
                 <label><input type="checkbox" name="reqNoneOnly" value="reqNoneOnly" /> Show talents without requirements</label>
+                <button type="button" id="toggleRare">Show rare requirements ▼</button>
             </div>
         </div>
 
         <!-- TRAITS -->
-            <div class="section traits_tab">
-            <h2>Traits</h2>
-                <div class="checkbox-grid">
-                    <label><input type="checkbox" name="traits" value="Guild Training" /> Guild Training</label>
-                    <label><input type="checkbox" name="traits" value="Stitched" /> Stitched</label>
-                    <label><input type="checkbox" name="traits" value="Invested" /> Invested</label>
-                    <label><input type="checkbox" name="traits" value="Kin" /> Kin</label>
-                    <label><input type="checkbox" name="traits" value="Construct" /> Construct</label>
-                    <label><input type="checkbox" name="traits" value="Mimic" /> Mimic</label>
-                    <label><input type="checkbox" name="traits" value="Woe" /> Woe</label>
-                    <label><input type="checkbox" name="traits" value="Nephilim" /> Nephilim</label>
-                    <label><input type="checkbox" name="traits" value="Half-Blood" /> Half-Blood</label>
-                    <label><input type="checkbox" name="traits" value="Nightmare" /> Nightmare</label>
-                </div>
+        <div class="section traits_tab">
+        <h2>Traits</h2>
+            <div class="checkbox-grid">
+                <label><input type="checkbox" name="traits" value="Guild Training" /> Guild Training</label>
+                <label><input type="checkbox" name="traits" value="Mimic" /> Mimic</label>
+                <label><input type="checkbox" name="traits" value="Stitched" /> Stitched</label>
+                <label><input type="checkbox" name="traits" value="Woe" /> Woe</label>
+                <label><input type="checkbox" name="traits" value="Kin" /> Kin</label>
+                <label><input type="checkbox" name="traits" value="Nephilim" /> Nephilim</label>
+                <label><input type="checkbox" name="traits" value="Invested" /> Invested</label>
+                <label><input type="checkbox" name="traits" value="Half-Blood" /> Half-Blood</label>
+                <label><input type="checkbox" name="traits" value="Construct" /> Construct</label>
+                <label><input type="checkbox" name="traits" value="Nightmare" /> Nightmare</label>        
             </div>
+        </div>
     </div>
+
+    <div class="section rare-requirements hidden" id="rareRequirements">
+    <h2>Rare Requirements</h2>
+        <div class="checkbox-grid">
+            <label><input type="checkbox" name="rare[]" value="burning_5_resolved" />
+            This character must have had the Burning +5 or greater Condition resolve against her.
+            </label>
+            <label><input type="checkbox" name="rare[]" value="burning_10_applied" />
+            The character must have applied 10 or more ranks of the Burning Condition to her enemies during a single combat.
+            </label>
+            <label><input type="checkbox" name="rare[]" value="died_or_minus10" />
+            The character has either died or been at -10 Wounds or below.
+            </label>
+        </div>
+    </div>
+
 
         <!-- SKILLS -->
         <div class="section skills_tab">
