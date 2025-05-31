@@ -216,7 +216,12 @@ document.getElementById("filterForm").addEventListener("submit", function (e) {
     matched.forEach(t => {
       const div = document.createElement("div");
       div.classList.add("talent-block");
-      div.innerHTML = `<strong>${t.name}</strong><p>${t.description}</p>`;
+      div.innerHTML = `
+        <strong>${t.name}</strong>
+        ${t.displayedReqs ? `<p><em>${t.displayedReqs}</em></p>` : ""}
+        <p>${t.description}</p>
+      `;
+
       resultsDiv.appendChild(div);
     });
   }
