@@ -79,21 +79,66 @@
     "book": "Core Book"
   }, 
   {
-    "name": "Will of Ages",
+    "name": "Counterspell",
     "displayedReqs": "Requirement: Counter-Spelling 3 or higher.",
-    "description": "When this character uses Magical Shielding, she may shield a number of additional friendly characters (including herself) equal to her Tenacity.",
+    "description": "Training in the art of Counter-Spelling has given this character an intuitive ability to resist magic. When this character is targeted by an enemy’s Magical Action, the enemy loses any suits associated with their Magical Skill.",
     "requirements": [
       { "type": "skill", "name": "Counter-Spelling", "operator": ">=", "value": 3 }
     ],
     "book": "Core Book"
   },
   {
-    "name": "Touched by the Grave Spirit",
-    "displayedReqs": "Requirements: The character has either died or been at -10 Wounds or below.",
-    "description": "When this character fails an unconsciousness challenge, she heals 1/2/3 damage. She still remains unconscious until the Fatemaster determines otherwise (generally until the end of Dramatic Time or until she is revived with the Doctor Skill).",
+    "name": "Critical Strike",
+    "displayedReqs": "Requirement: Close Combat or Ranged Combat Skill 3 or higher.",
+    "description": "Choose a Skill that meets this Talent’s requirement. All attacks with the chosen Skill gain the following Trigger: [r] **Critical Strike**: When damaging, deal 1 additional damage for each [r] in the final duel total. A character may take this Talent multiple times, but each time a different Skill must be chosen.",
     "requirements": [
-      { "type": "custom", "name": "died_or_minus10" }
+      { "type": "skill", "name": "any", "operator": ">=", "value": 3, "category": ["Close Combat", "Ranged Combat"] }
     ],
-    "book": "Under Quarantine"
+    "book": "Core Book"
+  },
+  {
+    "name": "Defensive Protocols",
+    "displayedReqs": "Requirement: Leadership 3 or higher.",
+    "description": "This character’s subordinate characters that are within [a] 6 of her may choose to flip cards when they are attacked, in the same manner as a Fated character.",
+    "requirements": [
+      { "type": "skill", "name": "Leadership", "operator": ">=", "value": 3 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Duck and Cover",
+    "displayedReqs": "Requirement: Evade 3 or higher.",
+    "description": "This character gains the following ability: **Blast Resistant +1**: Reduce all damage this character suffers from [p] and [b] effects by +1, to a minimum of 1.",
+    "requirements": [
+      { "type": "skill", "name": "Evade", "operator": ">=", "value": 3 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Flick of the Wrist",
+    "displayedReqs": "Requirement: Might -1 or lower.",
+    "description": "When making a Melee or Pugilism attack, this character may substitute Grace for Might when calculating her Acting value.",
+    "requirements": [
+      { "type": "attribute", "name": "Might", "operator": "<=", "value": -1 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Governor's Gift",
+    "displayedReqs": "Requirement: Charm 1 or higher.",
+    "description": "Choose male or female. This character gains [+] on any Bewitch or Scrutiny duels made against members of the chosen gender.",
+    "requirements": [
+      { "type": "attribute", "name": "Charm", "operator": ">=", "value": 1 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Cynic",
+    "displayedReqs": "Requirement: Charm -1 or lower.",
+    "description": "This character gains [+] on any duel made to resist deception (including Deceive and Pick Pocket Challenges, as well as the Trick Action).",
+    "requirements": [
+      { "type": "attribute", "name": "Charm", "operator": "<=", "value": -1 }
+    ],
+    "book": "Core Book"
   }
 ]

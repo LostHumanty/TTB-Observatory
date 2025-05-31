@@ -1,5 +1,30 @@
 let allTalents = [];
 
+// Special Characters Replace
+function formatTextWithSymbols(text) {
+  const symbolMap = {
+    '[r]': 'r',
+    '[t]': 't',
+    '[m]': 'm',
+    '[C]': 'C',
+    '[p]': 'p',
+    '[a]': 'a',
+    '[b]': 'b',
+    '[l]': 'l',
+    '[x]': 'x',
+    '[+]': '+',
+    '[-]': '-'
+  };
+
+  let formattedText = text;
+  Object.keys(symbolMap).forEach((key) => {
+    const regex = new RegExp(key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+    formattedText = formattedText.replace(regex, `<span class="malifaux-symbol">${symbolMap[key]}</span>`);
+  });
+
+  return formattedText;
+}
+
 // Load talents.json
 fetch("talents.json")
   .then(res => res.json())
@@ -121,7 +146,6 @@ document.querySelectorAll('input[type="number"]').forEach(input => {
   }, { passive: false });
 });
 
-
 // Show/hide rare requirements section
 document.getElementById("toggleRare").addEventListener("click", () => {
   const section = document.getElementById("rareRequirements");
@@ -132,18 +156,6 @@ document.getElementById("toggleRare").addEventListener("click", () => {
     : "Hide rare requirements ▲";
 });
 
-// Evaluate conditions
-function compare(a, op, b) {
-  switch (op) {
-    case ">=": return a >= b;
-    case "<=": return a <= b;
-    case ">": return a > b;
-    case "<": return a < b;
-    case "==": return a == b;
-    default: return false;
-  }
-}
-
 // Filter logic
 document.getElementById("filterForm").addEventListener("submit", function (e) {
   e.preventDefault();
@@ -152,17 +164,20 @@ document.getElementById("filterForm").addEventListener("submit", function (e) {
   resultsDiv.innerHTML = "";
 
   const formData = new FormData(e.target);
-  const filters = Object.fromEntries(formData.entries());
-  Object.keys(filters).forEach(k => filters[k] = Number(filters[k]));
+  const filters = {};
+  formData.forEach((value, key) => {
+    if (['might', 'grace', 'speed', 'resilience', 'intellect', 'charm', 'cunning', 'tenacity'].includes(key)) {
+      filters[key] = parseInt(value) || 0;
+    } else if (key === "rare[]") {
+      if (!filters.rare) filters.rare = [];
+      filters.rare.push(value);
+    }
+  });
 
+  // Destiny Steps
   const destinySteps = parseInt(document.querySelector('[data-name="destiny_steps"]').dataset.selected || "0");
-  const includeNoReq = document.querySelector('input[name="reqNoneOnly"]')?.checked;
-
-  // Rare requirement checkboxes
-  const selectedRare = Array.from(document.querySelectorAll('input[name="rare[]"]:checked'))
-    .map(cb => cb.value);
-
-  // Gather selected skill levels
+  
+  // skills
   const selectedSkills = {};
   document.querySelectorAll(".skill-selector").forEach(skillDiv => {
     const name = skillDiv.dataset.name;
@@ -172,57 +187,81 @@ document.getElementById("filterForm").addEventListener("submit", function (e) {
     }
   });
 
+  // Talent filter
   const matched = allTalents.filter(talent => {
     const requirements = talent.requirements || [];
 
-    // If there are no requirements at all
     if (requirements.length === 0) {
-      return includeNoReq;
+      return document.querySelector('input[name="reqNoneOnly"]')?.checked;
     }
 
     return requirements.every(req => {
       const { type, name, operator, value } = req;
 
+      // aspects
       if (type === "attribute") {
-        const val = filters[name] ?? 0;
-        return compare(val, operator, value);
+        const attributeValue = filters[name.toLowerCase()] ?? 0;
+        return compare(attributeValue, operator, value);
       }
 
+      // Destiny Steps
       if (type === "destiny") {
         return compare(destinySteps, operator, value);
       }
 
+      // skills
       if (type === "skill") {
         if (name === "any") {
-          return Object.values(selectedSkills).some(val => compare(val, operator, value));
+          return Object.values(selectedSkills).some(skillLevel => 
+            compare(skillLevel, operator, value)
+          );
         } else {
-          const skillVal = selectedSkills[name.toLowerCase()] || 0;
-          return compare(skillVal, operator, value);
+          const skillLevel = selectedSkills[name.toLowerCase()] || 0;
+          return compare(skillLevel, operator, value);
         }
       }
 
       if (type === "custom") {
-        return selectedRare.includes(name);
+        return filters.rare?.includes(name) || false;
       }
 
       return false;
     });
   });
 
-  // Show results
+  // Result
   if (matched.length === 0) {
     resultsDiv.innerHTML = "<p>No matching talents found.</p>";
   } else {
     matched.forEach(t => {
       const div = document.createElement("div");
       div.classList.add("talent-block");
+      
+      const formattedDescription = formatTextWithSymbols(t.description);
+      const formattedReqs = t.displayedReqs ? formatTextWithSymbols(t.displayedReqs) : "";
+      
       div.innerHTML = `
         <strong>${t.name}</strong>
-        ${t.displayedReqs ? `<p><em>${t.displayedReqs}</em></p>` : ""}
-        <p>${t.description}</p>
+        ${formattedReqs ? `<p><em>${formattedReqs}</em></p>` : ""}
+        <p>${formattedDescription}</p>
       `;
 
       resultsDiv.appendChild(div);
     });
   }
 });
+
+// Evaluate conditions
+function compare(a, op, b) {
+  a = Number(a);
+  b = Number(b);
+  
+  switch (op) {
+    case ">=": return a >= b;
+    case "<=": return a <= b;
+    case ">": return a > b;
+    case "<": return a < b;
+    case "==": return a == b;
+    default: return false;
+  }
+}
