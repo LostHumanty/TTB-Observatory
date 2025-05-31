@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'MalifauxSymbols';
+  src: url('./assets/fonts/MalifauxRodentEditionNormal.ttf') format('truetype');
+  font-display: swap; /* Важно для корректной загрузки */
+}
+
+.malifaux-symbol {
+  font-family: 'MalifauxSymbols', sans-serif;
+  font-size: 1.2em;
+  line-height: 1;
+  color: inherit; /* Наследует цвет текста */
+  display: inline-block; /* Фиксит выравнивание */
+}
+
 body {
   font-family: Arial, sans-serif;
   background: #ffffff;
