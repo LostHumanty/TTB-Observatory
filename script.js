@@ -211,18 +211,15 @@ document.getElementById("filterForm").addEventListener("submit", function (e) {
 
       // skills
       if (type === "skill") {
-        // Case 1: category-based requirement
         if (Array.isArray(req.category)) {
           const skillsToCheck = req.category.flatMap(cat => skillCategories[cat] || []).map(s => s.toLowerCase());
           return skillsToCheck.some(skill => selectedSkills[skill] && compare(selectedSkills[skill], operator, value));
         }
 
-        // Case 2: any skill
         if (name === "any") {
           return Object.values(selectedSkills).some(val => compare(val, operator, value));
         }
 
-        // Case 3: single named skill
         const skillVal = selectedSkills[name.toLowerCase()] || 0;
         return compare(skillVal, operator, value);
       }
