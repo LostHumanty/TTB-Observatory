@@ -6,14 +6,14 @@
     "requirements": [
       { "type": "skill", "name": "any", "operator": ">=", "value": 5 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.215"
   },
   {
     "name": "Armor Training",
     "displayedReqs": "Requirement: None.",
     "description": "This character reduces the penalty to Defense from wearing armor by 1, to a minimum of 0. A character can take this Talent multiple times.",
     "requirements": [],
-    "book": "Core Book"
+    "book": "Core Book pg.215"
   },
   {
     "name": "Back to the Wall",
@@ -22,7 +22,7 @@
     "requirements": [
       { "type": "attribute", "name": "Tenacity", "operator": ">=", "value": 2 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.215"
   },
   {
     "name": "Better Part of Valor",
@@ -31,16 +31,16 @@
     "requirements": [
       { "type": "attribute", "name": "Tenacity", "operator": "<=", "value": -1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.215"
   },
     {
     "name": "Blissful Ignorance",
     "displayedReqs": "Requirement: Cunning -1 or lower.",
-    "description": "When this character fails a Horror Duel, if it is her turn, her current Action immediately fails, but she does not become Paralyzed. If it is not her turn, she becomes Slow instead of Paralyzed.",
+    "description": "When this character fails a Horror Duel, if it is her turn, her current Action immediately fails, but she does not become **Paralyzed.** If it is not her turn, she becomes **Slow** instead of **Paralyzed.**",
     "requirements": [
       { "type": "attribute", "name": "Cunning", "operator": "<=", "value": -1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.216"
   },
   {
     "name": "Call Shot",
@@ -49,16 +49,16 @@
     "requirements": [
       { "type": "custom", "name": "fated" }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.216"
   },
   {
     "name": "Calm And Collected",
     "displayedReqs": "Requirement: Speed -1 or lower.",
-    "description": "This character adds +1 to the value of any Focused condition that she receives, to a maximum of Focused +3.",
+    "description": "This character adds +1 to the value of any **Focused** condition that she receives, to a maximum of **Focused +3**.",
     "requirements": [
       { "type": "attribute", "name": "Speed", "operator": "<=", "value": -1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.216"
   },
   {
     "name": "Clear Orders",
@@ -67,7 +67,7 @@
     "requirements": [
       { "type": "skill", "name": "Leadership", "operator": ">=", "value": 3 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.216"
   },
   {
     "name": "Combat Reading",
@@ -76,7 +76,7 @@
     "requirements": [
       { "type": "attribute", "name": "Cunning", "operator": ">=", "value": 1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.216"
   }, 
   {
     "name": "Counterspell",
@@ -85,16 +85,16 @@
     "requirements": [
       { "type": "skill", "name": "Counter-Spelling", "operator": ">=", "value": 3 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.217"
   },
   {
     "name": "Critical Strike",
     "displayedReqs": "Requirement: Close Combat or Ranged Combat Skill 3 or higher.",
-    "description": "Choose a Skill that meets this Talent’s requirement. All attacks with the chosen Skill gain the following Trigger:\n\n[r] **Critical Strike**: When damaging, deal 1 additional damage for each [r] in the final duel total. A character may take this Talent multiple times, but each time a different Skill must be chosen.",
+    "description": "Choose a Skill that meets this Talent’s requirement. All attacks with the chosen Skill gain the following Trigger:\n\n[r] *Critical Strike*: When damaging, deal 1 additional damage for each [r] in the final duel total.\n\nA character may take this Talent multiple times, but each time a different Skill must be chosen.",
     "requirements": [
       { "type": "skill", "name": "any", "operator": ">=", "value": 3, "category": ["Close Combat", "Ranged Combat"] }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.217"
   },
   {
     "name": "Defensive Protocols",
@@ -103,7 +103,7 @@
     "requirements": [
       { "type": "skill", "name": "Leadership", "operator": ">=", "value": 3 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.217"
   },
   {
     "name": "Duck and Cover",
@@ -112,7 +112,7 @@
     "requirements": [
       { "type": "skill", "name": "Evade", "operator": ">=", "value": 3 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.217"
   },
   {
     "name": "Flick of the Wrist",
@@ -121,7 +121,7 @@
     "requirements": [
       { "type": "attribute", "name": "Might", "operator": "<=", "value": -1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.217"
   },
   {
     "name": "Governor's Gift",
@@ -130,7 +130,7 @@
     "requirements": [
       { "type": "attribute", "name": "Charm", "operator": ">=", "value": 1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.217"
   },
   {
     "name": "Cynic",
@@ -139,7 +139,7 @@
     "requirements": [
       { "type": "attribute", "name": "Charm", "operator": "<=", "value": -1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.217"
   },
   {
     "name": "Great Fate",
@@ -148,7 +148,7 @@
     "requirements": [
       { "type": "custom", "name": "fated" }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.218"
   },
   {
     "name": "Gruesome Attack",
@@ -157,7 +157,7 @@
     "requirements": [
       { "type": "skill", "name": "any", "operator": ">=", "value": 3, "category": ["Close Combat", "Ranged Combat"] }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.218"
   },
   {
     "name": "Gruff",
@@ -166,16 +166,16 @@
     "requirements": [
       { "type": "attribute", "name": "Charm", "operator": "<=", "value": -1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.218"
   },
   {
     "name": "Hobbling Attack",
     "displayedReqs": "Requirement: Close Combat or Ranged Combat Skill 3 or higher.",
-    "description": "Choose a Skill that meets this Talent’s requirement. All attacks with the chosen Skill gain the following Trigger:\n\n[r] Hobble: After succeeding, the target gains the following Condition for the remainder of Dramatic Time: “Hobbled: This character may only declare one Movement General Action per turn and may not declare the Run Action.”\n\nA character may take this Talent multiple times, but each time a different Skill must be chosen.",
+    "description": "Choose a Skill that meets this Talent’s requirement. All attacks with the chosen Skill gain the following Trigger:\n\n[r] *Hobble*: After succeeding, the target gains the following Condition for the remainder of Dramatic Time: “**Hobbled**: This character may only declare one Movement General Action per turn and may not declare the Run Action.”\n\nA character may take this Talent multiple times, but each time a different Skill must be chosen.",
     "requirements": [
       { "type": "skill", "name": "any", "operator": ">=", "value": 3, "category": ["Close Combat", "Ranged Combat"] }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.218"
   },
   {
     "name": "Honest",
@@ -184,7 +184,7 @@
     "requirements": [
       { "type": "attribute", "name": "Cunning", "operator": "<=", "value": -1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.219"
   },
   {
     "name": "Imposing Mass",
@@ -193,7 +193,7 @@
     "requirements": [
       { "type": "attribute", "name": "Grace", "operator": "<=", "value": -1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.219"
   },
   {
     "name": "Let Me Show You",
@@ -202,7 +202,7 @@
     "requirements": [
       { "type": "skill", "name": "Leadership", "operator": ">=", "value": 3 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.219"
   },
   {
     "name": "Open Hand Fighting",
@@ -211,7 +211,7 @@
     "requirements": [
       { "type": "skill", "name": "Melee", "operator": ">=", "value": 3 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.219"
   },
   {
     "name": "Paired Weapons",
@@ -220,7 +220,7 @@
     "requirements": [
       { "type": "skill", "name": "any", "operator": ">=", "value": 3, "category": ["Close Combat", "Ranged Combat"] }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.219"
   },
   {
     "name": "Plain-Spoken",
@@ -229,7 +229,7 @@
     "requirements": [
       { "type": "attribute", "name": "Intellect", "operator": "<=", "value": -1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.219"
   },
   {
     "name": "Polyglot",
@@ -238,7 +238,7 @@
     "requirements": [
       { "type": "attribute", "name": "Intellect", "operator": ">=", "value": 1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.220"
   },
   {
     "name": "Quick Study",
@@ -247,7 +247,7 @@
     "requirements": [
       { "type": "attribute", "name": "Intellect", "operator": ">=", "value": 1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.220"
   },
   {
     "name": "Rush",
@@ -256,7 +256,7 @@
     "requirements": [
       { "type": "attribute", "name": "Speed", "operator": ">=", "value": 1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.220"
   },
   {
     "name": "Secretive Spellcasting",
@@ -265,7 +265,7 @@
     "requirements": [
       { "type": "custom", "name": "magical_theory" }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.220"
   },
   {
     "name": "Seize the Day",
@@ -274,16 +274,16 @@
     "requirements": [
       { "type": "attribute", "name": "Grace", "operator": "<=", "value": -1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.220"
   },
   {
     "name": "Shot Studies",
     "displayedReqs": "Requirement: Shotgun 3 or higher.",
-    "description": "If this character has the Focused Condition and is firing a shotgun loaded with slug ammunition, she multiplies the range of the shotgun by x10.",
+    "description": "If this character has the **Focused** Condition and is firing a shotgun loaded with slug ammunition, she multiplies the range of the shotgun by x10.",
     "requirements": [
       { "type": "skill", "name": "Shotgun", "operator": ">=", "value": 3 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.220"
   },
   {
     "name": "Shove Aside",
@@ -292,7 +292,7 @@
     "requirements": [
       { "type": "attribute", "name": "Might", "operator": ">=", "value": 1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.221"
   },
   {
     "name": "Shrug Off",
@@ -301,59 +301,55 @@
     "requirements": [
       { "type": "attribute", "name": "Resilience", "operator": "<=", "value": -1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.221"
   },
   {
     "name": "Specialized Skill",
     "displayedReqs": "Requirement: Fatemaster Character or 2 or more completed Destiny Steps.",
     "description": "Choose a Skill and a suit. Add the chosen suit to the chosen Skill’s value.\n\nA character may take this Talent multiple times, but each time, a different Skill must be chosen.",
     "requirements": [
-      { "type": "custom", "name": "fatemaster_or_2_destiny" }
+      {
+        "or": [
+          { "type": "custom", "name": "fmc" },
+          { "type": "destiny", "operator": ">=", "value": 2 }
+        ]
+      }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.221"
   },
   {
     "name": "Specialized Toxins",
     "displayedReqs": "Requirement: Alchemistry 2 or higher.",
-    "description": "The character chooses one of the following Characteristics: Living, Construct, Undead, Spirit, or Nightmare. When this character performs an Action or declares a Trigger that gives a target with the chosen Characteristic the Poison Condition, the target gains an additional Poison +1.\n\nA character may take this Talent multiple times, but each time a different Characteristic must be chosen.",
+    "description": "The character chooses one of the following Characteristics: Living, Construct, Undead, Spirit, or Nightmare. When this character performs an Action or declares a Trigger that gives a target with the chosen Characteristic the **Poison** Condition, the target gains an additional **Poison** +1.\n\nA character may take this Talent multiple times, but each time a different Characteristic must be chosen.",
     "requirements": [
       { "type": "skill", "name": "Alchemistry", "operator": ">=", "value": 2 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.221"
   },
   {
     "name": "Speed Loading",
     "displayedReqs": "Requirement: Chosen Skill Rank 2 or higher.",
-    "description": "Choose the Long Arms, Pistols, Shotguns, or Heavy Weapons Skill. The character gains the following Trigger on any attack Action using the chosen Skill:\n\n[R] Speed Loading: If this weapon’s Reload AP cost is 2 or lower, reload this weapon.",
+    "description": "Choose the Long Arms, Pistols, Shotguns, or Heavy Weapons Skill. The character gains the following Trigger on any attack Action using the chosen Skill:\n\n[r] Speed Loading: If this weapon’s Reload AP cost is 2 or lower, reload this weapon.",
     "requirements": [
-      { "type": "skill", "name": "any", "operator": ">=", "value": 2 }
+      { "type": "skill", "name": ["Long Arms", "Pistol", "Shotgun", "Heavy Guns"], "operator": ">=", "value": 2 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.221"
   },
   {
     "name": "Steam-Powered Charge",
     "displayedReqs": "Requirement: Character must be a Construct or possess one or more pneumatic limbs.",
-    "description": "When this character declares the Charge Action, she may choose to make a single (1) AP or (2) AP Close Combat attack instead of two (1) AP Close Combat attacks. If she chooses to makes a single (1) AP Close Combat attack, it deals +1 damage and knocks the target Prone if successful.",
+    "description": "When this character declares the Charge Action, she may choose to make a single (1) AP or (2) AP Close Combat attack instead of two (1) AP Close Combat attacks. If she chooses to makes a single (1) AP Close Combat attack, it deals +1 damage and knocks the target **Prone** if successful.",
     "requirements": [
-      { "type": "custom", "name": "construct_or_pneumatic" }
+      { "type": "custom", "name": "construct" }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.221"
   },
   {
     "name": "Sturdy",
     "displayedReqs": "Requirement: None.",
     "description": "This character gains +2 Wounds.\n\nThis Talent may be taken multiple times; each additional time this Talent is taken, this character gains +1 Wound.",
     "requirements": [],
-    "book": "Core Book"
-  },
-  {
-    "name": "Stubborn",
-    "displayedReqs": "Requirement: Tenacity 2 or higher.",
-    "description": "This character gains a [+] on all Willpower duels but a [-] on all Convince Challenges.",
-    "requirements": [
-      { "type": "attribute", "name": "Tenacity", "operator": ">=", "value": 2 }
-    ],
-    "book": "Core Book"
+    "book": "Core Book pg.222"
   },
   {
     "name": "Sure-Footed",
@@ -362,7 +358,7 @@
     "requirements": [
       { "type": "attribute", "name": "Speed", "operator": "<=", "value": -1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.222"
   },
   {
     "name": "Tenacious Warrior",
@@ -371,7 +367,7 @@
     "requirements": [
       { "type": "attribute", "name": "Resilience", "operator": ">=", "value": 2 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.222"
   },
   {
     "name": "Threatening Posture",
@@ -380,7 +376,7 @@
     "requirements": [
       { "type": "skill", "name": "Intimidate", "operator": ">=", "value": 3 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.222"
   },
   {
     "name": "Tricky Shot",
@@ -389,7 +385,7 @@
     "requirements": [
       { "type": "skill", "name": "any_ranged", "operator": ">=", "value": 2 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.223"
   },
   {
     "name": "Twisted Fates",
@@ -398,7 +394,7 @@
     "requirements": [
       { "type": "custom", "name": "fated" }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.223"
   },
   {
     "name": "Unassuming",
@@ -407,7 +403,7 @@
     "requirements": [
       { "type": "attribute", "name": "Might", "operator": "<=", "value": -1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.223"
   },
   {
     "name": "Undermine Confidence",
@@ -416,7 +412,7 @@
     "requirements": [
       { "type": "attribute", "name": "Resilience", "operator": "<=", "value": -1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.223"
   },
   {
     "name": "Unequaled Accuracy",
@@ -425,7 +421,7 @@
     "requirements": [
       { "type": "skill", "name": "any", "operator": ">=", "value": 2, "category": ["Magical", "Ranged Combat"] }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.223"
   },
   {
     "name": "Wall of Muscle",
@@ -434,7 +430,7 @@
     "requirements": [
       { "type": "attribute", "name": "Resilience", "operator": ">=", "value": 1 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.223"
   },
   {
     "name": "Will of Ages",
@@ -443,7 +439,7 @@
     "requirements": [
       { "type": "skill", "name": "Counter-Spelling", "operator": ">=", "value": 3 }
     ],
-    "book": "Core Book"
+    "book": "Core Book pg.223"
   },
   {
     "name": "Advanced Sensors",
@@ -453,7 +449,7 @@
       { "type": "custom", "name": "invested" },
       { "type": "custom", "name": "light_chassis" }
     ],
-    "book": "Into the Steam"
+    "book": "Into the Steam pg.121"
   },
   {
     "name": "Avoidant",
@@ -462,16 +458,16 @@
     "requirements": [
       { "type": "attribute", "name": "Resilience", "operator": "<=", "value": -1 }
     ],
-    "book": "Into the Steam"
+    "book": "Into the Steam pg.121"
   },
   {
     "name": "Blot the Sky",
     "displayedReqs": "Requirement: Archery 3 or higher",
-    "description": "When the character makes an Archery attack, her Moderate damage gains [+b], and her Severe damage gains [+bb] (provided that she expends two additional arrows per resulting [+b]).",
+    "description": "When the character makes an Archery attack, her Moderate damage gains +[b], and her Severe damage gains +[b][b] (provided that she expends two additional arrows per resulting +[b]).",
     "requirements": [
       { "type": "skill", "name": "Archery", "operator": ">=", "value": 3 }
     ],
-    "book": "Into the Steam"
+    "book": "Into the Steam pg.121"
   },
   {
     "name": "Book Smart",
@@ -480,15 +476,58 @@
     "requirements": [
       { "type": "attribute", "name": "Cunning", "operator": "<=", "value": -1 }
     ],
-    "book": "Into the Steam"
+    "book": "Into the Steam pg.121"
   },
   {
     "name": "C-C-C-Combo!!!!",
     "displayedReqs": "Requirement: Martial Arts 3 or higher",
-    "description": "The character gains the following Trigger on her Martial Arts Close Combat attacks:\n\n**[m] Combo!**: This character may take this attack again against the same target. This second attack may not declare Triggers.",
+    "description": "The character gains the following Trigger on her Martial Arts Close Combat attacks:\n\n*[m] Combo!*: This character may take this attack again against the same target. This second attack may not declare Triggers.",
     "requirements": [
       { "type": "skill", "name": "Martial Arts", "operator": ">=", "value": 3 }
     ],
-    "book": "Into the Steam"
+    "book": "Into the Steam pg.121"
+  },
+  {
+  "name": "Channel Destiny",
+  "displayedReqs": "",
+  "description": "When this character performs a duel, she may suffer 2 damage before flipping any cards to add a suit of her choice to her final duel total. If this damage causes the character to suffer a Critical Effect or Toughness check to remain conscious, resolve the initial duel before checking for either.",
+  "requirements": [],
+  "book": "Into the Steam pg.121"
+  },
+  {
+  "name": "Cheating So and So",
+  "displayedReqs": "Requirement: Gambling 3 or higher",
+  "description": "It’s one thing to play the odds, but it’s something else entirely to stack the game in your favor. The character gains the following Trigger on all Expertise Challenges:\n\n*[m] Stack the Deck*: After resolving, you may look at the top card of the Fate deck and then choose whether or not to put it on the bottom of the deck.",
+  "requirements": [
+    { "type": "skill", "name": "Gambling", "operator": ">=", "value": 3 }
+  ],
+  "book": "Into the Steam pg.121"
+  },
+  {
+  "name": "Common Sense",
+  "displayedReqs": "Requirement: Cunning 2 or higher",
+  "description": "This character has a good head on her shoulders and can generally make sense of most things. She may discard a Twist Card during Narrative Time to gain a [+] on a duel.",
+  "requirements": [
+    { "type": "attribute", "name": "Cunning", "operator": ">=", "value": 2 }
+  ],
+  "book": "Into the Steam pg.121"
+  },
+    {
+    "name": "Concussive Force",
+    "displayedReqs": "Requirement: Might 2 or higher",
+    "description": "Any time the character deals damage with the Martial Arts or Pugilism Skills, she may push her target directly away from her a number of yards equal to her Might Aspect.",
+    "requirements": [
+      { "type": "attribute", "name": "Might", "operator": ">=", "value": 2 }
+    ],
+    "book": "Into the Steam pg.122"
+  },
+  {
+    "name": "Demanding Taskmaster",
+    "displayedReqs": "Requirement: Flexible 3 or higher",
+    "description": "The character gains the following Trigger on her Flexible Close Combat attacks:\n\n*[m] Motivation*: After succeeding, move the target 1 yard if this attack dealt Weak damage, 2 yards if Moderate, and 3 yards if Severe.",
+    "requirements": [
+      { "type": "skill", "name": "Flexible", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Steam pg.122"
   }
 ]

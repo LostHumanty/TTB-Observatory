@@ -4,17 +4,11 @@ to do:
 
 - сделать полный json
 
-- исправить \n и **bold** в талантах
-
 - Добавить в трейты:
-Magical Theory
-Fated и сделать по дефолту включенным
-Light Chassis
-Heavy Chassis
-Undead
 Non-Kin (сделать переключатель с Kin)
 Guild Training (сделать выпадающее меню с дивизионом)
-Living и сделать по дефолту включенным
+
+- добавить фильтр по книгам
 
 - Сделать чтобы Appraise 3 было равно Notice 3
     - потенцаильно сделать опцию "выставить Appraise и Teach отдельно" с подсказкой что по дефолту это нотис и лидершип.
@@ -34,7 +28,7 @@ Gifts of Darkness каунтер
     - Добавить экспорт составленных талантов
     - Учитывание взятых талантов для требований других талантов (например Infiltration для Personal Soulstone)
 
-
+- Добавить таланты из апдейта правил, мб опцию выбора Specialized Skill
 
     DONE:
 
@@ -53,3 +47,5 @@ Sloth Vice
 Enchant Item Talent
 Must be a Guild employee or have the Infiltration Talent.
 Have met with a Shinto priest, Oni hunter, or other organization (like the Red Library) with knowledge about how to best exploit these spirits and their weaknesses.
+Have pneumatic limbs
+Fatemaster's Character

@@ -11,254 +11,123 @@ const skillCategories = {
   "Training": ["Acrobatics", "Athletics", "Carouse", "Centering", "Evade", "Pickpocket", "Stealth", "Toughness"]
 };
 
-// Special Characters Replace
 function formatTextWithSymbols(text) {
   const symbolMap = {
-    '[r]': 'r',
-    '[t]': 't',
-    '[m]': 'm',
-    '[C]': 'C',
-    '[p]': 'p',
-    '[a]': 'a',
-    '[b]': 'b',
-    '[l]': 'l',
-    '[x]': 'x',
-    '[+]': '+',
-    '[-]': '-'
+    '[r]': 'r', '[t]': 't', '[m]': 'm', '[C]': 'C', '[p]': 'p',
+    '[a]': 'a', '[b]': 'b', '[l]': 'l', '[x]': 'x', '[+]': '+', '[-]': '-'
   };
 
-  let formattedText = text;
-  Object.keys(symbolMap).forEach((key) => {
-    const regex = new RegExp(key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
-    formattedText = formattedText.replace(regex, `<span class="malifaux-symbol">${symbolMap[key]}</span>`);
+  let formatted = text;
+
+  Object.entries(symbolMap).forEach(([key, sym]) => {
+    formatted = formatted.replace(new RegExp(key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), `<span class="malifaux-symbol">${sym}</span>`);
   });
 
-  return formattedText;
+  formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  formatted = formatted.replace(/\*(.*?)\*/g, '<em>$1</em>');
+  formatted = formatted.replace(/\n/g, '<br>');
+
+  return formatted;
 }
 
-// Load talents.json
+
 fetch("talents.json")
   .then(res => res.json())
   .then(data => {
     allTalents = data;
     console.log("Talents loaded:", allTalents.length);
-  })
-  .catch(err => {
-    console.error("Failed to load talents.json", err);
   });
 
-// Create round button selector (0–5 scale)
-function createRoundSelector(container, name) {
+function createRoundSelector(container) {
   for (let i = 1; i <= 5; i++) {
     const btn = document.createElement("div");
     btn.className = "round-button";
     btn.dataset.value = i;
-
     btn.addEventListener("click", () => {
-      let current = parseInt(container.dataset.selected || 0);
+      const current = parseInt(container.dataset.selected || 0);
       const selected = parseInt(btn.dataset.value);
       container.dataset.selected = (current === selected) ? 0 : selected;
       updateButtons(container, selected, current === selected);
     });
-
     container.appendChild(btn);
   }
 }
 
-// Update round button styles
 function updateButtons(container, count, reset = false) {
-  const buttons = container.querySelectorAll(".round-button");
-  buttons.forEach((btn, idx) => {
-    if (reset || idx + 1 > count) {
-      btn.classList.remove("active");
-    } else {
-      btn.classList.add("active");
-    }
+  container.querySelectorAll(".round-button").forEach((btn, idx) => {
+    btn.classList.toggle("active", !reset && idx + 1 <= count);
   });
 }
 
-// Initialize on DOM ready
 document.addEventListener("DOMContentLoaded", () => {
-  const destinySteps = document.querySelector('[data-name="destiny_steps"]');
-  createRoundSelector(destinySteps, "destiny_steps");
+  createRoundSelector(document.querySelector('[data-name="destiny_steps"]'));
 
-  const skillsContainer = document.getElementById("skillsContainer");
-  const column1 = document.createElement("div");
-  const column2 = document.createElement("div");
-  column1.classList.add("skills-column");
-  column2.classList.add("skills-column");
+  const container = document.getElementById("skillsContainer");
+  const [col1, col2] = [document.createElement("div"), document.createElement("div")];
+  col1.classList.add("skills-column");
+  col2.classList.add("skills-column");
 
-  const categories = Object.entries(skillCategories);
-  const half = Math.ceil(categories.length / 2);
-
-  categories.forEach(([category, skills], index) => {
-    const wrapper = document.createElement("div");
-    wrapper.classList.add("skill-category");
+  const entries = Object.entries(skillCategories);
+  const half = Math.ceil(entries.length / 2);
+  entries.forEach(([cat, skills], i) => {
+    const box = document.createElement("div");
+    box.classList.add("skill-category");
 
     const title = document.createElement("h3");
     title.classList.add("collapsible");
-    title.textContent = `${category} ▼`;
+    title.textContent = `${cat} ▼`;
 
-    const content = document.createElement("div");
-    content.classList.add("category-content", "hidden");
-
-    title.addEventListener("click", () => {
-      content.classList.toggle("hidden");
-      title.textContent = category + (content.classList.contains("hidden") ? " ▼" : " ▲");
-    });
+    const section = document.createElement("div");
+    section.classList.add("category-content", "hidden");
+    title.onclick = () => {
+      section.classList.toggle("hidden");
+      title.textContent = `${cat} ${section.classList.contains("hidden") ? "▼" : "▲"}`;
+    };
 
     skills.forEach(skill => {
-      const skillDiv = document.createElement("div");
-      skillDiv.classList.add("skill-selector");
-      skillDiv.dataset.name = skill;
-
+      const div = document.createElement("div");
+      div.classList.add("skill-selector");
+      div.dataset.name = skill;
       const label = document.createElement("label");
       label.textContent = skill + ": ";
-      skillDiv.appendChild(label);
-
-      createRoundSelector(skillDiv, skill);
-      content.appendChild(skillDiv);
+      div.appendChild(label);
+      createRoundSelector(div);
+      section.appendChild(div);
     });
 
-    wrapper.appendChild(title);
-    wrapper.appendChild(content);
-    if (index < half) column1.appendChild(wrapper);
-    else column2.appendChild(wrapper);
+    box.appendChild(title);
+    box.appendChild(section);
+    (i < half ? col1 : col2).appendChild(box);
   });
 
-  skillsContainer.appendChild(column1);
-  skillsContainer.appendChild(column2);
+  container.appendChild(col1);
+  container.appendChild(col2);
 });
 
-// Prevent page scroll while using mouse wheel on number inputs
 document.querySelectorAll('input[type="number"]').forEach(input => {
-  input.addEventListener("wheel", function (e) {
+  input.addEventListener("wheel", e => {
     if (document.activeElement === input) {
       e.preventDefault();
-
       const step = Number(input.step) || 1;
-      const direction = e.deltaY < 0 ? 1 : -1;
-      const current = Number(input.value) || 0;
-
-      input.value = current + direction * step;
+      const delta = e.deltaY < 0 ? 1 : -1;
+      const value = Number(input.value) || 0;
+      input.value = value + delta * step;
       input.dispatchEvent(new Event('input', { bubbles: true }));
     }
   }, { passive: false });
 });
 
-// Show/hide rare requirements section
 document.getElementById("toggleRare").addEventListener("click", () => {
   const section = document.getElementById("rareRequirements");
-  const btn = document.getElementById("toggleRare");
   section.classList.toggle("hidden");
-  btn.textContent = section.classList.contains("hidden")
+  document.getElementById("toggleRare").textContent = section.classList.contains("hidden")
     ? "Show rare requirements ▼"
     : "Hide rare requirements ▲";
 });
 
-// Filter logic
-document.getElementById("filterForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const resultsDiv = document.getElementById("results");
-  resultsDiv.innerHTML = "";
-
-  const formData = new FormData(e.target);
-  const filters = {};
-  formData.forEach((value, key) => {
-    if (['might', 'grace', 'speed', 'resilience', 'intellect', 'charm', 'cunning', 'tenacity'].includes(key)) {
-      filters[key] = parseInt(value) || 0;
-    } else if (key === "rare[]") {
-      if (!filters.rare) filters.rare = [];
-      filters.rare.push(value);
-    }
-  });
-
-  // Destiny Steps
-  const destinySteps = parseInt(document.querySelector('[data-name="destiny_steps"]').dataset.selected || "0");
-  
-  // skills
-  const selectedSkills = {};
-  document.querySelectorAll(".skill-selector").forEach(skillDiv => {
-    const name = skillDiv.dataset.name;
-    const level = parseInt(skillDiv.dataset.selected || "0");
-    if (level > 0) {
-      selectedSkills[name.toLowerCase()] = level;
-    }
-  });
-
-  // Talent filter
-  const matched = allTalents.filter(talent => {
-    const requirements = talent.requirements || [];
-
-    if (requirements.length === 0) {
-      return document.querySelector('input[name="reqNoneOnly"]')?.checked;
-    }
-
-    return requirements.every(req => {
-      const { type, name, operator, value } = req;
-
-      // aspects
-      if (type === "attribute") {
-        const attributeValue = filters[name.toLowerCase()] ?? 0;
-        return compare(attributeValue, operator, value);
-      }
-
-      // Destiny Steps
-      if (type === "destiny") {
-        return compare(destinySteps, operator, value);
-      }
-
-      // skills
-      if (type === "skill") {
-        if (Array.isArray(req.category)) {
-          const skillsToCheck = req.category.flatMap(cat => skillCategories[cat] || []).map(s => s.toLowerCase());
-          return skillsToCheck.some(skill => selectedSkills[skill] && compare(selectedSkills[skill], operator, value));
-        }
-
-        if (name === "any") {
-          return Object.values(selectedSkills).some(val => compare(val, operator, value));
-        }
-
-        const skillVal = selectedSkills[name.toLowerCase()] || 0;
-        return compare(skillVal, operator, value);
-      }
-
-      if (type === "custom") {
-        return filters.rare?.includes(name) || false;
-      }
-
-      return false;
-    });
-  });
-
-  // Result
-  if (matched.length === 0) {
-    resultsDiv.innerHTML = "<p>No matching talents found.</p>";
-  } else {
-    matched.forEach(t => {
-      const div = document.createElement("div");
-      div.classList.add("talent-block");
-      
-      const formattedDescription = formatTextWithSymbols(t.description);
-      const formattedReqs = t.displayedReqs ? formatTextWithSymbols(t.displayedReqs) : "";
-      
-      div.innerHTML = `
-        <strong>${t.name}</strong>
-        ${formattedReqs ? `<p><em>${formattedReqs}</em></p>` : ""}
-        <p>${formattedDescription}</p>
-      `;
-
-      resultsDiv.appendChild(div);
-    });
-  }
-});
-
-// Evaluate conditions
 function compare(a, op, b) {
   a = Number(a);
   b = Number(b);
-  
   switch (op) {
     case ">=": return a >= b;
     case "<=": return a <= b;
@@ -267,4 +136,101 @@ function compare(a, op, b) {
     case "==": return a == b;
     default: return false;
   }
+}
+
+document.getElementById("filterForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const resultsDiv = document.getElementById("results");
+  resultsDiv.innerHTML = "";
+
+  const formData = new FormData(e.target);
+  const filters = Object.fromEntries([...formData.entries()].filter(([k]) => !k.endsWith("[]")));
+
+  ["might", "grace", "speed", "resilience", "intellect", "charm", "cunning", "tenacity"].forEach(k => {
+    filters[k] = parseInt(filters[k]) || 0;
+  });
+
+  const destinySteps = parseInt(document.querySelector('[data-name="destiny_steps"]').dataset.selected || "0");
+
+  const selectedSkills = {};
+  document.querySelectorAll(".skill-selector").forEach(div => {
+    const level = parseInt(div.dataset.selected || "0");
+    if (level > 0) selectedSkills[div.dataset.name.toLowerCase()] = level;
+  });
+
+  // Unified boolean flags
+  const selectedFlags = new Set([
+    ...formData.getAll("traits"),
+    ...formData.getAll("rare[]")
+  ]);
+
+  const includeNoReq = document.querySelector('input[name="reqNoneOnly"]').checked;
+
+  const matched = allTalents.filter(talent => {
+    const requirements = talent.requirements || [];
+    if (requirements.length === 0) return includeNoReq;
+
+    return requirements.every(req => {
+      const { type, name, operator, value, category, or } = req;
+
+      if (or && Array.isArray(or)) {
+        return or.some(sub => evaluateRequirement(sub, filters, destinySteps, selectedSkills, selectedFlags));
+      }
+
+      return evaluateRequirement(req, filters, destinySteps, selectedSkills, selectedFlags);
+    });
+  });
+
+  if (!matched.length) {
+    resultsDiv.innerHTML = "<p>No matching talents found.</p>";
+  } else {
+    matched.forEach(t => {
+      const div = document.createElement("div");
+      div.classList.add("talent-block");
+      div.innerHTML = `
+        <strong>${t.name}</strong>
+        ${t.displayedReqs ? `<p><em>${formatTextWithSymbols(t.displayedReqs)}</em></p>` : ""}
+        <p>${formatTextWithSymbols(t.description)}</p>
+        ${t.book ? `<div class="talent-book">${t.book}</div>` : ""}`;
+      resultsDiv.appendChild(div);
+    });
+  }
+});
+
+function evaluateRequirement(req, filters, destinySteps, selectedSkills, selectedFlags) {
+  const { type, name, operator, value, category } = req;
+
+  if (type === "attribute") {
+    return compare(filters[name.toLowerCase()] ?? 0, operator, value);
+  }
+
+  if (type === "destiny") {
+    return compare(destinySteps, operator, value);
+  }
+
+  if (type === "skill") {
+    if (Array.isArray(category)) {
+      const skillList = category.flatMap(cat => skillCategories[cat] || []).map(s => s.toLowerCase());
+      return skillList.some(skill => selectedSkills[skill] && compare(selectedSkills[skill], operator, value));
+    }
+
+    if (Array.isArray(name)) {
+      return name.some(skill => {
+        const lvl = selectedSkills[skill.toLowerCase()] || 0;
+        return compare(lvl, operator, value);
+      });
+    }
+
+    if (name === "any") {
+      return Object.values(selectedSkills).some(val => compare(val, operator, value));
+    }
+
+    return compare(selectedSkills[name.toLowerCase()] || 0, operator, value);
+  }
+
+  if (type === "custom") {
+    return selectedFlags.has(name);
+  }
+
+  return false;
 }
