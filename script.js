@@ -1,5 +1,16 @@
 let allTalents = [];
 
+const skillCategories = {
+  "Academic": ["Bureaucracy", "Engineering", "History", "Literacy", "Mathematics", "Music"],
+  "Close Combat": ["Flexible", "Grappling", "Heavy Melee", "Martial Arts", "Melee", "Pneumatic", "Pugilism"],
+  "Crafting": ["Alchemistry", "Art", "Artefacting", "Blacksmithing", "Culinary", "Explosives", "Homesteading", "Printing", "Stitching"],
+  "Expertise": ["Doctor", "Forgery", "Gambling", "Husbandry", "Lockpicking", "Notice", "Track", "Wilderness"],
+  "Magical": ["Counter-Spelling", "Enchanting", "Necromancy", "Sorcery", "Prestidigitation"],
+  "Ranged Combat": ["Archery", "Heavy Guns", "Long Arms", "Pistol", "Shotgun", "Thrown Weapons"],
+  "Social": ["Barter", "Bewitch", "Convince", "Deceive", "Intimidate", "Leadership", "Scrutiny"],
+  "Training": ["Acrobatics", "Athletics", "Carouse", "Centering", "Evade", "Pickpocket", "Stealth", "Toughness"]
+};
+
 // Special Characters Replace
 function formatTextWithSymbols(text) {
   const symbolMap = {
@@ -70,17 +81,6 @@ function updateButtons(container, count, reset = false) {
 document.addEventListener("DOMContentLoaded", () => {
   const destinySteps = document.querySelector('[data-name="destiny_steps"]');
   createRoundSelector(destinySteps, "destiny_steps");
-
-  const skillCategories = {
-    "Academic": ["Bureaucracy", "Engineering", "History", "Literacy", "Mathematics", "Music"],
-    "Close Combat": ["Flexible", "Grappling", "Heavy Melee", "Martial Arts", "Melee", "Pneumatic", "Pugilism"],
-    "Crafting": ["Alchemistry", "Art", "Artefacting", "Blacksmithing", "Culinary", "Explosives", "Homesteading", "Printing", "Stitching"],
-    "Expertise": ["Doctor", "Forgery", "Gambling", "Husbandry", "Lockpicking", "Notice", "Track", "Wilderness"],
-    "Magical": ["Counter-Spelling", "Enchanting", "Necromancy", "Sorcery", "Prestidigitation"],
-    "Ranged Combat": ["Archery", "Heavy Guns", "Long Arms", "Pistol", "Shotgun", "Thrown Weapons"],
-    "Social": ["Barter", "Bewitch", "Convince", "Deceive", "Intimidate", "Leadership", "Scrutiny"],
-    "Training": ["Acrobatics", "Athletics", "Carouse", "Centering", "Evade", "Pickpocket", "Stealth", "Toughness"]
-  };
 
   const skillsContainer = document.getElementById("skillsContainer");
   const column1 = document.createElement("div");
@@ -211,14 +211,20 @@ document.getElementById("filterForm").addEventListener("submit", function (e) {
 
       // skills
       if (type === "skill") {
-        if (name === "any") {
-          return Object.values(selectedSkills).some(skillLevel => 
-            compare(skillLevel, operator, value)
-          );
-        } else {
-          const skillLevel = selectedSkills[name.toLowerCase()] || 0;
-          return compare(skillLevel, operator, value);
+        // Case 1: category-based requirement
+        if (Array.isArray(req.category)) {
+          const skillsToCheck = req.category.flatMap(cat => skillCategories[cat] || []).map(s => s.toLowerCase());
+          return skillsToCheck.some(skill => selectedSkills[skill] && compare(selectedSkills[skill], operator, value));
         }
+
+        // Case 2: any skill
+        if (name === "any") {
+          return Object.values(selectedSkills).some(val => compare(val, operator, value));
+        }
+
+        // Case 3: single named skill
+        const skillVal = selectedSkills[name.toLowerCase()] || 0;
+        return compare(skillVal, operator, value);
       }
 
       if (type === "custom") {
