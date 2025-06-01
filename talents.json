@@ -90,7 +90,7 @@
   {
     "name": "Critical Strike",
     "displayedReqs": "Requirement: Close Combat or Ranged Combat Skill 3 or higher.",
-    "description": "Choose a Skill that meets this Talent’s requirement. All attacks with the chosen Skill gain the following Trigger: [r] **Critical Strike**: When damaging, deal 1 additional damage for each [r] in the final duel total. A character may take this Talent multiple times, but each time a different Skill must be chosen.",
+    "description": "Choose a Skill that meets this Talent’s requirement. All attacks with the chosen Skill gain the following Trigger:\n\n[r] **Critical Strike**: When damaging, deal 1 additional damage for each [r] in the final duel total. A character may take this Talent multiple times, but each time a different Skill must be chosen.",
     "requirements": [
       { "type": "skill", "name": "any", "operator": ">=", "value": 3, "category": ["Close Combat", "Ranged Combat"] }
     ],
@@ -140,5 +140,355 @@
       { "type": "attribute", "name": "Charm", "operator": "<=", "value": -1 }
     ],
     "book": "Core Book"
+  },
+  {
+    "name": "Great Fate",
+    "displayedReqs": "Requirement: Fated.",
+    "description": "When this character draws her Control Hand at the end of the Prologue, she draws one additional card. A character may take this Talent multiple times, and its effects stack.",
+    "requirements": [
+      { "type": "custom", "name": "fated" }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Gruesome Attack",
+    "displayedReqs": "Requirement: Close Combat or Ranged Combat Skill 3 or higher.",
+    "description": "Choose a Skill that meets this Talent's requirements. All Critical Effect flips this character generates from attacks using the chosen Skill receive [+]. A character may take this Talent multiple times, but each time a different Skill must be chosen.",
+    "requirements": [
+      { "type": "skill", "name": "any", "operator": ">=", "value": 3, "category": ["Close Combat", "Ranged Combat"] }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Gruff",
+    "displayedReqs": "Requirement: Charm -1 or lower.",
+    "description": "This character gains a [+] to Deceive and Intimidate Challenges.",
+    "requirements": [
+      { "type": "attribute", "name": "Charm", "operator": "<=", "value": -1 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Hobbling Attack",
+    "displayedReqs": "Requirement: Close Combat or Ranged Combat Skill 3 or higher.",
+    "description": "Choose a Skill that meets this Talent’s requirement. All attacks with the chosen Skill gain the following Trigger:\n\n[r] Hobble: After succeeding, the target gains the following Condition for the remainder of Dramatic Time: “Hobbled: This character may only declare one Movement General Action per turn and may not declare the Run Action.”\n\nA character may take this Talent multiple times, but each time a different Skill must be chosen.",
+    "requirements": [
+      { "type": "skill", "name": "any", "operator": ">=", "value": 3, "category": ["Close Combat", "Ranged Combat"] }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Honest",
+    "displayedReqs": "Requirement: Cunning -1 or lower.",
+    "description": "This character doesn’t have to try to convince others to trust her; they can see that she has an honest nature. This character gains [+] to all Convince and Leadership Duels.",
+    "requirements": [
+      { "type": "attribute", "name": "Cunning", "operator": "<=", "value": -1 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Imposing Mass",
+    "displayedReqs": "Requirement: Grace -1 or lower.",
+    "description": "This character may not be very graceful, but she’s become quite good at using her physical size to her advantage in combat. This character gains [+] to her disengaging strikes and to any Impose Action she takes.",
+    "requirements": [
+      { "type": "attribute", "name": "Grace", "operator": "<=", "value": -1 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Let Me Show You",
+    "displayedReqs": "Requirement: Leadership 3 or higher.",
+    "description": "This character has a natural affinity for teaching other people how to do things. She may spend 15 minutes and discard a Twist Card to explain how one of her General Talents works to another character. That character may then discard a Twist Card to gain the taught General Talent for the rest of the day. The taught character must still meet all the necessary physical prerequisites for the Talent. Talents with a requirement of Invested, Stitched, or Twisted cannot be taught.",
+    "requirements": [
+      { "type": "skill", "name": "Leadership", "operator": ">=", "value": 3 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Open Hand Fighting",
+    "displayedReqs": "Requirement: Melee 3 or higher.",
+    "description": "If the character is wielding a Melee weapon and has nothing in her other hand when she makes a successful disengaging strike, she may choose to have her disengaging strike deal damage to her target.",
+    "requirements": [
+      { "type": "skill", "name": "Melee", "operator": ">=", "value": 3 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Paired Weapons",
+    "displayedReqs": "Requirement: Close Combat or Ranged Combat Skill 3 or higher.",
+    "description": "Choose a Skill that meets this Talent’s requirement. When this character is wielding two weapons of the chosen type, one in each hand, she gains [+] to any attacks made with either weapon. The second weapon merely gives her a bonus to hit. If wielding two Ranged Combat weapons, this Talent expends one round of ammunition from each weapon.",
+    "requirements": [
+      { "type": "skill", "name": "any", "operator": ">=", "value": 3, "category": ["Close Combat", "Ranged Combat"] }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Plain-Spoken",
+    "displayedReqs": "Requirement: Intellect -1 or lower.",
+    "description": "This character doesn’t try to muddy her conversation with flowery language and is good at saying difficult truths efficiently. This character gains [+] to Social Duels made during Dramatic Time.",
+    "requirements": [
+      { "type": "attribute", "name": "Intellect", "operator": "<=", "value": -1 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Polyglot",
+    "displayedReqs": "Requirement: Intellect 1 or higher.",
+    "description": "When this character gains this Talent, she chooses two languages that she does not already speak and learns how to speak them. When conversing with another character in their native, non-English language, this character gains [+] to her Barter and Bewitch duels.",
+    "requirements": [
+      { "type": "attribute", "name": "Intellect", "operator": ">=", "value": 1 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Quick Study",
+    "displayedReqs": "Requirement: Intellect 1 or higher.",
+    "description": "During the Epilogue, when presented with Skill Advancement options by the Fatemaster, this character may instead advance in any Skill she does not already possess instead of the Skill Advancement options presented by the Fatemaster. She must have witnessed a friendly character succeed at the chosen Skill at some point during the session.",
+    "requirements": [
+      { "type": "attribute", "name": "Intellect", "operator": ">=", "value": 1 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Rush",
+    "displayedReqs": "Requirement: Speed 1 or higher.",
+    "description": "The character increases her Charge Aspect by +1. A character may take this Talent multiple times, and its effects stack.",
+    "requirements": [
+      { "type": "attribute", "name": "Speed", "operator": ">=", "value": 1 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Secretive Spellcasting",
+    "displayedReqs": "Requirement: Magical Theory.",
+    "description": "When this character casts a Spell or Manifested power, she may discard a card to make her Magical Theory appear to be the Thalarian Doctrine to anyone who attempts to detect it.",
+    "requirements": [
+      { "type": "custom", "name": "magical_theory" }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Seize the Day",
+    "displayedReqs": "Requirement: Grace -1 or lower.",
+    "description": "This character gains [+] to her Initiative flips.",
+    "requirements": [
+      { "type": "attribute", "name": "Grace", "operator": "<=", "value": -1 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Shot Studies",
+    "displayedReqs": "Requirement: Shotgun 3 or higher.",
+    "description": "If this character has the Focused Condition and is firing a shotgun loaded with slug ammunition, she multiplies the range of the shotgun by x10.",
+    "requirements": [
+      { "type": "skill", "name": "Shotgun", "operator": ">=", "value": 3 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Shove Aside",
+    "displayedReqs": "Requirement: Might 1 or higher.",
+    "description": "This character can move through characters with a Height lower than her own without being impeded. Such characters cannot make disengaging strikes against this character.",
+    "requirements": [
+      { "type": "attribute", "name": "Might", "operator": ">=", "value": 1 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Shrug Off",
+    "displayedReqs": "Requirement: Resilience -1 or lower.",
+    "description": "This character gains the following Tactical Action:\n\n(0) Shrug Off: This character may discard a Twist card to end a Condition affecting her.",
+    "requirements": [
+      { "type": "attribute", "name": "Resilience", "operator": "<=", "value": -1 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Specialized Skill",
+    "displayedReqs": "Requirement: Fatemaster Character or 2 or more completed Destiny Steps.",
+    "description": "Choose a Skill and a suit. Add the chosen suit to the chosen Skill’s value.\n\nA character may take this Talent multiple times, but each time, a different Skill must be chosen.",
+    "requirements": [
+      { "type": "custom", "name": "fatemaster_or_2_destiny" }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Specialized Toxins",
+    "displayedReqs": "Requirement: Alchemistry 2 or higher.",
+    "description": "The character chooses one of the following Characteristics: Living, Construct, Undead, Spirit, or Nightmare. When this character performs an Action or declares a Trigger that gives a target with the chosen Characteristic the Poison Condition, the target gains an additional Poison +1.\n\nA character may take this Talent multiple times, but each time a different Characteristic must be chosen.",
+    "requirements": [
+      { "type": "skill", "name": "Alchemistry", "operator": ">=", "value": 2 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Speed Loading",
+    "displayedReqs": "Requirement: Chosen Skill Rank 2 or higher.",
+    "description": "Choose the Long Arms, Pistols, Shotguns, or Heavy Weapons Skill. The character gains the following Trigger on any attack Action using the chosen Skill:\n\n[R] Speed Loading: If this weapon’s Reload AP cost is 2 or lower, reload this weapon.",
+    "requirements": [
+      { "type": "skill", "name": "any", "operator": ">=", "value": 2 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Steam-Powered Charge",
+    "displayedReqs": "Requirement: Character must be a Construct or possess one or more pneumatic limbs.",
+    "description": "When this character declares the Charge Action, she may choose to make a single (1) AP or (2) AP Close Combat attack instead of two (1) AP Close Combat attacks. If she chooses to makes a single (1) AP Close Combat attack, it deals +1 damage and knocks the target Prone if successful.",
+    "requirements": [
+      { "type": "custom", "name": "construct_or_pneumatic" }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Sturdy",
+    "displayedReqs": "Requirement: None.",
+    "description": "This character gains +2 Wounds.\n\nThis Talent may be taken multiple times; each additional time this Talent is taken, this character gains +1 Wound.",
+    "requirements": [],
+    "book": "Core Book"
+  },
+  {
+    "name": "Stubborn",
+    "displayedReqs": "Requirement: Tenacity 2 or higher.",
+    "description": "This character gains a [+] on all Willpower duels but a [-] on all Convince Challenges.",
+    "requirements": [
+      { "type": "attribute", "name": "Tenacity", "operator": ">=", "value": 2 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Sure-Footed",
+    "displayedReqs": "Requirement: Speed -1 or lower.",
+    "description": "When this character is pushed or moved by an effect, she may apply her Speed Aspect as a penalty to the distance (in yards) that she is pushed or moved by the effect.",
+    "requirements": [
+      { "type": "attribute", "name": "Speed", "operator": "<=", "value": -1 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Tenacious Warrior",
+    "displayedReqs": "Requirement: Resilience 2 or higher.",
+    "description": "When an enemy makes a successful attack against this character and declares a Trigger, this character may discard a card. If she does so, the Trigger has no effect on her (though it may still affect others and the attack deals normal damage).",
+    "requirements": [
+      { "type": "attribute", "name": "Resilience", "operator": ">=", "value": 2 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Threatening Posture",
+    "displayedReqs": "Requirement: Intimidate 3 or higher.",
+    "description": "Enemies engaged with this character suffer a – penalty on Close Combat attacks made against targets other than her who do not also possess this Talent.",
+    "requirements": [
+      { "type": "skill", "name": "Intimidate", "operator": ">=", "value": 3 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Tricky Shot",
+    "displayedReqs": "Requirement: Chosen Skill Rank 2 or higher.",
+    "description": "Choose a Ranged Combat Skill. While making an attack with the chosen Skill, this character may choose to ignore one –.",
+    "requirements": [
+      { "type": "skill", "name": "any_ranged", "operator": ">=", "value": 2 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Twisted Fates",
+    "displayedReqs": "Requirement: Fated.",
+    "description": "When this Talent is chosen, choose a card in the character’s Twist deck and permanently increase its value by 1, to a maximum value of 13. A character may take this Talent multiple times.",
+    "requirements": [
+      { "type": "custom", "name": "fated" }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Unassuming",
+    "displayedReqs": "Requirement: Might -1 or lower.",
+    "description": "This character gains + to any duels made to avoid being noticed in a group or angering someone.",
+    "requirements": [
+      { "type": "attribute", "name": "Might", "operator": "<=", "value": -1 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Undermine Confidence",
+    "displayedReqs": "Requirement: Resilience -1 or lower.",
+    "description": "This character gains + to all Intimidate Challenges made during Narrative Time.",
+    "requirements": [
+      { "type": "attribute", "name": "Resilience", "operator": "<=", "value": -1 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Unequaled Accuracy",
+    "displayedReqs": "Requirement: Magical or Ranged Combat Skill 2 or higher.",
+    "description": "Choose a Skill that meets this Talent’s requirement. This character does not randomize her target when firing into an engagement using the chosen Skill.",
+    "requirements": [
+      { "type": "skill", "name": "any", "operator": ">=", "value": 2, "category": ["Magical", "Ranged Combat"] }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Wall of Muscle",
+    "displayedReqs": "Requirement: Resilience 1 or higher.",
+    "description": "Increase this character’s Height to 3. In addition, increase the range of all [y] weapons wielded by this character by 1 yard, to a maximum of 3 yards.",
+    "requirements": [
+      { "type": "attribute", "name": "Resilience", "operator": ">=", "value": 1 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Will of Ages",
+    "displayedReqs": "Requirement: Counter-Spelling 3 or higher.",
+    "description": "When this character uses Magical Shielding, she may shield a number of additional friendly characters (including herself) equal to her Tenacity.",
+    "requirements": [
+      { "type": "skill", "name": "Counter-Spelling", "operator": ">=", "value": 3 }
+    ],
+    "book": "Core Book"
+  },
+  {
+    "name": "Advanced Sensors",
+    "displayedReqs": "Requirement: Invested, Light Chassis",
+    "description": "This character gains a [+] on Notice duels and is capable of detecting things that other characters might miss, such as the presence of invisible creatures (though not their exact position) with a Difficult Notice Challenge.",
+    "requirements": [
+      { "type": "custom", "name": "invested" },
+      { "type": "custom", "name": "light_chassis" }
+    ],
+    "book": "Into the Steam"
+  },
+  {
+    "name": "Avoidant",
+    "displayedReqs": "Requirement: Resilience -1 or lower",
+    "description": "The character’s heightened sense of pain has encouraged her to become really, really good at avoiding it. This character permanently loses 1 Wound but gains +1 Defense.",
+    "requirements": [
+      { "type": "attribute", "name": "Resilience", "operator": "<=", "value": -1 }
+    ],
+    "book": "Into the Steam"
+  },
+  {
+    "name": "Blot the Sky",
+    "displayedReqs": "Requirement: Archery 3 or higher",
+    "description": "When the character makes an Archery attack, her Moderate damage gains [+b], and her Severe damage gains [+bb] (provided that she expends two additional arrows per resulting [+b]).",
+    "requirements": [
+      { "type": "skill", "name": "Archery", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Steam"
+  },
+  {
+    "name": "Book Smart",
+    "displayedReqs": "Requirement: Cunning -1 or lower",
+    "description": "While this character has learned quite a bit from her books, all that reading has dulled her reaction time. This character gains a [-] to Initiative but a [+] to all non-Magical Intellect Challenges.",
+    "requirements": [
+      { "type": "attribute", "name": "Cunning", "operator": "<=", "value": -1 }
+    ],
+    "book": "Into the Steam"
+  },
+  {
+    "name": "C-C-C-Combo!!!!",
+    "displayedReqs": "Requirement: Martial Arts 3 or higher",
+    "description": "The character gains the following Trigger on her Martial Arts Close Combat attacks:\n\n**[m] Combo!**: This character may take this attack again against the same target. This second attack may not declare Triggers.",
+    "requirements": [
+      { "type": "skill", "name": "Martial Arts", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Steam"
   }
 ]
