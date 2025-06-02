@@ -340,7 +340,12 @@
     "displayedReqs": "Requirement: Character must be a Construct or possess one or more pneumatic limbs.",
     "description": "When this character declares the Charge Action, she may choose to make a single (1) AP or (2) AP Close Combat attack instead of two (1) AP Close Combat attacks. If she chooses to makes a single (1) AP Close Combat attack, it deals +1 damage and knocks the target **Prone** if successful.",
     "requirements": [
-      { "type": "custom", "name": "construct" }
+      {
+        "or": [
+          { "type": "custom", "name": "pneumatic_limbs" },
+          { "type": "custom", "name": "construct" }
+        ]
+      }
     ],
     "book": "Core Book pg.221"
   },
@@ -472,7 +477,7 @@
   {
     "name": "Book Smart",
     "displayedReqs": "Requirement: Cunning -1 or lower",
-    "description": "While this character has learned quite a bit from her books, all that reading has dulled her reaction time. This character gains a [-] to Initiative but a [+] to all non-Magical Intellect Challenges.",
+    "description": "This character gains a [-] to Initiative but a [+] to all non-Magical Intellect Challenges.",
     "requirements": [
       { "type": "attribute", "name": "Cunning", "operator": "<=", "value": -1 }
     ],
@@ -529,5 +534,460 @@
       { "type": "skill", "name": "Flexible", "operator": ">=", "value": 3 }
     ],
     "book": "Into the Steam pg.122"
+  },
+  {
+    "name": "Disarming Attack",
+    "displayedReqs": "Requirement: Martial Arts 3 or higher",
+    "description": "The character’s Martial Arts Close Combat attacks gain the following Trigger:\n\n*[C] Disarming Attack*: After succeeding, the target drops a single item of your choice held in its hands. This attack’s damage flip receives a [-].",
+    "requirements": [
+      { "type": "skill", "name": "Martial Arts", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Steam pg.122"
+  },
+  {
+    "name": "Fickle",
+    "displayedReqs": "Requirement: Tenacity -2 or lower",
+    "description": "The character gains a [+] on any Skill she hasn’t used that session, but it costs 1 extra experience point whenever she attempts to raise a Skill higher than 2 ranks.",
+    "requirements": [
+      { "type": "attribute", "name": "Tenacity", "operator": "<=", "value": -2 }
+    ],
+    "book": "Into the Steam pg.122"
+  },
+  {
+    "name": "Frozen Heart",
+    "displayedReqs": "Requirement: None",
+    "description": "The character becomes immune to Horror Duels and the Paralyzed Condition.",
+    "requirements": [],
+    "book": "Into the Steam pg.122"
+  },
+  {
+    "name": "Gaussian Logic Engine",
+    "displayedReqs": "Requirement: Invested",
+    "description": "The character reduces its highest Physical Aspect by 1, but may then raise a Mental Aspect by 1, to a maximum Aspect Value of 4.",
+    "requirements": [
+      { "type": "custom", "name": "invested" }
+    ],
+    "book": "Into the Steam pg.122"
+  },
+  {
+    "name": "Heavy Mount and Bracing",
+    "displayedReqs": "Requirement: Invested, Heavy Chassis",
+    "description": "The character may attach a weapon with the Heavy rule to their weapon mount with five minutes of work; it is then considered to be braced to a weapon mount. The character may use the (1) Ready Weapon Action as a (0) Action when readying this attached weapon.",
+    "requirements": [
+      { "type": "custom", "name": "invested" },
+      { "type": "custom", "name": "heavy_chassis" }
+    ],
+    "book": "Into the Steam pg.123"
+  },
+  {
+    "name": "Improvised Parts",
+    "displayedReqs": "Requirement: Intellect 1 or higher",
+    "description": "When creating a Construct, the character gains an additional number of Construct Points equal to her Intellect Aspect.",
+    "requirements": [
+      { "type": "attribute", "name": "Intellect", "operator": ">=", "value": 1 }
+    ],
+    "book": "Into the Steam pg.123"
+  },
+  {
+    "name": "Inscription",
+    "displayedReqs": "Requirement: Literacy 3 or higher",
+    "description": "The character may add up to two total Magia and/or Immuto to a single Grimoire in her possession. These Magia or Immuto need not be ones that the character has in another Grimoire; Any special rules which apply to the Grimoire also apply to these new Magia and/or Immuto.",
+    "requirements": [
+      { "type": "skill", "name": "Literacy", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Steam pg.123"
+  },
+  {
+    "name": "Interface",
+    "displayedReqs": "Requirement: Invested",
+    "description": "The character gains the following Trigger to all Social Duels:\n\n*[t] Interface*: After succeeding against a Construct, gain 1 additional Margin of Success.",
+    "requirements": [
+      { "type": "custom", "name": "invested" }
+    ],
+    "book": "Into the Steam pg.123"
+  },
+  {
+    "name": "Leg Modification",
+    "displayedReqs": "Requirement: Invested",
+    "description": "This character’s legs can be swapped out for different models. Replacing the legs requires 30 minutes of work and a successful Artefacting or Engineering duel against TN 12(which may be made by the character or someone else assisting them). Grants one of several modifications until the Talent is used again. If successful, the character gains one of the options below until it uses this Talent again.\n\n• Standard: No adjustment\n• Chargers: Gain +2 Charge and -1 Walk\n• Light Alloy: Gain + 1 Walk and -1 Wound\n• Treads: Gain Unimpeded, -1 Walk, and -2 Charge\n• Hinged: Character may take the Drop Prone and Stand Up Actions as (0) Actions but may not take the Run Action.",
+    "requirements": [
+      { "type": "custom", "name": "invested" }
+    ],
+    "book": "Into the Steam pg.123"
+  },
+  {
+    "name": "Let Me Show You",
+    "displayedReqs": "Requirement: Teach 3 or higher",
+    "description": "The character may discard a Twist Card to spend 15 minutes explaining how one of her non-Invested, non-Stitched Talents works to another character. That character may then discard a Twist Card to gain the taught Talent for the rest of the day.",
+    "requirements": [
+      { "type": "skill", "name": "Leadership", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Steam pg.123"
+  },
+    {
+    "name": "Lightning Rod",
+    "displayedReqs": "Requirement: Grace -1 or lower",
+    "description": "The character gains a [+] on any duels made to resist Spells or Manifested Powers, but when targeted by an enemy’s Spell or Manifested Power, the enemy can add a single suit of their choice to the final duel total.",
+    "requirements": [
+      { "type": "attribute", "name": "Grace", "operator": "<=", "value": -1 }
+    ],
+    "book": "Into the Steam pg.123"
+  },
+  {
+    "name": "Metal on Metal",
+    "displayedReqs": "Requirement: Invested",
+    "description": "The character gains the following Defensive Trigger:\n\n*Df ([t]) Metal on Metal*: Reduce the damage caused by an Attack Action by 2, to a minimum of 1.",
+    "requirements": [
+      { "type": "custom", "name": "invested" }
+    ],
+    "book": "Into the Steam pg.124"
+  },
+  {
+    "name": "Mostly Blind",
+    "displayedReqs": "Requirement: Grace -1 or lower",
+    "description": "The character gains a [+] on Close Combat attacks but a [-] on Ranged Combat attacks.",
+    "requirements": [
+      { "type": "attribute", "name": "Grace", "operator": "<=", "value": -1 }
+    ],
+    "book": "Into the Steam pg.124"
+  },
+  {
+    "name": "Mountaineer",
+    "displayedReqs": "Requirement: Grace 1 or higher",
+    "description": "When climbing a surface, this character moves at full Walk speed rather than half her Walk speed. She gains a [+] to Athletics Challenges to climb and moves 2 yards per Margin of Success (rather than 1 yard).",
+    "requirements": [
+      { "type": "attribute", "name": "Grace", "operator": ">=", "value": 1 }
+    ],
+    "book": "Into the Steam pg.124"
+  },
+  {
+    "name": "Mow Down",
+    "displayedReqs": "Requirement: Heavy Guns 3 or higher",
+    "description": "When making a Ranged Combat attack with a Heavy Gun, the character may use 2 AP instead of 1 AP to gain [+][+] on the attack flip. She may not Cheat Fate on this attack. This attack uses three times as many bullets as normal.",
+    "requirements": [
+      { "type": "skill", "name": "Heavy Guns", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Steam pg.124"
+  },
+  {
+    "name": "Queensbury Rules",
+    "displayedReqs": "Requirement: Pugilism 3 or higher",
+    "description": "The character gains the following Trigger on her Pugilism Close Combat attacks:\n\n*R Win By Knockout*: After damaging, the target takes the Drop Prone action.",
+    "requirements": [
+      { "type": "skill", "name": "Pugilism", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Steam pg.124"
+  },
+  {
+    "name": "Quick",
+    "displayedReqs": "Requirement: Speed 2 or higher",
+    "description": "The character gains a [+] to any Challenges made to resist p and takes 1 less damage from [p] and [b] effects (to a minimum of 1 damage).",
+    "requirements": [
+      { "type": "attribute", "name": "Speed", "operator": ">=", "value": 2 }
+    ],
+    "book": "Into the Steam pg.125"
+  },
+  {
+    "name": "Rebound",
+    "displayedReqs": "Requirement: Thrown Weapons 3 or higher",
+    "description": "The character gains the following Trigger on her Thrown Weapons Ranged Combat attacks:\n\n*M Rebound*: After damaging, you may deal 1/2/3 damage to another target within 3 yards of the original target.",
+    "requirements": [
+      { "type": "skill", "name": "Thrown Weapons", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Steam pg.125"
+  },
+  {
+    "name": "Riposte",
+    "displayedReqs": "Requirement: Melee 3 or higher",
+    "description": "The character gains the following Defensive Trigger:\n\n*Df ([r][m]) Riposte*: After a Close Combat attack fails against this character, this character deals the damage of one of her readied sword or blade weapons to the attacker. This damage flip receives a [-].",
+    "requirements": [
+      { "type": "skill", "name": "Melee", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Steam pg.125"
+  },
+  {
+    "name": "Self Sufficient",
+    "displayedReqs": "Requirement: Charm -2 or lower",
+    "description": "This character gains +1 Willpower but cannot take the Assist Action and cannot voluntarily take part in Ongoing Challenges alongside other characters (though the Fatemaster may still force it).",
+    "requirements": [
+      { "type": "attribute", "name": "Charm", "operator": "<=", "value": -2 }
+    ],
+    "book": "Into the Steam pg.125"
+  },
+    {
+    "name": "Slow Learner",
+    "displayedReqs": "Requirement: Intellect -1 or lower",
+    "description": "This character gains +1 to an Aspect of her choice. During the Epilogue step, the Fatemaster chooses which Skill the character will advance in, rather than the player.",
+    "requirements": [
+      { "type": "attribute", "name": "Intellect", "operator": "<=", "value": -1 }
+    ],
+    "book": "Into the Steam pg.125"
+  },
+  {
+    "name": "Steel Wall",
+    "displayedReqs": "Requirement: Invested",
+    "description": "At the end of the character’s turn, if it did not take any Move or Charge Actions, the character gains Armor +1 until the start of its next turn and provides Hard Cover to characters with a Height equal to or lower than its own.",
+    "requirements": [
+      { "type": "custom", "name": "invested" }
+    ],
+    "book": "Into the Steam pg.125"
+  },
+  {
+    "name": "Street Fighter",
+    "displayedReqs": "Requirement: Pugilism 3 or higher",
+    "description": "The character gains the following Defensive Trigger:\n\n*Df ([C]) Street Fighter*: After a Close Combat attack fails against this character, if this character is wielding no weapons, this character deals 1/2/3 damage to the attacker. This damage flip may not be cheated.",
+    "requirements": [
+      { "type": "skill", "name": "Pugilism", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Steam pg.125"
+  },
+  {
+    "name": "Stubborn",
+    "displayedReqs": "Requirement: Tenacity 2 or higher",
+    "description": "This character gains a [+] on all Willpower duels but a [-] on all Convince Challenges.",
+    "requirements": [
+      { "type": "attribute", "name": "Tenacity", "operator": ">=", "value": 2 }
+    ],
+    "book": "Into the Steam pg.125"
+  },
+  {
+    "name": "Sycophant",
+    "displayedReqs": "Requirement: Charm 2 or higher",
+    "description": "The character chooses a Peon or Minion level Commoner to be her sycophant. The sycophant is a subordinate under the Fatemaster’s control. If it dies or is abandoned, a new one may appear after a few days in a populated area.",
+    "requirements": [
+      { "type": "attribute", "name": "Charm", "operator": ">=", "value": 2 }
+    ],
+    "book": "Into the Steam pg.126"
+  },
+  {
+    "name": "Taskmaster",
+    "displayedReqs": "Requirement: Flexible 3 or higher",
+    "description": "When a friendly character within 3 yards takes an action involving a non-Social Skill, they may suffer 1 damage to gain a [+] to the resulting Challenge. This Talent may only be used while this character is wielding a Flexible weapon.",
+    "requirements": [
+      { "type": "skill", "name": "Flexible", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Steam pg.126"
+  },
+  {
+    "name": "Threading the Needle",
+    "displayedReqs": "Requirement: Archery 3 or higher",
+    "description": "When making an Archery Ranged Combat attack, this character may ignore other characters when determining line of sight and does not randomize her target when firing into an engagement.",
+    "requirements": [
+      { "type": "skill", "name": "Archery", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Steam pg.126"
+  },
+  {
+    "name": "Torso Modifications",
+    "displayedReqs": "Requirement: Invested",
+    "description": "This character’s torso can be swapped out for different models. Replacing the torso takes 30 minutes and a successful Artefacting or Engineering duel against TN 14 (which may be made by the character or someone else assisting them).If successful, the character gains one of the options below until it uses this Talent again.\n\n• Standard: No adjustments.\n• Reinforced Armor: The character’s Armor may reduce damage to 0, but it suffers -2 to its Charge Aspect.\n• Lightweight Chest Plate: The character gains +1 Defense and -1 Wound.\n• Parade Armor: The character lowers its Defense and Armor by 1 (to a minimum of 0) but gains a [+] to Social Challenges.",
+    "requirements": [
+      { "type": "custom", "name": "invested" }
+    ],
+    "book": "Into the Steam pg.126"
+  },
+  {
+    "name": "Tough as Nails",
+    "displayedReqs": "Requirement: Resilience 2 or higher",
+    "description": "Critical Effect flips made against the character receive a [-].",
+    "requirements": [
+      { "type": "attribute", "name": "Resilience", "operator": ">=", "value": 2 }
+    ],
+    "book": "Into the Steam pg.126"
+  },
+  {
+    "name": "Unceasing",
+    "displayedReqs": "Requirement: Speed -2 or lower",
+    "description": "Once per turn, the character may discard a Twist Card to take a Walk action without spending any AP.",
+    "requirements": [
+      { "type": "attribute", "name": "Speed", "operator": "<=", "value": -2 }
+    ],
+    "book": "Into the Steam pg.126"
+  },
+  {
+    "name": "Addict",
+    "displayedReqs": "Requirement: The character must have the Brilliance Condition (any value).",
+    "description": "This character has become addicted to Brilliance. While this character has the Brilliance Condition, she gains the following Tactical Action:\n\n(0) Drawn to the Light: This character may move up to its Walk Aspect towards a character with the Brilliance Condition and must end this movement as close to the target as possible.",
+    "requirements": [
+      { "type": "custom", "name": "brilliance" }
+    ],
+    "book": "Under Quarantine pg.134"
+  },
+  {
+    "name": "Bent Fate",
+    "displayedReqs": "Requirement: Fated, 2 or more completed Destiny Steps",
+    "description": "This character may remove two cards from her Twist Deck.",
+    "requirements": [
+      { "type": "custom", "name": "fated" },
+      { "type": "destiny", "operator": ">=", "value": 2 }
+    ],
+    "book": "Under Quarantine pg.134"
+  },
+  {
+    "name": "Bloated Stench",
+    "displayedReqs": "Requirement: Stitched, Charm -1 or lower.",
+    "description": "When this character suffers damage from a [y] attack, the attacker suffers 1 damage after resolving the attack.",
+    "requirements": [
+      { "type": "custom", "name": "stitched" },
+      { "type": "attribute", "name": "Charm", "operator": "<=", "value": -1 }
+    ],
+    "book": "Under Quarantine pg.134"
+  },
+  {
+    "name": "Blood Scent",
+    "displayedReqs": "Requirement: The character must have the Blood Sickness Condition (any value).",
+    "description": "If a Living character is killed within 1 yard of this character while she has the Blood Sickness Condition, she may discard a card to gain the **Fast** Condition.",
+    "requirements": [
+      { "type": "custom", "name": "blood_sickness" }
+    ],
+    "book": "Under Quarantine pg.134"
+  },
+  {
+    "name": "Brain Surgery",
+    "displayedReqs": "Requirement: Doctor 4 or higher.",
+    "description": "The character can transplant the brain of a corpse (or soon-to-be corpse) into a Flesh Construct or special jar (see Under Quarantine pg. 95) with an hour of work. The donor must have the Living Characteristic, and the brain counts as one body part when determining how many a character may replace. The Flesh Construct gains the donor's Skill ranks (replacing the Flesh Construct's Skills, if the donor's Skills are higher) and her Mental Aspects. Some elements of the donor's personality and memories may carry over to the Flesh Construct.\n\nIf the transplanted brain belongs to a Fated, the Fatemaster should consider allowing the character to become a Stitched in control of her new body. The character will retain its Mental Aspects and Skills as noted above, as well as any Talents she possesses (which are normally lost when a non-Fated character has her brain transferred into a Flesh Construct).",
+    "requirements": [
+      { "type": "skill", "name": "Doctor", "operator": ">=", "value": 4 }
+    ],
+    "book": "Under Quarantine pg.134"
+  },
+  {
+    "name": "Burning Man",
+    "displayedReqs": "Requirement: This character must have had the Burning +5 or greater Condition resolve against her.",
+    "description": "This character gains the following Defensive Trigger:\n\n**Df/Wp (t) Smoldering Heart:** After this character succeeds, the attacker gains the Burning +1 Condition.",
+    "requirements": [
+      { "type": "custom", "name": "burning_5_resolved" }
+    ],
+    "book": "Under Quarantine pg.134"
+  },
+  {
+    "name": "Ceaseless Advance",
+    "displayedReqs": "Requirement: Fated, Tenacity 1 or higher",
+    "description": "At the end of each round of Dramatic Time, if this character does not have any Twist Cards in her hand, she may take a (1) Walk Action.",
+    "requirements": [
+      { "type": "custom", "name": "fated" },
+      { "type": "attribute", "name": "Tenacity", "operator": ">=", "value": 1 }
+    ],
+    "book": "Under Quarantine pg.134"
+  },
+    {
+    "name": "Evil Eye",
+    "displayedReqs": "Requirement: Willpower 6 or higher",
+    "description": "This character gains the following Defensive Trigger:\n\n**Df/Wp (C) Evil Eye**: After this character succeeds, the attacker gains the Cursed +1 Condition with a Taboo against attacking this character.",
+    "requirements": [
+      { "type": "attribute", "name": "Willpower", "operator": ">=", "value": 6 }
+    ],
+    "book": "Under Quarantine pg.135"
+  },
+  {
+    "name": "Fate's Messenger",
+    "displayedReqs": "Requirement: Fated, 2 or more completed Destiny Steps",
+    "description": "Whenever this character would discard a Twist card for any reason other than Cheating Fate, she may instead choose to suffer 2 damage; this damage may not be reduced or prevented.",
+    "requirements": [
+      { "type": "custom", "name": "fated" },
+      { "type": "destiny", "operator": ">=", "value": 2 }
+    ],
+    "book": "Under Quarantine pg.135"
+  },
+  {
+    "name": "Favored of Fate",
+    "displayedReqs": "Requirement: Fated, 1 or more completed Destiny Steps",
+    "description": "When this character draws a Twist Card, she may suffer 2 damage to immediately discard it and draw again; this damage may not be reduced or prevented.",
+    "requirements": [
+      { "type": "custom", "name": "fated" },
+      { "type": "destiny", "operator": ">=", "value": 1 }
+    ],
+    "book": "Under Quarantine pg.135"
+  },
+  {
+    "name": "Ferocious Loyalty",
+    "displayedReqs": "Requirement: Leadership 3 or higher",
+    "description": "When this character uses the (1) Order Action to command a subordinate character, this character may discard a card to give her subordinate a [+] to all Skill Challenges (including attacks) it makes for the duration of its turn.",
+    "requirements": [
+      { "type": "skill", "name": "Leadership", "operator": ">=", "value": 3 }
+    ],
+    "book": "Under Quarantine pg.135"
+  },
+  {
+    "name": "Final Repose",
+    "displayedReqs": "Requirement: Cunning 1 or higher",
+    "description": "When this character kills another character, she may choose to instantly render her target’s remains unfit to be reanimated into an Undead (or any other type of) creature.",
+    "requirements": [
+      { "type": "attribute", "name": "Cunning", "operator": ">=", "value": 1 }
+    ],
+    "book": "Under Quarantine pg.135"
+  },
+  {
+    "name": "From Beyond",
+    "displayedReqs": "Requirement: Must have the Haunted Condition.",
+    "description": "This character is immune to the mechanical symptoms of the Haunted Condition. Additionally, if she fails a Notice or Scrutiny Challenge, she may lower her Haunted Condition value by exactly 1 (to a minimum of 0) to reflip the duel.",
+    "requirements": [
+      { "type": "custom", "name": "haunted" }
+    ],
+    "book": "Under Quarantine pg.135"
+  },
+  {
+  "name": "Glimpse Fate's Plan",
+  "displayedReqs": "Requirement: Fated",
+  "description": "This character's maximum Control Hand size is increased by +1. This character may take this Talent multiple times, and its effects stack.",
+  "requirements": [
+    { "type": "custom", "name": "fated" }
+  ],
+  "book": "Under Quarantine pg.135"
+  },
+  {
+    "name": "Hole in the Chest",
+    "displayedReqs": "Requirement: Stitched, Resilience -1 or lower.",
+    "description": "This character has a hole in her chest. This character is unable to pass as a Living creature while this hole is visible, but she gains the following Defensive Trigger:\n\n**Df ([m]) Through the Hole:** After failing against a Ranged Combat attack, the attack deals no damage to this character.",
+    "requirements": [
+      { "type": "custom", "name": "stitched" },
+      { "type": "attribute", "name": "Resilience", "operator": "<=", "value": -1 }
+    ],
+    "book": "Under Quarantine pg.136"
+  },
+  {
+    "name": "Hunter",
+    "displayedReqs": "Requirement: Wilderness 3 or higher",
+    "description": "This character gains a [+] to damage flips made against Beasts.",
+    "requirements": [
+      { "type": "skill", "name": "Wilderness", "operator": ">=", "value": 3 }
+    ],
+    "book": "Under Quarantine pg.136"
+  },
+  {
+    "name": "I Thought You Died?!",
+    "displayedReqs": "Requirement: Resilience 3 or higher",
+    "description": "The next time this character is killed — no matter how grisly or final it may have been — this character returns to life (or unlife, if the character was previously Undead) and rejoins her companions at some point during the next day. This resurrection occurs \"off camera,\" though the character may sport some bandages or superficial injuries as a result of her \"near death\" experience. This Talent may only be used once; any subsequent deaths affect the character normally.",
+    "requirements": [
+      { "type": "attribute", "name": "Resilience", "operator": ">=", "value": 3 }
+    ],
+    "book": "Under Quarantine pg.136"
+  },
+  {
+    "name": "It's Raining Scrip",
+    "displayedReqs": "Requirement: Fated",
+    "description": "This character gains 5 scrip when she takes this Talent. When she gains scrip from any non-Fated source — whether as part of a reward for a completed adventure, gambling winnings, or just looting the pockets of the dead — she gains an additional +20% scrip.",
+    "requirements": [
+      { "type": "custom", "name": "fated" }
+    ],
+    "book": "Under Quarantine pg.136"
+  },
+  {
+    "name": "Killswitch",
+    "displayedReqs": "Requirement: Explosives 3 or higher",
+    "description": "This character is able to implant explosives within an Undead or Construct subordinate with a TN 11 Explosives Challenge and 2 scrip of raw materials (which are lost if she fails the Explosives Challenge). The subordinate gains the following ability:\n\n**Explosive Demise 2:** All characters within [p]2 suffer 2 damage when this character is killed.",
+    "requirements": [
+      { "type": "skill", "name": "Explosives", "operator": ">=", "value": 3 }
+    ],
+    "book": "Under Quarantine pg.136"
+  },
+  {
+    "name": "Man's Best Friend",
+    "displayedReqs": "Requirement: Husbandry 3 or higher",
+    "description": "This character has earned the devotion of a canine companion. Living or Construct characters gain a Guard Dog (pg. 173), while Undead characters gain a Canine Remains (pg. 173).\n\nIf the canine companion is killed, this character may discard a card during Narrative Time to attract a new canine companion. The canine companion is a subordinate character and may be commanded with the (1) Order Action.\n\nIf this character has the Animal Companion Talent, the canine companion benefits from any Talents that grant bonuses to Animal Companions (but does not otherwise count as an Animal Companion).",
+    "requirements": [
+      { "type": "skill", "name": "Husbandry", "operator": ">=", "value": 3 }
+    ],
+    "book": "Under Quarantine pg.136"
   }
 ]
