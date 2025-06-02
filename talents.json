@@ -989,5 +989,308 @@
       { "type": "skill", "name": "Husbandry", "operator": ">=", "value": 3 }
     ],
     "book": "Under Quarantine pg.136"
+  },
+  {
+  "name": "Mechanized Undead",
+  "displayedReqs": "Requirement: Stitched",
+  "description": "This character gains the Construct Characteristic and may purchase Talents as if she were an Invested character.",
+  "requirements": [
+    { "type": "custom", "name": "stitched" }
+  ],
+  "book": "Under Quarantine pg.137"
+  },
+  {
+    "name": "Medical Genius",
+    "displayedReqs": "Requirement: Doctor 3 or higher",
+    "description": "This character gains the following Trigger on all Doctor Challenges:\n\n[t] *It's Not Lupus:* After succeeding, gain 1 additional Margin of Success.",
+    "requirements": [
+      { "type": "skill", "name": "Doctor", "operator": ">=", "value": 3 }
+    ],
+    "book": "Under Quarantine pg.137"
+  },
+  {
+    "name": "Mind in the Sewer",
+    "displayedReqs": "Requirement: Toughness 3 or higher",
+    "description": "This character is immune to the Blighted and Infected Conditions and ignores severe terrain penalties for moving through water.",
+    "requirements": [
+      { "type": "attribute", "name": "Toughness", "operator": ">=", "value": 3 }
+    ],
+    "book": "Under Quarantine pg.137"
+  },
+  {
+    "name": "Necrochemist",
+    "displayedReqs": "Requirement: Alchemistry 3 or higher, Necromancy 2 or higher",
+    "description": "When this character creates a compound (whether from the options presented on page 98 in *Under Quarantine* or from the Elixir of Life, Mystery Brew, Transformative Vigor, or Truth Serum Talents of the Chemist Pursuit), she may choose to have it affect Undead instead of Living characters.",
+    "requirements": [
+      { "type": "skill", "name": "Alchemistry", "operator": ">=", "value": 3 },
+      { "type": "skill", "name": "Necromancy", "operator": ">=", "value": 2 }
+    ],
+    "book": "Under Quarantine pg.137"
+  },
+  {
+    "name": "Noxious Undead",
+    "displayedReqs": "Requirement: Alchemistry 3 or higher",
+    "description": "Undead characters this character creates gain the following ability:\n\n**Noxious Cloud:** At the end of this character's turn, all characters without Noxious Cloud within [p]1 of this character gain the Poison +1 Condition.",
+    "requirements": [
+      { "type": "skill", "name": "Alchemistry", "operator": ">=", "value": 3 }
+    ],
+    "book": "Under Quarantine pg.138"
+  },
+  {
+    "name": "Pyromaniac",
+    "displayedReqs": "Requirement: Must have applied 10 or more ranks of the Burning Condition to her enemies during a single combat.",
+    "description": "When this character gives the Burning Condition to another character, that character gains an additional Burning +1.",
+    "requirements": [
+      { "type": "custom", "name": "burning_10_applied" }
+    ],
+    "book": "Under Quarantine pg.138"
+  },
+  {
+    "name": "Reattach",
+    "displayedReqs": "Requirement: Undead, Resilience -1 or lower.",
+    "description": "At the start of this character's turn during Dramatic Time, she may heal up to 2 damage and gain the following Condition until the end of Dramatic Time: “**Fragile +1**: Damage flips against this character gain [+]”.\n\nIn addition, this character can heal any Amputated Critical Effect on her arms or legs by holding the severed limb against her stump for one minute, at which point the limb reattaches.",
+    "requirements": [
+      { "type": "custom", "name": "undead" },
+      { "type": "attribute", "name": "Resilience", "operator": "<=", "value": -1 }
+    ],
+    "book": "Under Quarantine pg.138"
+  },
+  {
+    "name": "Reset Fate",
+    "displayedReqs": "Requirement: Fated",
+    "description": "At the end of Dramatic Time, before this character discards any unwanted Twist Cards, she may reshuffle her Twist Card discard pile back into her Twist Deck.",
+    "requirements": [
+      { "type": "custom", "name": "fated" }
+    ],
+    "book": "Under Quarantine pg.138"
+  },
+  {
+    "name": "Rusts n' Oils",
+    "displayedReqs": "Requirement: Alchemistry 3 or higher, Engineering 2 or higher",
+    "description": "When this character creates a compound (whether from the options presented on page 98 in *Under Quarantine* or from the Elixir of Life, Mystery Brew, Transformative Vigor, or Truth Serum Talents of the Chemist Pursuit), she may choose to have it affect Constructs instead of Living characters.",
+    "requirements": [
+      { "type": "skill", "name": "Alchemistry", "operator": ">=", "value": 3 },
+      { "type": "skill", "name": "Engineering", "operator": ">=", "value": 2 }
+    ],
+    "book": "Under Quarantine pg.139"
+  },
+  {
+    "name": "Sadistic Streak",
+    "displayedReqs": "Requirement: None",
+    "full": "This character draws strength from the cruelty she inflicts upon those under her command.\nAt the start of this character's turn, she may deal 1 damage to one of her subordinate characters within 3 yards to push up to 3 yards in any direction.",
+    "description": "At the start of this character's turn, she may deal 1 damage to one of her subordinate characters within 3 yards to push up to 3 yards in any direction.",
+    "requirements": [],
+    "book": "Under Quarantine pg.139"
+  },
+  {
+    "name": "Shambling Gait",
+    "displayedReqs": "Requirement: Stitched, Speed -2 or lower",
+    "full": "This character will never be fast... but at least she tries, right?\nShe gains +1 to either all Physical Aspects or all Mental Aspects, but gains the Slow Condition at the start of each of her turns during Dramatic Time.",
+    "description": "This character gains +1 to either all Physical Aspects or all Mental Aspects, but gains the Slow Condition at the start of each of her turns during Dramatic Time.",
+    "requirements": [
+      { "type": "custom", "name": "stitched" },
+      { "type": "attribute", "name": "Speed", "operator": "<=", "value": -2 }
+    ],
+    "book": "Under Quarantine pg.139"
+  },
+  {
+    "name": "Spiritual Sensitivity",
+    "displayedReqs": "Requirement: The character must have failed an Unconsciousness Challenge while at negative Wounds.",
+    "full": "Perhaps it was a near-death experience or just a bump on the head; whatever the reason, this character is now able to sense the presence of spirits around her.\nThis character gains the following Tactical Action:\n\n(0) Sense Spirits: This character becomes aware of the presence of any characters with the Spirit Characteristic within 10 yards (even if they are invisible or hidden).",
+    "description": "This character gains the following Tactical Action:\n\n(0) Sense Spirits: This character becomes aware of the presence of any characters with the Spirit Characteristic within 10 yards (even if they are invisible or hidden).",
+    "requirements": [
+      { "type": "custom", "name": "unconscious" }
+    ],
+    "book": "Under Quarantine pg.139"
+  },
+    {
+    "name": "Spelunker",
+    "displayedReqs": "Requirement: None",
+    "full": "Time spent underground — whether in the caverns beneath Malifaux or back on Earth — has made this character comfortable with moving around in enclosed areas. This character gains a [+] on all Navigation, Track, and Wilderness duels made underground. Furthermore, she is immune to the Claustrophobia Condition (pg. 44).",
+    "description": "This character gains a [+] on all Navigation, Track, and Wilderness duels made underground and she is immune to the Claustrophobia Condition (pg. 44).",
+    "requirements": [],
+    "book": "Under Quarantine pg.139"
+  },
+  {
+    "name": "Touched by the Grave Spirit",
+    "displayedReqs": "Requirement: The character has either died or been at -10 Wounds or below.",
+    "full": "As she hovered on the brink of death, a powerful spirit took notice of this character, toughening her body and making her stronger (and likely giving her some strange dreams in the process).\nWhen this character fails an unconsciousness challenge, she heals 1/2/3 damage. She still remains unconscious until the Fatemaster determines otherwise (generally until the end of Dramatic Time or until she is revived with the Doctor Skill).",
+    "description": "When this character fails an unconsciousness challenge, she heals 1/2/3 damage. She still remains unconscious until the Fatemaster determines otherwise (generally until the end of Dramatic Time or until she is revived with the Doctor Skill).",
+    "requirements": [
+      { "type": "custom", "name": "died_or_minus10" }
+    ],
+    "book": "Under Quarantine pg.139"
+  },
+  {
+    "name": "Twisted Mind",
+    "displayedReqs": "Requirement: None",
+    "full": "This character's psyche is twisted by madness and torment, and anyone touching her mind invariably recoils in pain.\nThis character gains the following Trigger:\n\n**Wp [C] Twisted Mind:** After this character succeeds, the attacker suffers 2 damage.",
+    "description": "This character gains the following Trigger:\n\n**Wp [C] Twisted Mind:** After this character succeeds, the attacker suffers 2 damage.",
+    "requirements": [],
+    "book": "Under Quarantine pg.139"
+  },
+  {
+    "name": "Warding Gestures",
+    "displayedReqs": "Requirement: Resilience -2 or lower",
+    "full": "This character has a weak body that is prone to injury. In order to protect herself, she has learned a smattering of warding gestures that can be used to protect her from harm.\nWhen this character suffers damage, she may discard a Twist Card to reduce the damage by 2.",
+    "description": "When this character suffers damage, she may discard a Twist Card to reduce the damage by 2.",
+    "requirements": [
+      { "type": "attribute", "name": "Resilience", "operator": "<=", "value": -2 }
+    ],
+    "book": "Under Quarantine pg.139"
+  },
+  {
+    "name": "Well-Preserved",
+    "displayedReqs": "Requirement: Stitched, Charm 1 or higher",
+    "full": "This character's body is intact and preserved enough for her to easily pass as a Living character in polite company.\nThe TNs of Scrutiny Challenges made to determine if this character is Undead are increased by +2.",
+    "description": "The TNs of Scrutiny Challenges made to determine if this character is Undead are increased by +2.",
+    "requirements": [
+      { "type": "custom", "name": "stitched" },
+      { "type": "attribute", "name": "Charm", "operator": ">=", "value": 1 }
+    ],
+    "book": "Under Quarantine pg.139"
+  },
+  {
+    "name": "Swagger",
+    "displayedReqs": "Requirement: Speed -1 or lower",
+    "full": "It may take this character longer to get wherever she is going, but the self-confident way she gets there makes all the difference.\nAt the end of this character's turn, she gains the Defensive +1 Condition if she declared only Walk Actions during her turn.",
+    "description": "At the end of this character's turn, she gains the Defensive +1 Condition if she declared only Walk Actions during her turn.",
+    "requirements": [
+      { "type": "attribute", "name": "Speed", "operator": "<=", "value": -1 }
+    ],
+    "book": "Under Quarantine pg.139"
+  },
+  {
+    "name": "A Gremlin's Luck",
+    "displayedReqs": "Requirement: Kin, Cunning -2 or lower",
+    "full": "This character's lack of common sense has led her to rely upon her natural luck to carry her through life. Fortunately, it mostly seems to work for her... mostly.\nWhen performing a duel, this character may discard a card or suffer 1 damage to Cheat Fate with the top card of the Fate Deck.",
+    "description": "When performing a duel, this character may discard a card or suffer 1 damage to Cheat Fate with the top card of the Fate Deck.",
+    "requirements": [
+      { "type": "custom", "name": "kin" },
+      { "type": "attribute", "name": "Cunning", "operator": "<=", "value": -2 }
+    ],
+    "book": "Into the Bayou pg.141"
+  },
+  {
+    "name": "All the Big Words",
+    "displayedReqs": "Requirement: Literacy 3 or higher",
+    "full": "This personage has taken to peppering her dialogue with a plethora of sesquipedal words. While this does make her sound perspicacious, it tends to discombobulate anyone aurally perceiving her dialogue, and perplex them withal.\nIf this character succeeds on a Social Skill Challenge during Narrative Time, the target of the Challenge gains the Dazed Condition for one minute. If the character achieves a Margin of Success on the challenge, every other character within listening distance gains the Dazed Condition for one minute.",
+    "description": "If this character succeeds on a Social Skill Challenge during Narrative Time, the target of the Challenge gains the Dazed Condition for one minute. If the character achieves a Margin of Success on the challenge, every other character within listening distance gains the Dazed Condition for one minute.",
+    "requirements": [
+      { "type": "skill", "name": "Literacy", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Bayou pg.141"
+  },
+  {
+    "name": "Creative Refurbishment",
+    "displayedReqs": "Requirement: Artefacting or Blacksmithing 3 or higher",
+    "description": "With one hour of work, this character may remove a single property of a firearm (including range, capacity, damage, or one special rule) to add it to another firearm. Neither firearm can possess the Shoddy special rule. If the second firearm already possesses the chosen property (such as range, capacity, or damage), it gains the better of the two properties. The first firearm is destroyed in the process of modifying the second firearm, which then gains the Shoddy special rule.",
+    "requirements": [
+      { "type": "skill", "name": "Artefacting", "operator": ">=", "value": 3 },
+      { "type": "skill", "name": "Blacksmithing", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Bayou pg.141"
+  },
+  {
+    "name": "Crude Sense of Humor",
+    "displayedReqs": "Requirement: Kin, Resilience 1 or higher",
+    "full": "There’s something terrible happening in this character’s insides… and she finds that to be downright hilarious in the right circumstances.\nThis character gains the following Tactical Action:\n\n(0) Pull My Finger: If this character is adjacent to a friendly character, that character may choose to pull this character's finger. If she does, all non-Gremlin characters within [p]2 of this character gain the Poison +2 Condition. If this character chooses to discard a card when the adjacent character pulls her finger, any non-Gremlin characters within [p]2 also become Slow.",
+    "description": "This character gains the following Tactical Action:\n\n(0) Pull My Finger: If this character is adjacent to a friendly character, that character may choose to pull this character's finger. If she does, all non-Gremlin characters within [p]2 of this character gain the Poison +2 Condition. If this character chooses to discard a card when the adjacent character pulls her finger, any non-Gremlin characters within [p]2 also become Slow.",
+    "requirements": [
+      { "type": "custom", "name": "kin" },
+      { "type": "attribute", "name": "Resilience", "operator": ">=", "value": 1 }
+    ],
+    "book": "Into the Bayou pg.142"
+  },
+  {
+    "name": "Dirty Cheater",
+    "displayedReqs": "Requirement: Kin, Tenacity -2 or lower",
+    "full": "What this character lacks in willpower she makes up for in underhanded tricks.\nWhenever this character Cheats Fate from her Twist Hand, she heals 1 damage after resolving the current Action.",
+    "description": "Whenever this character Cheats Fate from her Twist Hand, she heals 1 damage after resolving the current Action.",
+    "requirements": [
+      { "type": "custom", "name": "kin" },
+      { "type": "attribute", "name": "Tenacity", "operator": "<=", "value": -2 }
+    ],
+    "book": "Into the Bayou pg.142"
+  },
+  {
+    "name": "Forgotten Lore",
+    "displayedReqs": "Requirement: Appraise 3 or higher",
+    "full": "It can often be difficult to correctly identify one of Malifaux's many Grimoires... \nThis character has managed to successfully identify a powerful Grimoire and claim it for her own. The character gains a Grimoire with 3 Magia and 3 Immuto of her choice, but no more than 2 of these Magia can be of the same type of magic (i.e., Enchanting, Necromancy, etc.). Grimoires gained by this Talent tend toward uncommon appearances; the character is encouraged to work with the Fatemaster to determine her Grimoire's appearance.",
+    "description": "This character has managed to successfully identify a powerful Grimoire and claim it for her own. The character gains a Grimoire with 3 Magia and 3 Immuto of her choice, but no more than 2 of these Magia can be of the same type of magic (i.e., Enchanting, Necromancy, etc.).",
+    "requirements": [
+      { "type": "skill", "name": "Notice", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Bayou pg.142"
+  },
+  {
+    "name": "From the Hip",
+    "displayedReqs": "Requirement: Grace 1 or higher",
+    "full": "For whatever reason, this character just doesn't believe in carefully aiming her shots...\nWhen making a Long Arms attack, this character may substitute Grace for Intellect when calculating her Acting Value.",
+    "description": "When making a Long Arms attack, this character may substitute Grace for Intellect when calculating her Acting Value.",
+    "requirements": [
+      { "type": "attribute", "name": "Grace", "operator": ">=", "value": 1 }
+    ],
+    "book": "Into the Bayou pg.142"
+  },
+  {
+    "name": "Gremlin Engineering",
+    "displayedReqs": "Requirement: Kin, Engineering 3 or higher",
+    "full": "As every good Gremlin engineer knows, the trick to making a machine work is to hit it with a heavy wrench whenever it starts doing something you don't like.\nAfter one of this character's subordinate Constructs within engagement range of one of this character's melee weapons fails a Skill Challenge (including an attack), this character may make a damage flip against the Construct. If the Construct suffers at least 1 damage from this character's weapon, it may immediately reflip its result on the Challenge.",
+    "description": "After one of this character's subordinate Constructs within engagement range of one of this character's melee weapons fails a Skill Challenge (including an attack), this character may make a damage flip against the Construct. If the Construct suffers at least 1 damage from this character's weapon, it may immediately reflip its result on the Challenge.",
+    "requirements": [
+      { "type": "custom", "name": "kin" },
+      { "type": "skill", "name": "Engineering", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Bayou pg.142"
+  },
+  {
+    "name": "Helping Hand",
+    "displayedReqs": "Requirement: Cunning 1 or higher",
+    "full": "This character functions well as part of a group and is extremely good at keeping all of her allies operating at peak efficiency.\nWhen this character takes the Assist Action during Dramatic Time, the target of her assistance gains the Focused +1 Condition instead of the usual benefits of the Assist Action. When this character takes the Pass Action during Dramatic Time, she may add 1 to the Initiative Value of every other friendly character within [p]3.",
+    "description": "When this character takes the Assist Action during Dramatic Time, the target of her assistance gains the Focused +1 Condition instead of the usual benefits of the Assist Action. When this character takes the Pass Action during Dramatic Time, she may add 1 to the Initiative Value of every other friendly character within [p]3.",
+    "requirements": [
+      { "type": "attribute", "name": "Cunning", "operator": ">=", "value": 1 }
+    ],
+    "book": "Into the Bayou pg.142"
+  },
+  {
+    "name": "Herding Squirrels",
+    "displayedReqs": "Requirement: Leadership 3 or higher",
+    "full": "Getting people to work together can be difficult, and that goes double for when those people are a pack of drunken idiots who refuse to acknowledge that the character is their supervisor.\nThis character may use a (1) Order Action to command a subordinate character controlled by another friendly character, with its controller's permission. A subordinate character may only take one turn per round, no matter how many (1) Order Actions it receives.",
+    "description": "This character may use a (1) Order Action to command a subordinate character controlled by another friendly character, with its controller's permission. A subordinate character may only take one turn per round, no matter how many (1) Order Actions it receives.",
+    "requirements": [
+      { "type": "skill", "name": "Leadership", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Bayou pg.143"
+  },
+  {
+    "name": "Hyperactive",
+    "displayedReqs": "Requirement: Kin",
+    "full": "While the standard portrayal of a Gremlin in the eyes of a human mostly involves a drunken green monster lazing around in a tree with a shoddy banjo, that's only partially true.\nAt the start of this character's turn, she may suffer 1 damage to remove the Slow Condition from herself, or 2 damage to remove the Paralyzed Condition. This damage cannot be reduced.",
+    "description": "At the start of this character's turn, she may suffer 1 damage to remove the Slow Condition from herself, or 2 damage to remove the Paralyzed Condition. This damage cannot be reduced.",
+    "requirements": [
+      { "type": "custom", "name": "kin" }
+    ],
+    "book": "Into the Bayou pg.143"
+  },
+  {
+    "name": "Hysterical Fury",
+    "displayedReqs": "Requirement: Resilience -1 or lower",
+    "full": "This character isn’t very hardy, and she knows it.\nWhen this character has zero or fewer Wounds remaining, she gains [+] to her attack and damage flips.",
+    "description": "When this character has zero or fewer Wounds remaining, she gains [+] to her attack and damage flips.",
+    "requirements": [
+      { "type": "attribute", "name": "Resilience", "operator": "<=", "value": -1 }
+    ],
+    "book": "Into the Bayou pg.143"
+  },
+  {
+    "name": "I Got My Bro",
+    "displayedReqs": "Requirement: Charm 1 or higher",
+    "description": "One of this character’s Gremlin relatives accompanies her on her adventures! If the character is not a Gremlin, this will probably raise more questions than answers, but the little fellow insists that the character is his sibling no matter how hard she tries to convince him otherwise. Use the Bayou Gremlin stats on pg. 159 to represent the character’s bro.\nThe Gremlin relative is a subordinate character and may be commanded with the (1) Order Action. If the Gremlin relative dies or the character abandons them, a new one will show up after a day spent in or near the Bayou.",
+    "requirements": [
+      { "type": "attribute", "name": "Charm", "operator": ">=", "value": 1 }
+    ],
+    "book": "Into the Bayou pg.144"
   }
 ]
