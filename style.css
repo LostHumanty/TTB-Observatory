@@ -59,9 +59,6 @@ button {
 
 .top_tab {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 30px;
 }
 
 .aspects {
@@ -232,6 +229,7 @@ button {
   display: flex;
   flex-direction: column;
   max-width: 700px;
+  margin-left: 10px;
 }
 
 .param-bar {
