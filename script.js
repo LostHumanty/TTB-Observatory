@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     title.textContent = `${cat} ▼`;
 
     const section = document.createElement("div");
-    section.classList.add("category-content", "hidden");
+    section.classList.add("category-content");
     title.onclick = () => {
       section.classList.toggle("hidden");
       title.textContent = `${cat} ${section.classList.contains("hidden") ? "▼" : "▲"}`;
@@ -102,7 +102,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   container.appendChild(col1);
   container.appendChild(col2);
+
+  // ✅ Навешиваем обработчик toggleSkills ПОСЛЕ создания DOM
+  const toggleSkillsBtn = document.getElementById("toggleSkills");
+  const skillsTab = document.querySelector(".skills_tab");
+  if (toggleSkillsBtn && skillsTab) {
+    toggleSkillsBtn.addEventListener("click", () => {
+      skillsTab.classList.toggle("hidden");
+      toggleSkillsBtn.textContent = skillsTab.classList.contains("hidden")
+        ? "Skills ▼"
+        : "Skills ▲";
+    });
+  }
 });
+
 
 document.querySelectorAll('input[type="number"]').forEach(input => {
   input.addEventListener("wheel", e => {
