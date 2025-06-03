@@ -6,10 +6,11 @@
 
 .malifaux-symbol {
   font-family: 'MalifauxSymbols', sans-serif;
-  font-size: 1.2em;
+  font-size: 27px;
   line-height: 1;
   color: inherit;
   display: inline-block;
+  vertical-align: middle;
 }
 
 body {
@@ -59,9 +60,6 @@ button {
 
 .top_tab {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 30px;
 }
 
 .aspects {
@@ -232,6 +230,7 @@ button {
   display: flex;
   flex-direction: column;
   max-width: 700px;
+  margin-left: 10px;
 }
 
 .param-bar {
@@ -297,4 +296,28 @@ button {
   font-weight: bold;
   text-align: center;
   font-size: 14px;
+}
+
+.talent-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.talent-reqs {
+  font-size: 13px;
+  font-style: italic;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.talent-description {
+  font-size: 14px;
+}
+
+.legacy-content {
+  background: #eaeaea;
+  margin-top: 10px;
+  padding: 10px;
+  border-left: 2px dashed #888;
 }

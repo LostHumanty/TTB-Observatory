@@ -188,14 +188,34 @@ document.getElementById("filterForm").addEventListener("submit", function (e) {
       const div = document.createElement("div");
       div.classList.add("talent-block");
       div.innerHTML = `
-        <strong>${t.name}</strong>
-        ${t.displayedReqs ? `<p><em>${formatTextWithSymbols(t.displayedReqs)}</em></p>` : ""}
+        <strong class="talent-name">${t.name}</strong>
+        ${t.displayedReqs ? `<p class="talent-req"><em>${formatTextWithSymbols(t.displayedReqs)}</em></p>` : ""}
         <p>${formatTextWithSymbols(t.description)}</p>
-        ${t.book ? `<div class="talent-book">${t.book}</div>` : ""}`;
+        ${t.book ? `<div class="talent-book">${t.book}</div>` : ""}
+        ${t.legacy ? `
+          <button class="toggle-legacy">Show old version ▼</button>
+          <div class="legacy-content hidden">
+            ${t.legacy.displayedReqs ? `<p class="talent-req"><em>${formatTextWithSymbols(t.legacy.displayedReqs)}</em></p>` : ""}
+            <p>${formatTextWithSymbols(t.legacy.description)}</p>
+            ${t.legacy.book ? `<div class="talent-book">${t.legacy.book}</div>` : ""}
+          </div>
+        ` : ""}
+      `;
       resultsDiv.appendChild(div);
     });
   }
+  
+  document.querySelectorAll(".toggle-legacy").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const legacy = btn.nextElementSibling;
+      legacy.classList.toggle("hidden");
+      btn.textContent = legacy.classList.contains("hidden")
+        ? "Show old version ▼"
+        : "Hide old version ▲";
+    });
+  });
 });
+
 
 function evaluateRequirement(req, filters, destinySteps, selectedSkills, selectedFlags) {
   const { type, name, operator, value, category } = req;
@@ -246,6 +266,13 @@ function evaluateRequirement(req, filters, destinySteps, selectedSkills, selecte
     return selectedFlags.has(name);
   }
 
+  if (type === "number") {
+    const input = document.querySelector(`input[name="${name}"]`);
+    if (!input) return false;
+    const val = parseInt(input.value) || 0;
+    return compare(val, operator, value);
+  }
+
   return false;
 }
 
@@ -265,7 +292,7 @@ document.getElementById("calculateParams")?.addEventListener("click", () => {
   const df = 2 + Math.max(evade, speed);
   const wp = 2 + Math.max(centering, tenacity);
   const wk = 4 + Math.ceil(speed / 2);
-  const ch = Math.max(4 + speed, 4 + speed); // same as walk unless logic changes
+  const ch = Math.max(4 + speed, 4 + speed);
   const wd = 4 + toughness + (resilience > 0 ? Math.ceil(resilience / 2) : 0);
   const init = speed + notice;
 
@@ -285,10 +312,28 @@ document.getElementById("showAllTalents")?.addEventListener("click", () => {
     const div = document.createElement("div");
     div.classList.add("talent-block");
     div.innerHTML = `
-      <strong>${t.name}</strong>
-      ${t.displayedReqs ? `<p><em>${formatTextWithSymbols(t.displayedReqs)}</em></p>` : ""}
+      <strong class="talent-name">${t.name}</strong>
+      ${t.displayedReqs ? `<p class="talent-req"><em>${formatTextWithSymbols(t.displayedReqs)}</em></p>` : ""}
       <p>${formatTextWithSymbols(t.description)}</p>
-      ${t.book ? `<div class="talent-book">${t.book}</div>` : ""}`;
+      ${t.book ? `<div class="talent-book">${t.book}</div>` : ""}
+      ${t.legacy ? `
+        <button class="toggle-legacy">Show old version ▼</button>
+        <div class="legacy-content hidden">
+          ${t.legacy.displayedReqs ? `<p class="talent-req"><em>${formatTextWithSymbols(t.legacy.displayedReqs)}</em></p>` : ""}
+          <p>${formatTextWithSymbols(t.legacy.description)}</p>
+          ${t.legacy.book ? `<div class="talent-book">${t.legacy.book}</div>` : ""}
+        </div>
+      ` : ""}
+    `;
     resultsDiv.appendChild(div);
+  });
+    document.querySelectorAll(".toggle-legacy").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const legacy = btn.nextElementSibling;
+      legacy.classList.toggle("hidden");
+      btn.textContent = legacy.classList.contains("hidden")
+        ? "Show old version ▼"
+        : "Hide old version ▲";
+    });
   });
 });
