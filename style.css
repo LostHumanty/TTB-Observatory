@@ -1,22 +1,21 @@
 @font-face {
   font-family: 'MalifauxSymbols';
   src: url('./assets/fonts/MalifauxRodentEditionNormal.ttf') format('truetype');
-  font-display: swap; /* Важно для корректной загрузки */
+  font-display: swap;
 }
 
 .malifaux-symbol {
   font-family: 'MalifauxSymbols', sans-serif;
   font-size: 1.2em;
   line-height: 1;
-  color: inherit; /* Наследует цвет текста */
-  display: inline-block; /* Фиксит выравнивание */
+  color: inherit;
+  display: inline-block;
 }
 
 body {
   font-family: Arial, sans-serif;
   background: #ffffff;
   margin: 0;
-  /* padding: 20px; */
   color: #000;
 }
 
@@ -217,4 +216,90 @@ button {
   color: rgba(0, 0, 0, 0.5);
   text-align: right;
   margin-top: 5px;
+}
+
+.top-left {
+  display: flex;
+  flex-direction: row;
+}
+
+.mid-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+}
+
+.param-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  /* padding: 10px;
+  margin-top: 10px; */
+}
+
+.param-bar input[type="number"] {
+  width: 40px;
+  padding: 4px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.param-bar label {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.param-bar .param-group {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.param-bar .button-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.param-bar .button-group button {
+  margin: 0;
+}
+
+#calculateParams {
+  font-size: 14px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#calculateParams::before {
+  content: "🧮";
+}
+
+#showAllTalents {
+  font-size: 14px;
+  padding: 6px 12px;
+  background: white;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+#godInput {
+  width: 50px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
 }

@@ -2,7 +2,13 @@
 
 to do:
 
+- добавить кнопку "показать все таланты"
+
+- сделать возможность переключения между короткими и большими версиями
+    - оформить эти версии как целый кусок досье и порванный.
+
 - сделать полный json
+    - зажирнить focused +1 +2..., poison +1..., burning, crazy, Defensive, conditions, slow, fast, paralyzed, df/wp Dazed Reactivate
 
 - Добавить в трейты:
 Non-Kin (сделать переключатель с Kin)
@@ -12,7 +18,7 @@ Guild Training (сделать выпадающее меню с дивизион
 
 - Сделать чтобы Appraise 3 было равно Notice 3
     - потенцаильно сделать опцию "выставить Appraise и Teach отдельно" с подсказкой что по дефолту это нотис и лидершип.
-        - это затронет Let Me Show You, Inscription
+        - это затронет Forgotten Lore
     - может добавить эту же опцию к Show talents without requirements в какуюнибудь графу "адванс опции"
 
 - Добавить рядом с аспектами
@@ -54,3 +60,5 @@ Must be a Guild employee or have the Infiltration Talent.
 Have met with a Shinto priest, Oni hunter, or other organization (like the Red Library) with knowledge about how to best exploit these spirits and their weaknesses.
 Have pneumatic limbs
 Fatemaster's Character
+
+
