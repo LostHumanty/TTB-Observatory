@@ -10,16 +10,22 @@
   line-height: 1;
   color: inherit;
   display: inline-block;
+  vertical-align: middle;
 }
 
 body {
   font-family: Arial, sans-serif;
   background: #ffffff;
+  font-size: 16px;
   margin: 0;
   color: #000;
 }
 
 .hidden {
+  display: none;
+}
+
+.skills_tab.hidden {
   display: none;
 }
 
@@ -50,11 +56,12 @@ form {
 
 button {
   display: block;
-  margin: 30px auto;
+  margin: 5px;
   padding: 10px 30px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .top_tab {
@@ -140,7 +147,7 @@ button {
 
 .skill-selector label {
   display: inline-block;
-  width: 150px;
+  width: 135px;
   font-weight: normal;
   margin: 0;
 }
@@ -184,6 +191,20 @@ button {
   min-width: 300px;
 }
 
+.skills-toggle-area {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+#toggleSkills,
+#toggleRare {
+  font-size: 14px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
 .category-content.hidden {
   display: none;
 }
@@ -195,13 +216,13 @@ button {
 
 .talent-block {
   padding: 10px;
+  font-size: 16px;
   margin: 10px 0;
   background: #f5f5f5;
   border-left: 4px solid #000;
 }
 
 #toggleRare {
-  margin-top: 10px;
   font-size: 14px;
   padding: 6px 12px;
   cursor: pointer;
@@ -213,6 +234,13 @@ button {
   color: rgba(0, 0, 0, 0.5);
   text-align: right;
   margin-top: 5px;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
 }
 
 .top-left {
@@ -283,16 +311,129 @@ button {
   gap: 6px;
 }
 
-
-#showAllTalents {
-  font-size: 14px;
-  padding: 6px 12px;
-  cursor: pointer;
-}
-
 #godInput {
   width: 50px;
   font-weight: bold;
   text-align: center;
   font-size: 14px;
+}
+
+.talent-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.talent-reqs {
+  font-size: 13px;
+  font-style: italic;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.talent-description {
+  font-size: 14px;
+}
+
+.legacy-content {
+  background: #eaeaea;
+  margin-top: 10px;
+  padding: 10px;
+  border-left: 2px dashed #888;
+}
+
+/* 768px - 1199px */
+@media (min-width: 768px) and (max-width: 1199px) {
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .talent-block {
+    font-size: 15px;
+  }
+
+  .top_tab {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-selector label {
+    width: 120px;
+  }
+
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px 12px;
+  }
+}
+
+/* 320px - 767px */
+@media (max-width: 767px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .talent-block {
+    font-size: 14px;
+  }
+
+  .top-left {
+    flex-direction: column;
+  }
+
+  .top_tab {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .skill-selector label {
+    width: 111px;
+  }
+
+  .aspects,
+  .traits_tab,
+  .rare-requirements {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #skillsContainer {
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-self: center;
+  }
+
+  .round-button {
+    width: 18px;
+    height: 18px;
+    font-size: 14px;
+  }
+
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px 12px;
+  }
 }

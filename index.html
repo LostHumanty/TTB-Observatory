@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TTB Observatory</title>
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -44,7 +45,6 @@
                     </div>
                     <div class="special">
                         <label><input type="checkbox" name="reqNoneOnly" value="reqNoneOnly" /> Show talents without requirements</label>
-                        <button type="button" id="toggleRare">Show rare requirements ▼</button>
                     </div>
                 </div>
             </div>
@@ -56,13 +56,12 @@
                     <label>Wk <input type="number" name="wk" /></label>
                     <label>Ch <input type="number" name="ch" /></label>
                     <label>Wd <input type="number" name="wd" /></label>
-                    <label>Initiative <input type="number" name="init" /></label>
+                    <label>In <input type="number" name="init" /></label>
                 </div>
 
                 <div class="button-group">
                     <button type="button" id="calculateParams">Calculate Parameters</button>
-                    <button type="button" id="showAllTalents">Show All Talents</button>
-                    <label>Gifts <input type="number" name="god" id="godInput" min="0" value="0" /></label>
+                    <label>Gifts <input type="number" name="GoD" id="godInput" min="0" value="0" /></label>
                 </div>
                 </div>
             </div>
@@ -93,68 +92,75 @@
         </div>
     </div>
 
-    <div class="section rare-requirements hidden" id="rareRequirements">
-    <h2>Rare Requirements</h2>
-        <div class="checkbox-grid">
-            <label><input type="checkbox" name="rare[]" value="fmc" />
-            Fatemaster's Character.
-            </label>           
-            <label><input type="checkbox" name="rare[]" value="pneumatic_limbs" />
-            Have pneumatic limbs.
-            </label>
-            <label><input type="checkbox" name="rare[]" value="brilliance" />
-            Must have the Brilliance Condition.
-            </label>
-            <label><input type="checkbox" name="rare[]" value="blood_sickness" />
-            Must have the Blood Sickness Condition.
-            </label>
-            <label><input type="checkbox" name="rare[]" value="haunted" />
-            Must have the Haunted Condition.
-            </label>
-            <label><input type="checkbox" name="rare[]" value="crazy" />
-            Must have had the Crazy +4 or greater Condition at some point during a session.
-            </label>
-            <label><input type="checkbox" name="rare[]" value="burning_5_resolved" />
-            Must have had the Burning +5 or greater Condition resolve against her.
-            </label>
-            <label><input type="checkbox" name="rare[]" value="burning_10_applied" />
-            Must have applied 10 or more ranks of the Burning Condition to her enemies during a single combat.
-            </label>
-            <label><input type="checkbox" name="rare[]" value="died_or_minus10" />
-            Has either died or been at -10 Wounds or below.
-            </label>
-            <label><input type="checkbox" name="rare[]" value="minus5" />
-            Has reached -5 Wounds or lower.
-            </label>
-            <label><input type="checkbox" name="rare[]" value="unconscious" />
-            Must have failed an Unconsciousness Challenge while at negative Wounds.
-            </label>
-            <label><input type="checkbox" name="rare[]" value="black_blood" />
-            Survived a Nephilim attack after being brought down to negative Wounds.
-            </label>
-            <label><input type="checkbox" name="rare[]" value="beyond" />
-            Have met with a Shinto priest, Oni hunter, or other organization (like the Red Library) with knowledge about how to best exploit these spirits and their weaknesses.
-            </label>
-            <label><input type="checkbox" name="rare[]" value="infiltration" />
-            Must be a Guild employee or have the Infiltration Talent.
-            </label>
-            <label><input type="checkbox" name="rare[]" value="sloth" />
-            Sloth Vice.
-            </label>
-            <label><input type="checkbox" name="rare[]" value="enchanter" />
-            Enchant Item Talent.
-            </label>
-        </div>
-    </div>
-
 
         <!-- SKILLS -->
-        <div class="section skills_tab">
-        <h2>Skills</h2>
-        <div id="skillsContainer"></div>
+        <div class="skills-toggle-area">
+            <button type="button" id="toggleSkills">Skills ▼</button>
+            <button type="button" id="toggleRare">Show rare requirements ▼</button>
         </div>
 
-        <button type="submit">Apply Filter</button>
+        <div class="section skills_tab hidden">
+            <div id="skillsContainer"></div>
+        </div>
+
+        <div class="section rare-requirements hidden" id="rareRequirements">
+            <h2>Rare Requirements</h2>
+            <div class="checkbox-grid">
+                <label><input type="checkbox" name="rare[]" value="fmc" />
+                Fatemaster's Character.
+                </label>           
+                <label><input type="checkbox" name="rare[]" value="pneumatic_limbs" />
+                Have pneumatic limbs.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="brilliance" />
+                Must have the Brilliance Condition.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="blood_sickness" />
+                Must have the Blood Sickness Condition.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="haunted" />
+                Must have the Haunted Condition.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="crazy" />
+                Must have had the Crazy +4 or greater Condition at some point during a session.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="burning_5_resolved" />
+                Must have had the Burning +5 or greater Condition resolve against her.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="burning_10_applied" />
+                Must have applied 10 or more ranks of the Burning Condition to her enemies during a single combat.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="died_or_minus10" />
+                Has either died or been at -10 Wounds or below.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="minus5" />
+                Has reached -5 Wounds or lower.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="unconscious" />
+                Must have failed an Unconsciousness Challenge while at negative Wounds.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="black_blood" />
+                Survived a Nephilim attack after being brought down to negative Wounds.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="beyond" />
+                Have met with a Shinto priest, Oni hunter, or other organization (like the Red Library) with knowledge about how to best exploit these spirits and their weaknesses.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="infiltration" />
+                Must be a Guild employee or have the Infiltration Talent.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="sloth" />
+                Sloth Vice.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="enchanter" />
+                Enchant Item Talent.
+                </label>
+            </div>
+        </div>
+
+        <div class="filter-buttons">
+            <button type="submit">Apply Filter</button>
+            <button type="button" id="showAllTalents">Show All Talents</button>
+        </div>
     </form>
 
     <div id="results"></div>

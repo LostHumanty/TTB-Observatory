@@ -338,21 +338,6 @@
     "book": "Core Book pg.221"
   },
   {
-    "name": "Specialized Skill",
-    "displayedReqs": "Requirement: Fatemaster Character or 2 or more completed Destiny Steps.",
-    "narative": "This character has honed a specific skill, allowing her to perform tricks with little effort.",
-    "description": "Choose a Skill and a suit. Add the chosen suit to the chosen Skill’s value.\n\nA character may take this Talent multiple times, but each time, a different Skill must be chosen.",
-    "requirements": [
-      {
-        "or": [
-          { "type": "custom", "name": "fmc" },
-          { "type": "destiny", "operator": ">=", "value": 2 }
-        ]
-      }
-    ],
-    "book": "Core Book pg.221"
-  },
-  {
     "name": "Specialized Toxins",
     "displayedReqs": "Requirement: Alchemistry 2 or higher.",
     "narative": "This character knows the perfect type of poison to deal with a specific kind of creature.",
@@ -539,7 +524,7 @@
     "name": "C-C-C-Combo!!!!",
     "displayedReqs": "Requirement: Martial Arts 3 or higher",
     "narative": "Whether it’s a string of fast punches or a spinning roundhouse kick, this character knows how to chain her attacks together into a flurry of blurred fists and kicking legs.",
-    "description": "The character gains the following Trigger on her Martial Arts Close Combat attacks:\n\n*[m] Combo!*: This character may take this attack again against the same target. This second attack may not declare Triggers.",
+    "description": "The character gains the following Trigger on her Martial Arts Close Combat attacks:\n\n[m] *Combo!*: This character may take this attack again against the same target. This second attack may not declare Triggers.",
     "requirements": [
       { "type": "skill", "name": "Martial Arts", "operator": ">=", "value": 3 }
     ],
@@ -557,7 +542,7 @@
     "name": "Cheating So and So",
     "displayedReqs": "Requirement: Gambling 3 or higher",
     "narative": "It’s one thing to play the odds, but it’s something else entirely to stack the game in your favor.",
-    "description": "The character gains the following Trigger on all Expertise Challenges:\n\n*[m] Stack the Deck*: After resolving, you may look at the top card of the Fate deck and then choose whether or not to put it on the bottom of the deck.",
+    "description": "The character gains the following Trigger on all Expertise Challenges:\n\n[m] *Stack the Deck*: After resolving, you may look at the top card of the Fate deck and then choose whether or not to put it on the bottom of the deck.",
     "requirements": [
       { "type": "skill", "name": "Gambling", "operator": ">=", "value": 3 }
     ],
@@ -587,7 +572,7 @@
     "name": "Demanding Taskmaster",
     "displayedReqs": "Requirement: Flexible 3 or higher",
     "narative": "This character knows how to use a bit of pain to spur others into action.",
-    "description": "The character gains the following Trigger on her Flexible Close Combat attacks:\n\n*[m] Motivation*: After succeeding, move the target 1 yard if this attack dealt Weak damage, 2 yards if Moderate, and 3 yards if Severe.",
+    "description": "The character gains the following Trigger on her Flexible Close Combat attacks:\n\n[m] *Motivation*: After succeeding, move the target 1 yard if this attack dealt Weak damage, 2 yards if Moderate, and 3 yards if Severe.",
     "requirements": [
       { "type": "skill", "name": "Flexible", "operator": ">=", "value": 3 }
     ],
@@ -597,7 +582,7 @@
     "name": "Disarming Attack",
     "displayedReqs": "Requirement: Martial Arts 3 or higher",
     "narative": "This character has trained against armed opponents and knows how to quickly disarm them.",
-    "description": "The character’s Martial Arts Close Combat attacks gain the following Trigger:\n\n*[C] Disarming Attack*: After succeeding, the target drops a single item of your choice held in its hands. This attack’s damage flip receives a [-].",
+    "description": "The character’s Martial Arts Close Combat attacks gain the following Trigger:\n\n[C] *Disarming Attack*: After succeeding, the target drops a single item of your choice held in its hands. This attack’s damage flip receives a [-].",
     "requirements": [
       { "type": "skill", "name": "Martial Arts", "operator": ">=", "value": 3 }
     ],
@@ -666,7 +651,7 @@
     "name": "Interface",
     "displayedReqs": "Requirement: Invested",
     "narative": "This character is capable of rapidly interfacing with other Constructs, allowing it to quickly transfer large amounts of data in a manner that Constructs can easily understand.",
-    "description": "The character gains the following Trigger to all Social Duels:\n\n*[t] Interface*: After succeeding against a Construct, gain 1 additional Margin of Success.",
+    "description": "The character gains the following Trigger to all Social Duels:\n\n[t] *Interface*: After succeeding against a Construct, gain 1 additional Margin of Success.",
     "requirements": [
       { "type": "custom", "name": "invested" }
     ],
@@ -735,7 +720,7 @@
     "name": "Queensbury Rules",
     "displayedReqs": "Requirement: Pugilism 3 or higher",
     "narative": "This character is an adherent to the Marquess of Queensberry rules, the code of generally accepted rules in the sport of boxing. Such a focus makes her a true boxer, leagues above the hoodlums who just punch and kick each other until someone falls down.",
-    "description": "The character gains the following Trigger on her Pugilism Close Combat attacks:\n\n*[r] Win By Knockout*: After damaging, the target takes the Drop Prone action.",
+    "description": "The character gains the following Trigger on her Pugilism Close Combat attacks:\n\n[r] *Win By Knockout*: After damaging, the target takes the Drop Prone action.",
     "requirements": [
       { "type": "skill", "name": "Pugilism", "operator": ">=", "value": 3 }
     ],
@@ -755,7 +740,7 @@
     "name": "Rebound",
     "displayedReqs": "Requirement: Thrown Weapons 3 or higher",
     "narative": "If you throw it just right, sometimes you can bounce a thrown weapon off one enemy and into another.",
-    "description": "The character gains the following Trigger on her Thrown Weapons Ranged Combat attacks:\n\n*[m] Rebound*: After damaging, you may deal 1/2/3 damage to another target within 3 yards of the original target.",
+    "description": "The character gains the following Trigger on her Thrown Weapons Ranged Combat attacks:\n\n[m] *Rebound*: After damaging, you may deal 1/2/3 damage to another target within 3 yards of the original target.",
     "requirements": [
       { "type": "skill", "name": "Thrown Weapons", "operator": ">=", "value": 3 }
     ],
@@ -765,7 +750,7 @@
     "name": "Riposte",
     "displayedReqs": "Requirement: Melee 3 or higher",
     "narative": "This character is capable of quickly counterattacking with her sword after parrying an enemy’s attack.",
-    "description": "The character gains the following Defensive Trigger:\n\nDf *([r][m]) Riposte*: After a Close Combat attack fails against this character, this character deals the damage of one of her readied sword or blade weapons to the attacker. This damage flip receives a [-].",
+    "description": "The character gains the following Defensive Trigger:\n\nDf ([r][m]) *Riposte*: After a Close Combat attack fails against this character, this character deals the damage of one of her readied sword or blade weapons to the attacker. This damage flip receives a [-].",
     "requirements": [
       { "type": "skill", "name": "Melee", "operator": ">=", "value": 3 }
     ],
@@ -805,7 +790,7 @@
     "name": "Street Fighter",
     "displayedReqs": "Requirement: Pugilism 3 or higher",
     "narative": "This character has spent enough time on the streets to realize that sometimes, it’s the guy with the dirtiest trick who gets to see another sunrise.",
-    "description": "The character gains the following Defensive Trigger:\n\n*Df ([C]) Street Fighter*: After a Close Combat attack fails against this character, if this character is wielding no weapons, this character deals 1/2/3 damage to the attacker. This damage flip may not be cheated.",
+    "description": "The character gains the following Defensive Trigger:\n\n*Df ([C]) *Street Fighter*: After a Close Combat attack fails against this character, if this character is wielding no weapons, this character deals 1/2/3 damage to the attacker. This damage flip may not be cheated.",
     "requirements": [
       { "type": "skill", "name": "Pugilism", "operator": ">=", "value": 3 }
     ],
@@ -884,7 +869,7 @@
     "name": "Addict",
     "displayedReqs": "Requirement: The character must have the Brilliance Condition (any value).",
     "narative": "This character has become addicted to Brilliance.",
-    "description": "While this character has the Brilliance Condition, she gains the following Tactical Action:\n\n(0) Drawn to the Light: This character may move up to its Walk Aspect towards a character with the Brilliance Condition and must end this movement as close to the target as possible.",
+    "description": "While this character has the **Brilliance** Condition, she gains the following Tactical Action:\n\n(0) Drawn to the Light: This character may move up to its Walk Aspect towards a character with the **Brilliance** Condition and must end this movement as close to the target as possible.",
     "requirements": [
       { "type": "custom", "name": "brilliance" }
     ],
@@ -916,7 +901,7 @@
     "name": "Blood Scent",
     "displayedReqs": "Requirement: The character must have the Blood Sickness Condition (any value).",
     "narative": "As the Black Blood spreads through the character's body, the scent of blood begins to have a more stimulating effect on her. Even the smallest wound will cause her heart rate to quicken and her mouth to salivate, and her reflexes go into overdrive whenever a living creature is killed near her.",
-    "description": "If a Living character is killed within 1 yard of this character while she has the Blood Sickness Condition, she may discard a card to gain the **Fast** Condition.",
+    "description": "If a Living character is killed within 1 yard of this character while she has the **Blood Sickness** Condition, she may discard a card to gain the **Fast** Condition.",
     "requirements": [
       { "type": "custom", "name": "blood_sickness" }
     ],
@@ -956,9 +941,9 @@
     "name": "Evil Eye",
     "displayedReqs": "Requirement: Willpower 6 or higher",
     "narative": "This character possesses the Evil Eye, a powerful curse that is cast via a malevolent glare.",
-    "description": "This character gains the following Defensive Trigger:\n\n**Df/Wp ([C]) Evil Eye**: After this character succeeds, the attacker gains the Cursed +1 Condition with a Taboo against attacking this character.",
+    "description": "This character gains the following Defensive Trigger:\n\n**Df/Wp ([C]) Evil Eye**: After this character succeeds, the attacker gains the **Cursed +1** Condition with a Taboo against attacking this character.",
     "requirements": [
-      { "type": "parameter", "name": "Willpower", "operator": ">=", "value": 6 }
+      { "type": "number", "name": "wp", "operator": ">=", "value": 6 }
     ],
     "book": "Under Quarantine pg.135"
   },
@@ -1008,7 +993,7 @@
     "name": "From Beyond",
     "displayedReqs": "Requirement: Must have the Haunted Condition.",
     "narative": "This character has made peace with the spirits that surround her. While still not pleasant, the spirits of the departed see the character as a kindred spirit and do what they can to help her.",
-    "description": "This character is immune to the mechanical symptoms of the Haunted Condition. Additionally, if she fails a Notice or Scrutiny Challenge, she may lower her Haunted Condition value by exactly 1 (to a minimum of 0) to reflip the duel.",
+    "description": "This character is immune to the mechanical symptoms of the **Haunted** Condition. Additionally, if she fails a Notice or Scrutiny Challenge, she may lower her **Haunted** Condition value by exactly 1 (to a minimum of 0) to reflip the duel.",
     "requirements": [
       { "type": "custom", "name": "haunted" }
     ],
@@ -1878,7 +1863,7 @@
     "description": "When this character suffers damage, she can count as suffering one additional point of damage for resolving any Triggers, effects, or similar actions. She does not actually suffer this additional point of damage (i.e. a character suffering 2 damage could count as suffering 3 damage, but would still only suffer 2 damage).",
     "requirements": [
       { "type": "attribute", "name": "Charm", "operator": "<=", "value": -3 },
-      { "type": "custom", "name": "darkness_3plus" }
+      { "type": "number", "name": "GoD", "operator": ">=", "value": 3 }
     ],
     "book": "From the Nightmares pg.129"
   },
@@ -2097,7 +2082,7 @@
     "description": "This character can only generate a maximum of 1 Margin of Failure for each Skill she uses during an Ongoing Challenge. If a failed Skill Challenge would generate additional Margins of Failure, they are ignored. Note that if the character uses two different Skills (like Barter and Bewitch), both can each generate 1 Margin of Failure during the Ongoing Challenge.",
     "requirements": [
       { "type": "attribute", "name": "Charm", "operator": "<=", "value": -2 },
-      { "type": "attribute", "name": "Tenacity", "operator": "<=", "value": -2, "orGroup": true }
+      { "type": "attribute", "name": "Tenacity", "operator": "<=", "value": -2 }
     ],
     "book": "From Shadows pg.116"
   },
@@ -2105,6 +2090,7 @@
     "name": "Teachings of Worlds Beyond",
     "displayedReqs": "Requirement: Have met with a Shinto priest, Oni hunter, or other organization (like the Red Library) with knowledge about how to best exploit these spirits and their weaknesses.",
     "narative": "The Shinto temples and shrines of Japan hold ancient secrets about the mysterious oni. Though established for the protection and reverence of natural spirits, the kami, the Shinto priesthood also serves as a barrier between the Beyond and other worlds. Their teachings are key to learning how to bind the oni and halt their rampages.",
+    "description": "Gain the following Trigger on all Ranged, Close Combat, or Magical attacks:\n\n[t][t] *Bind to this World*: After damaging, the target becomes **Paralyzed** if it is a Peon, Minion, or Enforcer Oni or Spirit; Henchmen and Masters gain **Slow** instead. This effect lasts until the character that applied this Condition takes any action other than Pass, or is moved.",
     "requirements": [
       { "type": "custom", "name": "beyond" }
     ],
@@ -2168,6 +2154,22 @@
         ]
       }
     ],
-    "book": "Rules Update 1.2025 pg.1"
+    "book": "Rules Update 1.2025 pg.1",
+    "legacy": 
+    {
+      "displayedReqs": "Requirement: Fatemaster Character or 2 or more completed Destiny Steps.",
+      "narative": "This character has honed a specific skill, allowing her to perform tricks with little effort.",
+      "description": "Choose a Skill and a suit. Add the chosen suit to the chosen Skill’s value.\n\nA character may take this Talent multiple times, but each time, a different Skill must be chosen.",
+      "book": "Core Book pg.221",
+      "requirements":
+      [
+        {
+          "or": [
+            { "type": "custom", "name": "fmc" },
+            { "type": "destiny", "operator": ">=", "value": 2 }
+          ]
+        }
+      ]
+    }
   }
 ]
