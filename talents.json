@@ -388,7 +388,7 @@
     "displayedReqs": "Requirement: Chosen Skill Rank 2 or higher.",
     "description": "Choose a Ranged Combat Skill. While making an attack with the chosen Skill, this character may choose to ignore one –.",
     "requirements": [
-      { "type": "skill", "name": "any_ranged", "operator": ">=", "value": 2 }
+      { "type": "skill", "name": "any", "operator": ">=", "value": 2, "category": ["Ranged Combat"] }
     ],
     "book": "Core Book pg.223"
   },
@@ -616,15 +616,6 @@
     "book": "Into the Steam pg.123"
   },
   {
-    "name": "Let Me Show You",
-    "displayedReqs": "Requirement: Teach 3 or higher",
-    "description": "The character may discard a Twist Card to spend 15 minutes explaining how one of her non-Invested, non-Stitched Talents works to another character. That character may then discard a Twist Card to gain the taught Talent for the rest of the day.",
-    "requirements": [
-      { "type": "skill", "name": "Leadership", "operator": ">=", "value": 3 }
-    ],
-    "book": "Into the Steam pg.123"
-  },
-    {
     "name": "Lightning Rod",
     "displayedReqs": "Requirement: Grace -1 or lower",
     "description": "The character gains a [+] on any duels made to resist Spells or Manifested Powers, but when targeted by an enemy’s Spell or Manifested Power, the enemy can add a single suit of their choice to the final duel total.",
@@ -1077,7 +1068,7 @@
   {
     "name": "Sadistic Streak",
     "displayedReqs": "Requirement: None",
-    "full": "This character draws strength from the cruelty she inflicts upon those under her command.\nAt the start of this character's turn, she may deal 1 damage to one of her subordinate characters within 3 yards to push up to 3 yards in any direction.",
+    "narative": "This character draws strength from the cruelty she inflicts upon those under her command.\nAt the start of this character's turn, she may deal 1 damage to one of her subordinate characters within 3 yards to push up to 3 yards in any direction.",
     "description": "At the start of this character's turn, she may deal 1 damage to one of her subordinate characters within 3 yards to push up to 3 yards in any direction.",
     "requirements": [],
     "book": "Under Quarantine pg.139"
@@ -1085,7 +1076,7 @@
   {
     "name": "Shambling Gait",
     "displayedReqs": "Requirement: Stitched, Speed -2 or lower",
-    "full": "This character will never be fast... but at least she tries, right?\nShe gains +1 to either all Physical Aspects or all Mental Aspects, but gains the Slow Condition at the start of each of her turns during Dramatic Time.",
+    "narative": "This character will never be fast... but at least she tries, right?\nShe gains +1 to either all Physical Aspects or all Mental Aspects, but gains the Slow Condition at the start of each of her turns during Dramatic Time.",
     "description": "This character gains +1 to either all Physical Aspects or all Mental Aspects, but gains the Slow Condition at the start of each of her turns during Dramatic Time.",
     "requirements": [
       { "type": "custom", "name": "stitched" },
@@ -1096,7 +1087,7 @@
   {
     "name": "Spiritual Sensitivity",
     "displayedReqs": "Requirement: The character must have failed an Unconsciousness Challenge while at negative Wounds.",
-    "full": "Perhaps it was a near-death experience or just a bump on the head; whatever the reason, this character is now able to sense the presence of spirits around her.\nThis character gains the following Tactical Action:\n\n(0) Sense Spirits: This character becomes aware of the presence of any characters with the Spirit Characteristic within 10 yards (even if they are invisible or hidden).",
+    "narative": "Perhaps it was a near-death experience or just a bump on the head; whatever the reason, this character is now able to sense the presence of spirits around her.\nThis character gains the following Tactical Action:\n\n(0) Sense Spirits: This character becomes aware of the presence of any characters with the Spirit Characteristic within 10 yards (even if they are invisible or hidden).",
     "description": "This character gains the following Tactical Action:\n\n(0) Sense Spirits: This character becomes aware of the presence of any characters with the Spirit Characteristic within 10 yards (even if they are invisible or hidden).",
     "requirements": [
       { "type": "custom", "name": "unconscious" }
@@ -1106,7 +1097,7 @@
     {
     "name": "Spelunker",
     "displayedReqs": "Requirement: None",
-    "full": "Time spent underground — whether in the caverns beneath Malifaux or back on Earth — has made this character comfortable with moving around in enclosed areas. This character gains a [+] on all Navigation, Track, and Wilderness duels made underground. Furthermore, she is immune to the Claustrophobia Condition (pg. 44).",
+    "narative": "Time spent underground — whether in the caverns beneath Malifaux or back on Earth — has made this character comfortable with moving around in enclosed areas. This character gains a [+] on all Navigation, Track, and Wilderness duels made underground. Furthermore, she is immune to the Claustrophobia Condition (pg. 44).",
     "description": "This character gains a [+] on all Navigation, Track, and Wilderness duels made underground and she is immune to the Claustrophobia Condition (pg. 44).",
     "requirements": [],
     "book": "Under Quarantine pg.139"
@@ -1114,7 +1105,7 @@
   {
     "name": "Touched by the Grave Spirit",
     "displayedReqs": "Requirement: The character has either died or been at -10 Wounds or below.",
-    "full": "As she hovered on the brink of death, a powerful spirit took notice of this character, toughening her body and making her stronger (and likely giving her some strange dreams in the process).\nWhen this character fails an unconsciousness challenge, she heals 1/2/3 damage. She still remains unconscious until the Fatemaster determines otherwise (generally until the end of Dramatic Time or until she is revived with the Doctor Skill).",
+    "narative": "As she hovered on the brink of death, a powerful spirit took notice of this character, toughening her body and making her stronger (and likely giving her some strange dreams in the process).\nWhen this character fails an unconsciousness challenge, she heals 1/2/3 damage. She still remains unconscious until the Fatemaster determines otherwise (generally until the end of Dramatic Time or until she is revived with the Doctor Skill).",
     "description": "When this character fails an unconsciousness challenge, she heals 1/2/3 damage. She still remains unconscious until the Fatemaster determines otherwise (generally until the end of Dramatic Time or until she is revived with the Doctor Skill).",
     "requirements": [
       { "type": "custom", "name": "died_or_minus10" }
@@ -1124,7 +1115,7 @@
   {
     "name": "Twisted Mind",
     "displayedReqs": "Requirement: None",
-    "full": "This character's psyche is twisted by madness and torment, and anyone touching her mind invariably recoils in pain.\nThis character gains the following Trigger:\n\n**Wp [C] Twisted Mind:** After this character succeeds, the attacker suffers 2 damage.",
+    "narative": "This character's psyche is twisted by madness and torment, and anyone touching her mind invariably recoils in pain.\nThis character gains the following Trigger:\n\n**Wp [C] Twisted Mind:** After this character succeeds, the attacker suffers 2 damage.",
     "description": "This character gains the following Trigger:\n\n**Wp [C] Twisted Mind:** After this character succeeds, the attacker suffers 2 damage.",
     "requirements": [],
     "book": "Under Quarantine pg.139"
@@ -1132,7 +1123,7 @@
   {
     "name": "Warding Gestures",
     "displayedReqs": "Requirement: Resilience -2 or lower",
-    "full": "This character has a weak body that is prone to injury. In order to protect herself, she has learned a smattering of warding gestures that can be used to protect her from harm.\nWhen this character suffers damage, she may discard a Twist Card to reduce the damage by 2.",
+    "narative": "This character has a weak body that is prone to injury. In order to protect herself, she has learned a smattering of warding gestures that can be used to protect her from harm.\nWhen this character suffers damage, she may discard a Twist Card to reduce the damage by 2.",
     "description": "When this character suffers damage, she may discard a Twist Card to reduce the damage by 2.",
     "requirements": [
       { "type": "attribute", "name": "Resilience", "operator": "<=", "value": -2 }
@@ -1142,7 +1133,7 @@
   {
     "name": "Well-Preserved",
     "displayedReqs": "Requirement: Stitched, Charm 1 or higher",
-    "full": "This character's body is intact and preserved enough for her to easily pass as a Living character in polite company.\nThe TNs of Scrutiny Challenges made to determine if this character is Undead are increased by +2.",
+    "narative": "This character's body is intact and preserved enough for her to easily pass as a Living character in polite company.\nThe TNs of Scrutiny Challenges made to determine if this character is Undead are increased by +2.",
     "description": "The TNs of Scrutiny Challenges made to determine if this character is Undead are increased by +2.",
     "requirements": [
       { "type": "custom", "name": "stitched" },
@@ -1153,7 +1144,7 @@
   {
     "name": "Swagger",
     "displayedReqs": "Requirement: Speed -1 or lower",
-    "full": "It may take this character longer to get wherever she is going, but the self-confident way she gets there makes all the difference.\nAt the end of this character's turn, she gains the Defensive +1 Condition if she declared only Walk Actions during her turn.",
+    "narative": "It may take this character longer to get wherever she is going, but the self-confident way she gets there makes all the difference.\nAt the end of this character's turn, she gains the Defensive +1 Condition if she declared only Walk Actions during her turn.",
     "description": "At the end of this character's turn, she gains the Defensive +1 Condition if she declared only Walk Actions during her turn.",
     "requirements": [
       { "type": "attribute", "name": "Speed", "operator": "<=", "value": -1 }
@@ -1163,7 +1154,7 @@
   {
     "name": "A Gremlin's Luck",
     "displayedReqs": "Requirement: Kin, Cunning -2 or lower",
-    "full": "This character's lack of common sense has led her to rely upon her natural luck to carry her through life. Fortunately, it mostly seems to work for her... mostly.\nWhen performing a duel, this character may discard a card or suffer 1 damage to Cheat Fate with the top card of the Fate Deck.",
+    "narative": "This character's lack of common sense has led her to rely upon her natural luck to carry her through life. Fortunately, it mostly seems to work for her... mostly.\nWhen performing a duel, this character may discard a card or suffer 1 damage to Cheat Fate with the top card of the Fate Deck.",
     "description": "When performing a duel, this character may discard a card or suffer 1 damage to Cheat Fate with the top card of the Fate Deck.",
     "requirements": [
       { "type": "custom", "name": "kin" },
@@ -1174,7 +1165,7 @@
   {
     "name": "All the Big Words",
     "displayedReqs": "Requirement: Literacy 3 or higher",
-    "full": "This personage has taken to peppering her dialogue with a plethora of sesquipedal words. While this does make her sound perspicacious, it tends to discombobulate anyone aurally perceiving her dialogue, and perplex them withal.\nIf this character succeeds on a Social Skill Challenge during Narrative Time, the target of the Challenge gains the Dazed Condition for one minute. If the character achieves a Margin of Success on the challenge, every other character within listening distance gains the Dazed Condition for one minute.",
+    "narative": "This personage has taken to peppering her dialogue with a plethora of sesquipedal words. While this does make her sound perspicacious, it tends to discombobulate anyone aurally perceiving her dialogue, and perplex them withal.\nIf this character succeeds on a Social Skill Challenge during Narrative Time, the target of the Challenge gains the Dazed Condition for one minute. If the character achieves a Margin of Success on the challenge, every other character within listening distance gains the Dazed Condition for one minute.",
     "description": "If this character succeeds on a Social Skill Challenge during Narrative Time, the target of the Challenge gains the Dazed Condition for one minute. If the character achieves a Margin of Success on the challenge, every other character within listening distance gains the Dazed Condition for one minute.",
     "requirements": [
       { "type": "skill", "name": "Literacy", "operator": ">=", "value": 3 }
@@ -1194,7 +1185,7 @@
   {
     "name": "Crude Sense of Humor",
     "displayedReqs": "Requirement: Kin, Resilience 1 or higher",
-    "full": "There’s something terrible happening in this character’s insides… and she finds that to be downright hilarious in the right circumstances.\nThis character gains the following Tactical Action:\n\n(0) Pull My Finger: If this character is adjacent to a friendly character, that character may choose to pull this character's finger. If she does, all non-Gremlin characters within [p]2 of this character gain the Poison +2 Condition. If this character chooses to discard a card when the adjacent character pulls her finger, any non-Gremlin characters within [p]2 also become Slow.",
+    "narative": "There’s something terrible happening in this character’s insides… and she finds that to be downright hilarious in the right circumstances.\nThis character gains the following Tactical Action:\n\n(0) Pull My Finger: If this character is adjacent to a friendly character, that character may choose to pull this character's finger. If she does, all non-Gremlin characters within [p]2 of this character gain the Poison +2 Condition. If this character chooses to discard a card when the adjacent character pulls her finger, any non-Gremlin characters within [p]2 also become Slow.",
     "description": "This character gains the following Tactical Action:\n\n(0) Pull My Finger: If this character is adjacent to a friendly character, that character may choose to pull this character's finger. If she does, all non-Gremlin characters within [p]2 of this character gain the Poison +2 Condition. If this character chooses to discard a card when the adjacent character pulls her finger, any non-Gremlin characters within [p]2 also become Slow.",
     "requirements": [
       { "type": "custom", "name": "kin" },
@@ -1205,7 +1196,7 @@
   {
     "name": "Dirty Cheater",
     "displayedReqs": "Requirement: Kin, Tenacity -2 or lower",
-    "full": "What this character lacks in willpower she makes up for in underhanded tricks.\nWhenever this character Cheats Fate from her Twist Hand, she heals 1 damage after resolving the current Action.",
+    "narative": "What this character lacks in willpower she makes up for in underhanded tricks.\nWhenever this character Cheats Fate from her Twist Hand, she heals 1 damage after resolving the current Action.",
     "description": "Whenever this character Cheats Fate from her Twist Hand, she heals 1 damage after resolving the current Action.",
     "requirements": [
       { "type": "custom", "name": "kin" },
@@ -1216,7 +1207,7 @@
   {
     "name": "Forgotten Lore",
     "displayedReqs": "Requirement: Appraise 3 or higher",
-    "full": "It can often be difficult to correctly identify one of Malifaux's many Grimoires... \nThis character has managed to successfully identify a powerful Grimoire and claim it for her own. The character gains a Grimoire with 3 Magia and 3 Immuto of her choice, but no more than 2 of these Magia can be of the same type of magic (i.e., Enchanting, Necromancy, etc.). Grimoires gained by this Talent tend toward uncommon appearances; the character is encouraged to work with the Fatemaster to determine her Grimoire's appearance.",
+    "narative": "It can often be difficult to correctly identify one of Malifaux's many Grimoires... \nThis character has managed to successfully identify a powerful Grimoire and claim it for her own. The character gains a Grimoire with 3 Magia and 3 Immuto of her choice, but no more than 2 of these Magia can be of the same type of magic (i.e., Enchanting, Necromancy, etc.). Grimoires gained by this Talent tend toward uncommon appearances; the character is encouraged to work with the Fatemaster to determine her Grimoire's appearance.",
     "description": "This character has managed to successfully identify a powerful Grimoire and claim it for her own. The character gains a Grimoire with 3 Magia and 3 Immuto of her choice, but no more than 2 of these Magia can be of the same type of magic (i.e., Enchanting, Necromancy, etc.).",
     "requirements": [
       { "type": "skill", "name": "Notice", "operator": ">=", "value": 3 }
@@ -1226,7 +1217,7 @@
   {
     "name": "From the Hip",
     "displayedReqs": "Requirement: Grace 1 or higher",
-    "full": "For whatever reason, this character just doesn't believe in carefully aiming her shots...\nWhen making a Long Arms attack, this character may substitute Grace for Intellect when calculating her Acting Value.",
+    "narative": "For whatever reason, this character just doesn't believe in carefully aiming her shots...\nWhen making a Long Arms attack, this character may substitute Grace for Intellect when calculating her Acting Value.",
     "description": "When making a Long Arms attack, this character may substitute Grace for Intellect when calculating her Acting Value.",
     "requirements": [
       { "type": "attribute", "name": "Grace", "operator": ">=", "value": 1 }
@@ -1236,7 +1227,7 @@
   {
     "name": "Gremlin Engineering",
     "displayedReqs": "Requirement: Kin, Engineering 3 or higher",
-    "full": "As every good Gremlin engineer knows, the trick to making a machine work is to hit it with a heavy wrench whenever it starts doing something you don't like.\nAfter one of this character's subordinate Constructs within engagement range of one of this character's melee weapons fails a Skill Challenge (including an attack), this character may make a damage flip against the Construct. If the Construct suffers at least 1 damage from this character's weapon, it may immediately reflip its result on the Challenge.",
+    "narative": "As every good Gremlin engineer knows, the trick to making a machine work is to hit it with a heavy wrench whenever it starts doing something you don't like.\nAfter one of this character's subordinate Constructs within engagement range of one of this character's melee weapons fails a Skill Challenge (including an attack), this character may make a damage flip against the Construct. If the Construct suffers at least 1 damage from this character's weapon, it may immediately reflip its result on the Challenge.",
     "description": "After one of this character's subordinate Constructs within engagement range of one of this character's melee weapons fails a Skill Challenge (including an attack), this character may make a damage flip against the Construct. If the Construct suffers at least 1 damage from this character's weapon, it may immediately reflip its result on the Challenge.",
     "requirements": [
       { "type": "custom", "name": "kin" },
@@ -1247,7 +1238,7 @@
   {
     "name": "Helping Hand",
     "displayedReqs": "Requirement: Cunning 1 or higher",
-    "full": "This character functions well as part of a group and is extremely good at keeping all of her allies operating at peak efficiency.\nWhen this character takes the Assist Action during Dramatic Time, the target of her assistance gains the Focused +1 Condition instead of the usual benefits of the Assist Action. When this character takes the Pass Action during Dramatic Time, she may add 1 to the Initiative Value of every other friendly character within [p]3.",
+    "narative": "This character functions well as part of a group and is extremely good at keeping all of her allies operating at peak efficiency.\nWhen this character takes the Assist Action during Dramatic Time, the target of her assistance gains the Focused +1 Condition instead of the usual benefits of the Assist Action. When this character takes the Pass Action during Dramatic Time, she may add 1 to the Initiative Value of every other friendly character within [p]3.",
     "description": "When this character takes the Assist Action during Dramatic Time, the target of her assistance gains the Focused +1 Condition instead of the usual benefits of the Assist Action. When this character takes the Pass Action during Dramatic Time, she may add 1 to the Initiative Value of every other friendly character within [p]3.",
     "requirements": [
       { "type": "attribute", "name": "Cunning", "operator": ">=", "value": 1 }
@@ -1257,7 +1248,7 @@
   {
     "name": "Herding Squirrels",
     "displayedReqs": "Requirement: Leadership 3 or higher",
-    "full": "Getting people to work together can be difficult, and that goes double for when those people are a pack of drunken idiots who refuse to acknowledge that the character is their supervisor.\nThis character may use a (1) Order Action to command a subordinate character controlled by another friendly character, with its controller's permission. A subordinate character may only take one turn per round, no matter how many (1) Order Actions it receives.",
+    "narative": "Getting people to work together can be difficult, and that goes double for when those people are a pack of drunken idiots who refuse to acknowledge that the character is their supervisor.\nThis character may use a (1) Order Action to command a subordinate character controlled by another friendly character, with its controller's permission. A subordinate character may only take one turn per round, no matter how many (1) Order Actions it receives.",
     "description": "This character may use a (1) Order Action to command a subordinate character controlled by another friendly character, with its controller's permission. A subordinate character may only take one turn per round, no matter how many (1) Order Actions it receives.",
     "requirements": [
       { "type": "skill", "name": "Leadership", "operator": ">=", "value": 3 }
@@ -1267,7 +1258,7 @@
   {
     "name": "Hyperactive",
     "displayedReqs": "Requirement: Kin",
-    "full": "While the standard portrayal of a Gremlin in the eyes of a human mostly involves a drunken green monster lazing around in a tree with a shoddy banjo, that's only partially true.\nAt the start of this character's turn, she may suffer 1 damage to remove the Slow Condition from herself, or 2 damage to remove the Paralyzed Condition. This damage cannot be reduced.",
+    "narative": "While the standard portrayal of a Gremlin in the eyes of a human mostly involves a drunken green monster lazing around in a tree with a shoddy banjo, that's only partially true.\nAt the start of this character's turn, she may suffer 1 damage to remove the Slow Condition from herself, or 2 damage to remove the Paralyzed Condition. This damage cannot be reduced.",
     "description": "At the start of this character's turn, she may suffer 1 damage to remove the Slow Condition from herself, or 2 damage to remove the Paralyzed Condition. This damage cannot be reduced.",
     "requirements": [
       { "type": "custom", "name": "kin" }
@@ -1277,7 +1268,7 @@
   {
     "name": "Hysterical Fury",
     "displayedReqs": "Requirement: Resilience -1 or lower",
-    "full": "This character isn’t very hardy, and she knows it.\nWhen this character has zero or fewer Wounds remaining, she gains [+] to her attack and damage flips.",
+    "narative": "This character isn’t very hardy, and she knows it.\nWhen this character has zero or fewer Wounds remaining, she gains [+] to her attack and damage flips.",
     "description": "When this character has zero or fewer Wounds remaining, she gains [+] to her attack and damage flips.",
     "requirements": [
       { "type": "attribute", "name": "Resilience", "operator": "<=", "value": -1 }
@@ -1291,6 +1282,758 @@
     "requirements": [
       { "type": "attribute", "name": "Charm", "operator": ">=", "value": 1 }
     ],
+    "book": "Into the Bayou pg.143"
+  },
+  {
+    "name": "Low Standards",
+    "displayedReqs": "Requirement: Non-Kin",
+    "narative": "Most humans don't care too much for Gremlins; they're loud, craven, and prone to acts of suicidal stupidity and negligence. Even the Neverborn tend to consider Gremlins to be beneath their notice. This character, however, is an exception to the rule. Whether due to a shared rustic background, an appreciation for the simpler ways of life, or just a fondness for moonshine and some good banjo music, this character has befriended enough Gremlins to know just how to properly interact with them.\nThis character gains a [+] on Social Skill Challenges with Gremlins and counts as a Kin character for meeting the requirements of Talents.",
+    "description": "This character gains a [+] on Social Skill Challenges with Gremlins and counts as a Kin character for meeting the requirements of Talents.",
+    "requirements": [
+      { "type": "custom", "name": "nonkin" }
+    ],
     "book": "Into the Bayou pg.144"
+  },
+  {
+    "name": "Ooo, Glowy",
+    "displayedReqs": "Requirement: Counter-Spelling 3 or higher",
+    "narative": "Protecting others from hostile magic isn't something that most people in Malifaux give much thought to doing - it's a dangerous world out there, and giving that protection away means that their own defenses are weakened - but this character has figured out a way to turn some of that extra magical energy to her benefit.\nWhen this character uses a (1) Action to protect another character with Magical Shielding (Fated Almanac, pg. 245), the protected character also emits faint light, and her attacks ignore Armor and Hard to Wound for the duration of the Magical Protection.",
+    "description": "When this character uses a (1) Action to protect another character with Magical Shielding, the protected character also emits faint light, and her attacks ignore Armor and Hard to Wound for the duration of the Magical Protection.",
+    "requirements": [
+      { "type": "skill", "name": "Counter-Spelling", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Bayou pg.144"
+  },
+  {
+    "name": "Pickled",
+    "displayedReqs": "Requirements: Kin, Carouse 4 or higher",
+    "narative": "The toxicity of Gremlin moonshine is often higher than most actual poisons, and a lifetime of pouring moonshine down her gullet has raised this character’s blood alcohol level to the point where most poisons just don’t stand a chance.\nThis character no longer suffers damage from the Poison Condition.",
+    "description": "This character no longer suffers damage from the Poison Condition.",
+    "requirements": [
+      { "type": "custom", "name": "kin" },
+      { "type": "skill", "name": "Carouse", "operator": ">=", "value": 4 }
+    ],
+    "book": "Into the Bayou pg.144"
+  },
+  {
+    "name": "Pig Friend",
+    "displayedReqs": "Requirements: Kin, Charm -2 or lower",
+    "narative": "This character has a special bond with pigs that can only come from being ostracized and disliked by most of the non-pig things in the world.\nAt the start of her turn during Dramatic Time, if this character is within 1 yard of a friendly Pig, she heals 1 damage. Additionally, when a Pig character is determining the closest target that can be charged with its Stampede Trigger, this character is not considered to be a legal target.",
+    "description": "At the start of her turn during Dramatic Time, if this character is within 1 yard of a friendly Pig, she heals 1 damage. Also, she is not considered a legal target for Stampede Triggers from Pigs.",
+    "requirements": [
+      { "type": "custom", "name": "kin" },
+      { "type": "attribute", "name": "Charm", "operator": "<=", "value": -2 }
+    ],
+    "book": "Into the Bayou pg.145"
+  },
+  {
+    "name": "Pounce",
+    "displayedReqs": "Requirement: Speed 1 or higher",
+    "narative": "When an enemy wanders into this character’s melee range, she lashes out with sudden and deadly fury.\nWhen an enemy character ends a push or move within this character’s engagement range that is not part of a Walk or Charge Action, this character may immediately take a (1) AP Close Combat attack against the enemy character.",
+    "description": "When an enemy character ends a push or move within this character’s engagement range that is not part of a Walk or Charge Action, this character may immediately take a (1) AP Close Combat attack against the enemy character.",
+    "requirements": [
+      { "type": "attribute", "name": "Speed", "operator": ">=", "value": 1 }
+    ],
+    "book": "Into the Bayou pg.145"
+  },
+  {
+    "name": "Quit Screwin’ Around!",
+    "displayedReqs": "Requirements: Kin, Intimidate 4 ranks or higher",
+    "narative": "A few shouted threats are all it takes for this character to get everyone around her to stop showboating and just kill each other.\nThis character gains the following Tactical Action:\n\n(0) Quit Screwin’ Around: Until the start of this character’s next turn, characters within [a]6 of this character may not declare Triggers. If this character discards a card when she uses this Action, it does not affect her or her allies.",
+    "description": "Gain Tactical Action: (0) Quit Screwin’ Around: Until the start of this character’s next turn, enemies within [a]6 of this character may not declare Triggers. If this character discards a card when she uses this Action, it does not affect her or her allies.",
+    "requirements": [
+      { "type": "custom", "name": "kin" },
+      { "type": "skill", "name": "Intimidate", "operator": ">=", "value": 4 }
+    ],
+    "book": "Into the Bayou pg.145"
+  },
+  {
+    "name": "Role Model",
+    "displayedReqs": "Requirements: Kin, Teach 3 or higher",
+    "narative": "It's hard being such a great role model for the youngsters, but this character tries to live up to their expectations. After all, if she doesn't teach them the proper way to shoot a gun or skin a pig, who will?\nWhen this character takes the Assist Action to help a friendly Gremlin character, that character gains an additional [+] to their Challenge Duel. If this character discards a card when she takes the Assist Action, the friendly Gremlin may also add the suit of the discarded card to her final duel total.",
+    "description": "Assist Action on friendly Gremlin gives an additional [+]; If this character discards a card when she takes the Assist Action, the friendly Gremlin may also add the suit of the discarded card to her final duel total.",
+    "requirements": [
+      { "type": "custom", "name": "kin" },
+      { "type": "skill", "name": "Teach", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Bayou pg.145"
+  },
+  {
+    "name": "School of Hard Knocks",
+    "displayedReqs": "Requirement: Intellect -2 or lower",
+    "narative": "Even though this character isn't the sharpest knife in the drawer, she's spent some time in the world and learned the hard way that the world won't wait for her to catch up to it. She's made plenty of mistakes along the way, but she's learning, and she rarely makes the same one twice.\nAfter this character fails a Challenge involving a Skill she has no ranks in, she gains 1 rank in that Skill until the end of the session.",
+    "description": "After this character fails a Challenge involving a Skill she has no ranks in, she gains 1 rank in that Skill until the end of the session.",
+    "requirements": [
+      { "type": "attribute", "name": "Intellect", "operator": "<=", "value": -2 }
+    ],
+    "book": "Into the Bayou pg.145"
+  },
+  {
+    "name": "Skulking Around",
+    "displayedReqs": "Requirements: Kin, Speed -2 or lower",
+    "narative": "This character might not be very quick on her feet, but she makes up for that by being a sneaky little git.\nAt the end of any round of Dramatic Time, if this character was not targeted by any enemy attacks (regardless of whether or not those attacks succeeded), she may immediately move a number of yards up to her Walk Aspect.",
+    "description": "At the end of any round of Dramatic Time, if this character was not targeted by any enemy attacks, she may move up to her Walk Aspect.",
+    "requirements": [
+      { "type": "custom", "name": "kin" },
+      { "type": "attribute", "name": "Speed", "operator": "<=", "value": -2 }
+    ],
+    "book": "Into the Bayou pg.145"
+  },
+  {
+    "name": "Squeal",
+    "displayedReqs": "Requirements: Kin, Might -1 or lower",
+    "narative": "Gremlins aren't particularly well known for suffering pain with dignity and grace. In fact, it's far more likely that a wounded Gremlin will squeal like a stuck pig upon receiving even the most minor of wounds.\nThis character gains the following Defensive Trigger:\n\nDf [m] “Squeal!”: After this character is damaged by an enemy Close Combat attack, push this character 4 yards directly away from the attacker.",
+    "description": "**Df [m] “Squeal!”:** After being damaged by an enemy Close Combat attack, push this character 4 yards directly away from the attacker.",
+    "requirements": [
+      { "type": "custom", "name": "kin" },
+      { "type": "attribute", "name": "Might", "operator": "<=", "value": -1 }
+    ],
+    "book": "Into the Bayou pg.146"
+  },
+  {
+    "name": "Stalker",
+    "displayedReqs": "Requirement: Wilderness 3 or higher",
+    "narative": "Whether hunting in the Bayou or the Badlands, a skilled hunter knows that the best way to take down her prey is to isolate it from its allies before striking. That principle holds true no matter what the prey might be, whether pig, gator, or human.\nWhen attacking a target that is not within 4 yards of a character it considers to be friendly, this character deals +1 damage.",
+    "description": "Attacks against targets not within 4 yards of their allies deal +1 damage.",
+    "requirements": [
+      { "type": "skill", "name": "Wilderness", "operator": ">=", "value": 3 }
+    ],
+    "book": "Into the Bayou pg.146"
+  },
+  {
+    "name": "Versatile",
+    "displayedReqs": "Requirement: Kin",
+    "narative": "The Gremlins of the Bayou have always had a certain amount of cleverness to them. Once an idea to build or do something gets into their head, they can usually follow through on it with a certain amount of success, regardless of their lack of training, expertise, or even common sense.\nAfter this character succeeds on a Challenge involving a Skill she has no ranks in, she may draw a Twist Card.",
+    "description": "After succeeding on a Challenge with a Skill she has no ranks in, draw a Twist Card.",
+    "requirements": [
+      { "type": "custom", "name": "kin" }
+    ],
+    "book": "Into the Bayou pg.146"
+  },
+  {
+    "name": "Advice for Idiots",
+    "displayedReqs": "Requirement: Printing 3 or higher",
+    "narative": "Despite her attempts, this character cannot always be there to share her advice with others. Thanks to the modern printing press, however, those in need can still benefit from her knowledge... provided that they pick up one of her affordably priced instruction manuals, of course!\nThis character can spend an hour and 2 scrip worth of raw materials to produce an instruction manual. When she produces the manual, she chooses a Skill that she possesses with one or more Ranks. From that point on, any other character in possession of the instruction manual may consult it as a (1) AP Action. For the rest of the consulting character’s turn, they are considered to be assisted by this character when using the Skill referenced by the manual, just as if this character had used the Assist Action to help her.",
+    "description": "This character can craft manuals for 2 scrip and 1 hour. When she produces the manual, she chooses a Skill that she possesses with one or more Ranks. Other characters may consult them as a (1) AP Action to be treated as assisted by her for that Skill.",
+    "requirements": [
+      { "type": "skill", "name": "Printing", "operator": ">=", "value": 3 }
+    ],
+    "book": "Above the Law pg.141"
+  },
+  {
+    "name": "Aetheric Resonator",
+    "displayedReqs": "Requirement: Engineering 3 or higher",
+    "narative": "Though difficult to create, aetheric resonators are quite useful to the aspiring artificer. These devices draw additional energy from the aether to augment the magic that animates a construct or pneumatic limb, extending the amount of time before the enchantment must be refreshed.\nWhen this character builds a Construct or pneumatic limb, she may spend 5 scrip to add an aetheric resonator to the machine. If she does so, when the Construct is targeted with a Spell or Manifested Power using the Animate Construct Magia, or when the pneumatic limb is targeted with the Animate Limb Magia, one instance of the Increased Duration Immuto is applied to the Magia at no increase to its TN.",
+    "description": "When this character builds a Construct or pneumatic limb, she may add aetheric resonator for 5 scrip, granting free Increased Duration Immuto to it's animation via Animate Construct Magia or Animate Limb Magia.",
+    "requirements": [
+      { "type": "skill", "name": "Engineering", "operator": ">=", "value": 3 }
+    ],
+    "book": "Above the Law pg.141"
+  },
+  {
+    "name": "Badge of Office",
+    "displayedReqs": "Requirements: Resilience -2 or lower, character must be a Guild employee or have the Infiltration Talent",
+    "narative": "Whether it's luck, fate, or heavy-handed symbolism, attacks that would otherwise kill this character tend to bounce harmlessly off her Guild badge.\nOnce per session after this character suffers damage from an enemy’s attack, she may discard a card to have the attack strike her badge of office. If she does so, the damage from the attack is reduced to 1, its Triggers and other effects are negated, and it does not cause any Critical Effects to this character. This Talent cannot be used on attacks that have one or more [b] in their damage track.",
+    "description": "Once per session, this character may discard a card to reduce damage to 1 and negate any effects, triggers and Critical Effects, unless the attack have [b] damage in their damage track.",
+    "requirements": [
+      { "type": "attribute", "name": "Resilience", "operator": "<=", "value": -2 },
+      { "type": "custom", "name": "infiltration" }
+    ],
+    "book": "Above the Law pg.141"
+  },
+  {
+    "name": "Clumsy",
+    "displayedReqs": "Requirement: Grace -2 or lower",
+    "narative": "Most people can walk down the street without tripping over their own feet. This character is not one of those people.\nThis character gains the following Defensive Trigger:\n\nDf [m] Trip Over Something: If this character fails and is not Prone, she becomes Prone and the attack is considered to have missed this character unless the attacker achieved a Margin of Success.",
+    "description": "**Df [m] Trip Over Something:** If this character fails and is not **Prone**, she falls **Prone** and the attack is considered a miss unless attacker had Margin of Success.",
+    "requirements": [
+      { "type": "attribute", "name": "Grace", "operator": "<=", "value": -2 }
+    ],
+    "book": "Above the Law pg.142"
+  },
+  {
+    "name": "Covering Fire",
+    "displayedReqs": "Requirement: Chosen Skill Rank 2 or higher",
+    "narative": "While there's certainly a time and a place for precise shooting, sometimes firing a salvo of bullets to frighten one's opponents works just as well.\nChoose a Ranged Combat Skill. This character gains the following Tactical Action:\n\n(2) Covering Fire: Target an enemy within range and line of sight of a ranged weapon of the chosen type wielded by this character and expend three rounds of ammunition. If you do so, the enemy subtracts this character's ranks in the weapon’s Skill from its final duel totals until the start of this character's next turn.",
+    "description": "This character gain Tactical Action:\n\n(2) Covering Fire : Target an enemy in LoS and range of of a ranged weapon of the chosen type wielded by this character and expend three rounds of ammunition. The enemy subtracts this character's ranks in the weapon’s Skill from its final duel totals until the start of this character's next turn.",
+    "requirements": [
+      { "type": "skill", "name": "any", "operator": ">=", "value": 2, "category": ["Ranged Combat"] }
+    ],
+    "book": "Above the Law pg.142"
+  },
+  {
+    "name": "Cultured",
+    "displayedReqs": "Requirement: Chosen Skill Rank 2 or higher, Art 1 or higher",
+    "narative": "Where brains and cleverness fail, this character's refined tastes and good manners prevail.\nChoose a Social Skill. When this character makes a Challenge involving the chosen Skill, she may use her ranks in the Art Skill in place of her Mental Aspect.",
+    "description": "This character may use Art ranks instead of Mental Aspect for chosen Social Skill Challenges.",
+    "requirements": [
+      { "type": "skill", "name": "Art", "operator": ">=", "value": 1 },
+      { "type": "skill", "name": "custom", "operator": ">=", "value": 2 }
+    ],
+    "book": "Above the Law pg.142"
+  },
+  {
+    "name": "Death Marshal Apostate",
+    "displayedReqs": "Requirements: Guild Training (Death Marshals), Necromancy 2 or higher",
+    "narative": "The Death Marshals walk a fine line between righteousness and corruption, and invariably, some of them end up drawing too heavily upon necromantic magic in the pursuit of their duties.\nWhenever this character successfully removes another character from reality (whether through a Spell, Manifested Power, the Get In The Box Trigger, or other source), the target suffers 2 irreducible damage and this character heals 2 damage.\nWhen this Talent is chosen, the character may change her Magical Theory to The Whisper. If she does not already have a Magical Theory, she gains The Whisper.",
+    "description": "When removing a target from reality, deal 2 irreducible damage to them and heal 2. This character must gain The Whisper Magical Theory, or may switch to it, if she already possess one.",
+    "requirements": [
+      { "type": "custom", "name": "guild" },
+      { "type": "skill", "name": "Necromancy", "operator": ">=", "value": 2 }
+    ],
+    "book": "Above the Law pg.142"
+  },
+  {
+    "name": "Devour Magic",
+    "displayedReqs": "Requirement: Counter-Spelling 4 or higher",
+    "narative": "With a simple gesture, this character is able to siphon magical energy away from nearby spells, significantly weakening their strength.\nEnemy characters within a[3] of this character suffer a [-] on Magical Skill Challenges.",
+    "description": "Enemy characters within a[3] of this character suffer a [-] on Magical Skill Challenges.",
+    "requirements": [
+      { "type": "skill", "name": "Counter-Spelling", "operator": ">=", "value": 4 }
+    ],
+    "book": "Above the Law pg.143"
+  },
+  {
+    "name": "Everyman",
+    "displayedReqs": "Requirement: No Aspects higher than 1",
+    "narative": "This character may not be all that strong, or all that fast, or even all that smart or charming, but when pushed too far, she fights back with everything she's got.\nWhen this character's current Wounds are below 0, her attacks that deal damage deal +1 damage. If her current Wounds are below -10, this bonus increases to +2 damage.",
+    "description": "When Wounds < 0, attacks deal +1 damage. If Wounds < -10, they deal +2 damage.",
+    "requirements": [
+      { "type": "custom", "name": "no_aspect_above_1" }
+    ],
+    "book": "Above the Law pg.143"
+  },
+  {
+    "name": "Fickle Fate",
+    "displayedReqs": "Requirement: Gambling 4 or higher",
+    "narative": "Fate can be a fickle mistress, but that doesn't mean she can't be courted. While the overall benefits of this attention can be debatable, it certainly allows this character to push her luck in interesting ways.\nBefore this character flips a Fate Card from the Fate Deck, she may declare “even” or “odd.” If the value of the flipped card matches the character’s prediction, its value is increased by +1. If not, its value is decreased by -1. If the character flips a Joker card, its value is not modified.",
+    "description": "Before flipping, you may declare “even” or “odd.” If correct, +1 to value; if incorrect, -1. No effect on Jokers.",
+    "requirements": [
+      { "type": "skill", "name": "Gambling", "operator": ">=", "value": 4 }
+    ],
+    "book": "Above the Law pg.143"
+  },
+  {
+    "name": "Guild Training",
+    "displayedReqs": "Requirement: Character must be a Guild employee or have the Infiltration Talent, Bureaucracy 2 or higher",
+    "description": "This character gains a [+] on all Social Skill Challenges involving Guild personnel and an additional bonus depending upon the division that trained her:\n\n**Amalgamation Office:** Halves cost of Constructs built using Guild resources and waives fees for modifications.\n**Death Marshals:** Ignores Hard to Wound on Undead targets.\n**Department of Public Relations:** Adds successes to Ongoing Challenges to inform or learn based on Charm.\n**Elite Division:** May create a cover identity to gain a [+] to a chosen Skill.\n**Guild Guard:** [+] on Social Challenges with non-Guild while in uniform and 'on duty'.\n**Neverborn Hunters:** Immune to Black Blood damage.\n**Witch Hunters:** May draw a card after resisting enemy Spell/Manifested Power.\n\nThis Talent may be taken multiple times, each time for a different division.",
+    "requirements": [
+      { "type": "custom", "name": "infiltration" },
+      { "type": "skill", "name": "Bureaucracy", "operator": ">=", "value": 2 }
+    ],
+    "book": "Above the Law pg.143"
+  },
+  {
+    "name": "Idiot",
+    "displayedReqs": "Requirement: Intellect -2 or lower",
+    "narative": "All it takes is a few minutes of conversation for someone to decide that this character is a bit slow on the uptake. While this might make it hard to get invited to fancy dinner parties, people tend to realize that this character isn't exactly playing with a full deck and don’t really hold it against her.\nWhen this character fails a Social Skill Challenge, she generates no Margins of Failure, and unless this character was outright threatening, the character she is interacting with does not take offense to anything she might have said or realize that this character was attempting to manipulate her.",
+    "description": "No Margins of Failure on failed Social Challenges; others don't take offense unless you was threatening.",
+    "requirements": [
+      { "type": "attribute", "name": "Intellect", "operator": "<=", "value": -2 }
+    ],
+    "book": "Above the Law pg.144"
+  },
+  {
+    "name": "Implacable",
+    "displayedReqs": "Requirement: Centering 2 or higher",
+    "narative": "This character is particularly resistant to fear.\nThis character may add her ranks in the Centering Skill to the final total of any Horror Duel she makes.",
+    "description": "Add Centering ranks to final total of any Horror Duel.",
+    "requirements": [
+      { "type": "skill", "name": "Centering", "operator": ">=", "value": 2 }
+    ],
+    "book": "Above the Law pg.144"
+  },
+  {
+    "name": "Instinctive Grip",
+    "displayedReqs": "Requirement: Thrown Weapons 2 or higher",
+    "narative": "This character doesn't fumble over weapons that she intends to throw. Her fingers just naturally seem to find the best way to hold the weapon.\nThis character may treat the (1) Ready Weapon Action as if it were a (0) Action when drawing a Thrown Weapon, and she may draw two Thrown Weapons instead of one.",
+    "description": "Ready Weapon becomes (0) AP for Thrown Weapons; may draw 2 instead of 1.",
+    "requirements": [
+      { "type": "skill", "name": "Thrown Weapons", "operator": ">=", "value": 2 }
+    ],
+    "book": "Above the Law pg.144"
+  },
+  {
+    "name": "I’ve Got Your Back",
+    "displayedReqs": "Requirement: Cunning -2 or lower",
+    "narative": "This character isn’t particularly prone to manipulation or guile. When it comes to her friends and partners, she assumes that they will have her back through thick and thin, and that belief (however misguided it may be) drives her to do the same.\nAt the start of this character’s turn during Dramatic Time, she may nominate another friendly character within 1 yard. Until the start of this character’s next turn, the nominated character gains Armor +1 (without any reduction to their Defense) whenever they are within 1 yard of this character.",
+    "description": "At start of turn, you may grant Armor +1 to nearby friendly character within 1 yard until the start of your next turn. This Armor doesn't reduce Df and stays while target withinn 1 yard of you.",
+    "requirements": [
+      { "type": "attribute", "name": "Cunning", "operator": "<=", "value": -2 }
+    ],
+    "book": "Above the Law pg.144"
+  },
+  {
+    "name": "Lackadaisical",
+    "displayedReqs": "Requirement: Speed -2 or lower or Sloth Vice",
+    "narative": "This character tends to do things according to her own schedule. Whether lethargic, listless, or just plain lazy, this character still manages to get things done... eventually, at least.\nWhen this character takes the Wait Action, the AP cost is equal to the AP cost of the named Action (instead of the AP cost of the named Action +1).",
+    "description": "Wait Action costs the same AP as the named Action, not +1.",
+    "requirements": [
+      { "type": "custom", "name": "sloth" },
+      { "type": "attribute", "name": "Speed", "operator": "<=", "value": -2 }
+    ],
+    "book": "Above the Law pg.144"
+  },
+  {
+    "name": "On My Mark",
+    "displayedReqs": "Requirement: Leadership 3 or higher",
+    "description": "When this character uses the Wait Action, she may name the Order Action as the Action she is waiting to perform.\nWhen the Wait Action resolves, her Order Action takes effect and one of her subordinate characters may immediately take its turn. The subordinate character’s turn interrupts the named action before any duels (if any) take place. The subordinate character may still only receive one turn per round (unless it has Reactivate).",
+    "requirements": [
+      { "type": "skill", "name": "Leadership", "operator": ">=", "value": 3 }
+    ],
+    "book": "Above the Law pg.145"
+  },
+  {
+    "name": "Partial Reload",
+    "displayedReqs": "Requirement: Speed 2 or higher",
+    "narative": "When this character takes the Reload action with a weapon with a Capacity of 4 or greater, she may discard a card to take the Reload action as a (0) Action. If she does so, the weapon gains an amount of ammunition based upon the value of the discarded card: 1–5 gives the weapon 1 round of ammunition, 6–10 gives it 2 rounds, and 11+ gives it 3 rounds.",
+    "description": "Reload with Capacity 4+ can be a (0) Action by discarding a card; Discarded 1-5 gives weapon 1 round, 6-10 - 2, 11+ - 3.",
+    "requirements": [
+      { "type": "attribute", "name": "Speed", "operator": ">=", "value": 2 }
+    ],
+    "book": "Above the Law pg.145"
+  },
+  {
+    "name": "Patient",
+    "displayedReqs": "Requirement: Centering 2 or higher",
+    "narative": "When this character takes the Wait Action, if the named Action does not occur before the start of this character’s next turn, she becomes Fast at the start of that turn.",
+    "description": "If Wait Action doesn't trigger, character becomes Fast at start of next turn.",
+    "requirements": [
+      { "type": "skill", "name": "Centering", "operator": ">=", "value": 2 }
+    ],
+    "book": "Above the Law pg.145"
+  },
+  {
+    "name": "Permanent Enchantment",
+    "displayedReqs": "Requirement: Enchant Item Talent",
+    "narative": "When this character uses the Enchant Item Talent to infuse magical energies into an item, she may choose to make the enchantment permanent. If she does so, the energies of the stored Spell do not dissipate when it is discharged; the enchanted item can be used over and over again without diminishing the magic stored inside it.\nThe character may only make a single enchantment permanent in this way, and the stored Spell counts against her maximum number of stored Spells for as long as the enchanted item exists.\nThis Talent may be chosen multiple times. Each time, the character may permanently enchant one additional item.",
+    "description": "May make one enchanted item permanent. Can take multiple times for more items.",
+    "requirements": [
+      { "type": "custom", "name": "enchanter" }
+    ],
+    "book": "Above the Law pg.145"
+  },
+  {
+    "name": "Personal Soulstone",
+    "displayedReqs": "Requirements: Guild Training (any Division), character must be a Guild employee or have the Infiltration Talent",
+    "narative": "This character gains a Soulstone of Lade 3 (Size 2 and Quality 1). If she loses or sells this Soulstone, it is not replaced (and the Guild will certainly have a few questions for her, if its agents find out).\nThis Talent may be chosen multiple times. Each time, the character gains another Soulstone.",
+    "description": "Grants a Soulstone of Lade 3. Can be taken multiple times for more Soulstones.",
+    "requirements": [
+      { "type": "custom", "name": "guild" },
+      { "type": "custom", "name": "infiltration" }
+    ],
+    "book": "Above the Law pg.145"
+  },
+  {
+    "name": "Prejudice",
+    "displayedReqs": "Requirement: Charm -2 or lower",
+    "narative": "For whatever reason, this character develops grudges very easily, often making up her mind about a person’s flaws and inadequacies from the first moment they meet.\nAt the start of Dramatic Time, this character may choose an enemy character and discard a card. If she does so, she gains [+] to all flips against the enemy character until the end of Dramatic Time.\nIf this character attempts to use a Social Skill other than Intimidate to influence the enemy character’s behavior at any point (even after Dramatic Time has finished), she gains no benefit from this Talent and instead suffers a [-] to her flip.",
+    "description": "Discard a card at start of Dramatic Time to gain [+] against one enemy until the end of Dramatic Time; if you use non-Intimidate Social Skills on them, gain [-] instead.",
+    "requirements": [
+      { "type": "attribute", "name": "Charm", "operator": "<=", "value": -2 }
+    ],
+    "book": "Above the Law pg.146"
+  },
+  {
+    "name": "Quick to Act",
+    "displayedReqs": "Requirement: Athletics 1 or higher",
+    "narative": "Rigorous training has turned this character’s body into a finely tuned machine. She’s in great shape, and all of that training has considerably improved her reaction time.\nThis character adds her ranks in Athletics to the final duel total of her Initiative flips.",
+    "description": "Add Athletics ranks to final total of Initiative flips.",
+    "requirements": [
+      { "type": "skill", "name": "Athletics", "operator": ">=", "value": 1 }
+    ],
+    "book": "Above the Law pg.145"
+  },
+  {
+    "name": "Self-Preservation",
+    "displayedReqs": "Requirement: Might -2 or lower",
+    "narative": "A lifetime of having to deal with bullies and enemies much stronger than herself has taught this character the value of fighting defensively. Even when fully on guard, she's always keeping an eye out for cover and making a dash for safety when the coast seems clear.\nWhen this character takes the Defensive Stance Action, she may move up to two yards in any direction.",
+    "description": "When taking Defensive Stance, you may move up to 2 yards in any direction.",
+    "requirements": [
+      { "type": "attribute", "name": "Might", "operator": "<=", "value": -2 }
+    ],
+    "book": "Above the Law pg.145"
+  },
+  {
+    "name": "Side Arm",
+    "displayedReqs": "Requirement: Speed 3 or higher",
+    "narative": "The Guild emphasizes a \"combined arms\" approach to combat: its combat personnel, including the entirety of the Guild Guard, are required to carry both a melee weapon and a firearm while on duty. The quickest of these soldiers are capable of firing off pistol shots while engaged with other business, such as ordering troops, securing a barricade, or hacking their enemies apart with an axe. This character has chosen to emulate the impressive skill of these soldiers and can fire off accurate shots at a moment's notice.\nOn her turn, if this character has not made a Pistol attack that turn, she may make an attack with a readied Pistol as a (0) AP Action. This character may not make any further Pistol attacks on her turn.",
+    "description": "You may make one Pistol attack as (0) AP if none used that turn; no further Pistol attacks allowed that turn.",
+    "requirements": [
+      { "type": "attribute", "name": "Speed", "operator": ">=", "value": 3 }
+    ],
+    "book": "Above the Law pg.146"
+  },
+  {
+    "name": "Soulstone Healer",
+    "displayedReqs": "Requirement: None",
+    "narative": "This character is particularly adept at channeling the magical energy contained in a Soulstone.\nWhen this character uses the Absorb Soul property of a Soulstone to heal herself or another character, the target heals 3/4/5 damage and removes a lasting Critical Effect.",
+    "description": "Absorbing Soulstone heals 3/4/5 damage and removes a lasting Critical Effect.",
+    "requirements": [],
+    "book": "Above the Law pg.146"
+  },
+  {
+    "name": "Steady Advance",
+    "displayedReqs": "Requirement: Leadership 4 or higher",
+    "narative": "In combat, momentum is everything. With a few quick shouts, this character can reorganize her troops into a new formation without having to explain the greater plan to them. Like extensions of her own body, her troops fall into place as expected, allowing their commander to focus upon more important tasks.\nAt the end of this character’s turn, any of her unengaged subordinate characters that did not receive a (1) Order Action may move a number of yards equal to half their Walk Aspect.",
+    "description": "At end of your turn, your unengaged subordinates without Order Action may move half Walk.",
+    "requirements": [
+      { "type": "skill", "name": "Leadership", "operator": ">=", "value": 4 }
+    ],
+    "book": "Above the Law pg.146"
+  },
+  {
+    "name": "Study Opponent",
+    "displayedReqs": "Requirement: Scrutiny 3 or higher",
+    "narative": "This character knows that an enemy is only as strong as their weakest point. She's always scanning her opponents for weakness and searching for the best avenue of attack.\nWhen this character declares an attack against an opponent, she may discard a card. If she does so, each time she makes an attack against that opponent, she may choose whether the opponent resists the attack with Defense or Willpower. This bonus lasts until the end of Dramatic Time.",
+    "description": "When this character declares an attack against an opponent, she may discard a card. If she does so, each time she makes an attack against that opponent, she may choose whether the opponent resists the attack with Defense or Willpower. This bonus lasts until the end of Dramatic Time.",
+    "requirements": [
+      { "type": "skill", "name": "Scrutiny", "operator": ">=", "value": 3 }
+    ],
+    "book": "Above the Law pg.146"
+  },
+  {
+    "name": "Subtle Magic",
+    "displayedReqs": "Requirement: Tenacity -1 or lower",
+    "narative": "Magic often rewards those with strong personalities and iron determination. While this character is, unfortunately, not one of those people, she is quite familiar with self-doubt, cowardice, indolence, and timidity. By tailoring her spells to exploit those weaknesses, she can often catch her opponents off-guard by attacking their minds and bodies in unexpected ways.\nAfter this character successfully casts a Spell or Manifested Power that uses the Tenacity Aspect, she generates a number of additional Margins of Success equal to her negative Tenacity Aspect (i.e., one Margin of Success at Tenacity -1, two Margins of Success at Tenacity -2, and so on).",
+    "description": "After this character successfully casts a Spell or Manifested Power that uses the Tenacity Aspect, she generates a number of additional Margins of Success equal to her negative Tenacity Aspect (i.e., one Margin of Success at Tenacity -1, two Margins of Success at Tenacity -2, and so on).",
+    "requirements": [
+      { "type": "attribute", "name": "Tenacity", "operator": "<=", "value": -1 }
+    ],
+    "book": "Above the Law pg.146"
+  },
+  {
+    "name": "Unrelenting",
+    "displayedReqs": "Requirement: Tenacity 2 or higher",
+    "narative": "No matter the injury or pain, this character does not abandon a mission… or a fight.\nAt the start of this character’s turn during Dramatic Time, if she is not Slow or Paralyzed, she may choose to become Slow. If she does so, she heals 1 damage.",
+    "description": "At start of turn, if you not Slow or Paralyzed, you may become Slow to heal 1 damage.",
+    "requirements": [
+      { "type": "attribute", "name": "Tenacity", "operator": ">=", "value": 2 }
+    ],
+    "book": "Above the Law pg.147"
+  },
+  {
+    "name": "Craft Grimoire",
+    "displayedReqs": "Requirement: One Magical Skill 4 or higher",
+    "narative": "Malifaux is a place filled with magic. For those with a voracious appetite for study, creation, and learning the arcane, there is no limit to how much knowledge a single person can acquire… so long as they understand the costs and risks associated with undertaking such a task.\nThis character begins to craft her own unique Grimoire, which may take whatever form she wishes. The first time this Talent is taken, add one Magia of the appropriate Magical Skill requirement this character has to the Grimoire. This must be a Magia she has previously encountered or has otherwise spent the time learning how to produce herself. Each additional time this General Talent is chosen, this character can add one additional Magia and any one Immuto to the Grimoire.\nOnly she may attune to this Grimoire; it is useless if any other character tries to utilize it. Finally, this Grimoire is special in that the Fated character that creates it can remain attuned to both it and one additional Grimoire; she is able to cast Magia and Immuto from both.",
+    "description": "The first time this Talent is taken, add one Magia of the appropriate Magical Skill requirement this character has to the Grimoire. This must be a Magia she has previously encountered or has otherwise spent the time learning how to produce herself. Each additional time this General Talent is chosen, this character can add one additional Magia and any one Immuto to the Grimoire.\nOnly she may attune to this Grimoire; it is useless if any other character tries to utilize it. Finally, this Grimoire is special in that the Fated character that creates it can remain attuned to both it and one additional Grimoire; she is able to cast Magia and Immuto from both.",
+    "requirements": [
+      { "type": "skill", "name": "Magical", "operator": ">=", "value": 4 }
+    ],
+    "book": "From the Nightmares pg.129"
+  },
+  {
+    "name": "Soulstone Efficiency",
+    "displayedReqs": "Requirement: Fated",
+    "narative": "Soulstones are strange and mysterious things. This character has learned how to divide up the energy within to maximize the benefits received from a Soulstone.\nWhen expending a Charge from a Soulstone, this character may select two of the benefits from using a Soulstone rather than just one.",
+    "description": "You may select two benefits instead of one when using a Soulstone Charge.",
+    "requirements": [
+      { "type": "custom", "name": "fated" }
+    ],
+    "book": "From the Nightmares pg.129"
+  },
+  {
+    "name": "Neverborn Anthropology",
+    "displayedReqs": "Requirement: History 4",
+    "narative": "Human historians have spent decades trying to decipher the complex and esoteric Neverborn language. Its harsh runic script is difficult to translate even for the most seasoned anthropologist, but long hours of consulting assembled tomes and academic texts (or undergoing tutelage from a Neverborn elder) have left this character with the knowledge necessary to interpret what the eldest Nephilim wrote long ago.\nThis character can read and decipher the ancient Neverborn language and its runic text; while its meaning might be slightly unclear (even to native Neverborn), the general concept and intention of the words is understandable. She is also able to (very roughly) communicate with the Neverborn in their native tongue.",
+    "description": "Can decipher ancient Neverborn runes and roughly communicate in their language.",
+    "requirements": [
+      { "type": "skill", "name": "History", "operator": ">=", "value": 4 }
+    ],
+    "book": "From the Nightmares pg.129"
+  },
+  {
+    "name": "Fortunate Familiarity",
+    "displayedReqs": "Requirement: Charm 2 or higher",
+    "narative": "Some situations always seem familiar, and this character has figured out when to identify, and take advantage of, those little chances at luck.\nDeclare a number 1-13 when this character takes this Talent. Any time she includes a card with that value in her acting duel total, she may add a single suit of her choice to that duel.",
+    "description": "Declare a number 1-13 when this character takes this Talent. Any time she includes a card with that value in her acting duel total, she may add a single suit of her choice to that duel.",
+    "requirements": [
+      { "type": "attribute", "name": "Charm", "operator": ">=", "value": 2 }
+    ],
+    "book": "From the Nightmares pg.129"
+  },
+  {
+    "name": "Cursed Existence",
+    "displayedReqs": "Requirement: Two Aspects -3 or less",
+    "narative": "This character’s very life seems cursed. Wherever she goes, bad luck seems to follow. Fortunately, this character has learned to rely on this ideology of “things can always be worse” and has gotten quite good at preparing for the most terrible outcome.\nIf this character would ever have any of her Aspects or Derived Aspects’ values reduced (aside from Wounds), she may choose to not lower those values.",
+    "description": "If this character would ever have any of her Aspects or Derived Aspects’ values reduced (aside from Wounds), she may choose to not lower those values.",
+    "requirements": [
+      { "type": "attribute", "name": "Any", "operator": "<=", "value": -3, "count": 2 }
+    ],
+    "book": "From the Nightmares pg.129"
+  },
+  {
+    "name": "Sacrificial Pawn",
+    "displayedReqs": "Requirement: Charm -3 or less, 3+ Gifts of Darkness",
+    "narative": "This character’s very body is an arcane vessel that provides shamans and mages with the power they need to fuel their spells. The pain she suffers is part of life; she was born for that station, and so shall fulfill it whenever asked.\nWhen this character suffers damage, she can count as suffering one additional point of damage for resolving any Triggers, effects, or similar actions. She does not actually suffer this additional point of damage (i.e. a character suffering 2 damage could count as suffering 3 damage, but would still only suffer 2 damage).",
+    "description": "When this character suffers damage, she can count as suffering one additional point of damage for resolving any Triggers, effects, or similar actions. She does not actually suffer this additional point of damage (i.e. a character suffering 2 damage could count as suffering 3 damage, but would still only suffer 2 damage).",
+    "requirements": [
+      { "type": "attribute", "name": "Charm", "operator": "<=", "value": -3 },
+      { "type": "custom", "name": "darkness_3plus" }
+    ],
+    "book": "From the Nightmares pg.129"
+  },
+  {
+    "name": "A Spot of Sunshine",
+    "displayedReqs": "Requirement: Charm 2 or higher, Tenacity -2 or lower",
+    "narative": "This character is surprisingly cheerful, and her enthusiasm tends to spread towards everything she does.\nThis character gains [+] to all non-Magical Skill Challenges or duels with the Charm Associated Aspect.",
+    "description": "Gain [+] to non-Magical Skill Challenges or duels with Charm Associated Aspect.",
+    "requirements": [
+      { "type": "attribute", "name": "Charm", "operator": ">=", "value": 2 },
+      { "type": "attribute", "name": "Tenacity", "operator": "<=", "value": -2 }
+    ],
+    "book": "From the Nightmares pg.130"
+  },
+  {
+    "name": "Aetheric Calibrator",
+    "displayedReqs": "Requirement: Construct Characteristic",
+    "narative": "Constructs rarely use magic as a weapon or for defensive purposes, but that has started to change in recent years.\nWhen this character is targeted by a Spell or Manifested Power, it may discard any number of cards from its hand. The attacker suffers 1/2/3 damage based on the value of each discarded card. Then, this character can draw 1 card for each value or suit its discarded cards matched with the attacking character’s final acting value.",
+    "description": "When this character is targeted by a Spell or Manifested Power, it may discard any number of cards from its hand. The attacker suffers 1/2/3 damage based on the value of each discarded card. Then, this character can draw 1 card for each value or suit its discarded cards matched with the attacking character’s final acting value.",
+    "requirements": [
+      { "type": "custom", "name": "construct" }
+    ],
+    "book": "From the Nightmares pg.130"
+  },
+  {
+    "name": "Plead Insanity",
+    "displayedReqs": "Requirement: Must have had the Crazy +4 or greater Condition",
+    "narative": "Madness can be a surprising defense against the horrors of everyday life. There’s a cost, of course, but this character’s head is filled with enough craziness to foot that bill.\nThis character may discard two cards to gain Armor equal to half of her current Crazy Condition, rounded up, for one round. At the start of her next turn, she gains Crazy +1.",
+    "description": "This character may discard two cards to gain Armor equal to half of her current Crazy Condition, rounded up, for one round. At the start of her next turn, she gains Crazy +1.",
+    "requirements": [
+      { "type": "custom", "name": "crazy" }
+    ],
+    "book": "From the Nightmares pg.130"
+  },
+  {
+    "name": "Vascular Studies",
+    "displayedReqs": "Requirement: None",
+    "narative": "Whether educated in the field of medicine or simply driven by morbid curiosity, this character knows where to best strike a vein or artery… and how best to patch them back up.\nThe TN of the Use Doctor Action against any injury this character causes is increased by +2. If this character takes the Use Doctor Action, the TN is reduced by -1.",
+    "description": "The TN of the Use Doctor Action against any injury this character causes is increased by +2. If this character takes the Use Doctor Action, the TN is reduced by -1.",
+    "requirements": [],
+    "book": "From the Nightmares pg.130"
+  },
+  {
+    "name": "Hatred of the Dead",
+    "displayedReqs": "Requirement: None",
+    "narative": "The Neverborn have a deep hatred for those who are undead and redouble their efforts to see every walking corpse torn apart and returned to final rest.\nWhen resolving an attack against a character with the Undead Characteristic, this character may discard a card to increase the damage she deals on an attack by exactly one degree (Weak to Moderate to Severe). The damage cannot be increased beyond Severe.",
+    "description": "When resolving an attack against a character with the Undead Characteristic, this character may discard a card to increase the damage she deals on an attack by exactly one degree (Weak to Moderate to Severe). The damage cannot be increased beyond Severe.",
+    "requirements": [],
+    "book": "From the Nightmares pg.130"
+  },
+  {
+    "name": "Rend Steel",
+    "displayedReqs": "Requirement: Might 4 or higher",
+    "narative": "The constructs and worked metals of mankind are no match for this character’s strength.\nThis character gains the following Trigger on all non-Flexible Close Combat attacks:\n\n[r] Rending: After causing a Moderate or Severe Critical Effect, this character may elect to destroy one piece of Armor the target is wearing instead of resolving the Critical Effect. If this would not be possible (such as when targeting a Construct), the target instead permanently lowers its Armor by +1 until it can be repaired.",
+    "description": "This character gains the following Trigger on all non-Flexible Close Combat attacks:\n\n[r] Rending: After causing a Moderate or Severe Critical Effect, this character may elect to destroy one piece of Armor the target is wearing instead of resolving the Critical Effect. If this would not be possible (such as when targeting a Construct), the target instead permanently lowers its Armor by +1 until it can be repaired.",
+    "requirements": [
+      { "type": "attribute", "name": "Might", "operator": ">=", "value": 4 }
+    ],
+    "book": "From the Nightmares pg.130"
+  },
+  {
+    "name": "Running and Screaming",
+    "displayedReqs": "Requirement: At least one Mental Aspect -1 or less",
+    "narative": "Sometimes the best reaction to seeing something frightening is to turn and run as fast as possible. Flailing and shouting is optional.\nAfter this character resolves the effects from a failed Horror Duel, she can choose to immediately Push her Walk value in yards directly away from the character that caused the Horror Duel.",
+    "description": "After this character resolves the effects from a failed Horror Duel, she can choose to immediately Push her Walk value in yards directly away from the character that caused the Horror Duel.",
+    "requirements": [
+      { "type": "attribute", "name": "Mental", "operator": "<=", "value": -1 }
+    ],
+    "book": "From the Nightmares pg.130"
+  },
+  {
+    "name": "Nocturnal",
+    "displayedReqs": "Requirement: None",
+    "narative": "When the lights of Malifaux City wink out, there are those who take this time to stretch their legs and begin their day.\nWhen in a dark environment or during nighttime (normally 9pm–6am), this character gains +1 to all non-Ranged Combat or Close Combat Skill Challenges she takes.",
+    "description": "When in a dark environment or during nighttime (normally 9pm–6am), this character gains +1 to all non-Ranged Combat or Close Combat Skill Challenges she takes.",
+    "requirements": [],
+    "book": "From the Nightmares pg.130"
+  },
+  {
+    "name": "Deeper Connection",
+    "displayedReqs": "Requirement: Magical Skill 1 or higher, 2 or more completed Destiny Steps",
+    "narative": "Once every generation, someone might be born with a slightly stronger connection to the aether. Their soul collects tiny fragments of magic over a long period of time. Mages can call this energy forth to empower their spells like others would use a Soulstone.\nOnce every week, this character can utilize one of the benefits of expending a charge from a Soulstone, resolving its effects as though she had used a normal Soulstone. This can be used in conjunction with normal Soulstones but cannot be recharged in any fashion other than waiting 7 days.",
+    "description": "Once every week, this character can utilize one of the benefits of expending a charge from a Soulstone, resolving its effects as though she had used a normal Soulstone. This can be used in conjunction with normal Soulstones but cannot be recharged in any fashion other than waiting 7 days.",
+    "requirements": [
+      { "type": "skill", "name": "Magical", "operator": ">=", "value": 1 },
+      { "type": "custom", "name": "destiny_2plus" }
+    ],
+    "book": "From the Nightmares pg.131"
+  },
+  {
+    "name": "Identify Magic",
+    "displayedReqs": "Requirement: Magical Skill 3 or higher",
+    "narative": "To this character, necromancy is slimy, cold, and bitter; prestidigitation is foggy, airy, and smooth; sorcery is colorful, violent, and energetic; enchanting is isolated, constant, and clean. These feelings register whenever a particularly strong source of magic happens by.\nThis character is automatically aware of all currently active magical effects that she comes within 2 yards of; while she may not know exactly what the spell does, this character can roughly ascertain its effects. Additionally, she knows all special effects and Magia a Grimoire might have, and does not need to attune to the Grimoire to know these qualities.",
+    "description": "This character is automatically aware of all currently active magical effects that she comes within 2 yards of; while she may not know exactly what the spell does, this character can roughly ascertain its effects. Additionally, she knows all special effects and Magia a Grimoire might have, and does not need to attune to the Grimoire to know these qualities.",
+    "requirements": [
+      { "type": "skill", "name": "Magical", "operator": ">=", "value": 3 }
+    ],
+    "book": "From the Nightmares pg.131"
+  },
+    // ВСЕ что выше - переделеать
+  {
+    "name": "Grounded",
+    "displayedReqs": "Requirement: Mental Aspect 4 or higher",
+    "narative": "The nights in Malifaux are filled with terrors, but this character has learned to stand firm and face whatever dwells within.",
+    "description": "Once per day, during Dramatic Time, this character may declare she is resisting the mental tricks of the Neverborn. She must select a character with the Nightmare or Woe trait that is currently taking their turn. For the remainder of that activation, she ignores the Terrifying Talent from the chosen Neverborn, and counts their Rank Value as 1 when targeting this character with any action that is resisted by Willpower.",
+    "requirements": [
+      { "type": "attribute", "name": "Mental", "operator": ">=", "value": 4 }
+    ],
+    "book": "From the Nightmares pg.131"
+  },
+  {
+    "name": "Murder Methodology",
+    "displayedReqs": "Requirement: Physical Aspect 2 or higher",
+    "narative": "Most Neverborn consider murder to be something of an art form. Ensuring one attacks quickly and efficiently is crucial to making it out of a fight alive.",
+    "description": "If this character deals a Critical Effect that affects a specific body part, she may flip a second card from the Fate Deck and choose where the attack lands based on either of the flipped suits. If the same suit is flipped on the second card, this character can choose where her attack lands.",
+    "requirements": [
+      { "type": "attribute", "name": "Physical", "operator": ">=", "value": 2 }
+    ],
+    "book": "From the Nightmares pg.131"
+  },
+  {
+    "name": "Scaredy-Cat",
+    "displayedReqs": "Requirement: Tenacity -2 or lower",
+    "narative": "Cowering isn’t always the worst option, as it makes this character less of an immediate threat. At least, that’s what she tells herself.",
+    "description": "If this character fails a Horror Duel, she immediately gains Defensive +1.",
+    "requirements": [
+      { "type": "attribute", "name": "Tenacity", "operator": "<=", "value": -2 }
+    ],
+    "book": "From the Nightmares pg.131"
+  },
+  {
+    "name": "Black Blood Scars",
+    "displayedReqs": "Requirement: Survived a Nephilim attack at negative Wounds",
+    "narative": "It is rare to survive a Nephilim attack. Those that do keep the scars forever. Pain, whether mental or physical, helps this character focus her attacks so each one deals as much damage to Malifaux’s denizens as possible.",
+    "description": "This character reduces the TN of all Willpower and Horror Duels Nephilim characters inflict by 1. She also gains the Critical Strike Trigger on all Ranged Combat and Close Combat attacks made against Nephilim characters. If she already has the Critical Strike Trigger, this character adds [r] to those final duel totals instead.",
+    "requirements": [
+      { "type": "custom", "name": "black_blood" }
+    ],
+    "book": "From the Nightmares pg.131"
+  },
+  {
+    "name": "Necromantic Tithe",
+    "displayedReqs": "Requirement: Necromancy 3 or higher",
+    "narative": "Sometimes this character just needs to snuff out the final spark of unlife to top off her own necromantic chalice.",
+    "description": "This character may destroy one friendly subordinate Undead character as a (0) Action to gain Fast.",
+    "requirements": [
+      { "type": "skill", "name": "Necromancy", "operator": ">=", "value": 3 }
+    ],
+    "book": "From the Nightmares pg.131"
+  },
+  {
+    "name": "Sleepless Elite",
+    "displayedReqs": "Requirement: Living Characteristic, Tenacity 2 or higher",
+    "narative": "A small sect of the population can function perfectly well on very little rest. Called the “sleepless elite”, they burn the midnight oil and rise with the dawn to get more waking hours in their day.",
+    "description": "This character only requires half the normal amount of sleep, about 3 hours, to avoid becoming fatigued and gaining the Dazed Condition. If she would ever gain the Dazed Condition, she may take a TN 14 Centering Challenge. On a success, she does not gain Dazed.",
+    "requirements": [
+      { "type": "custom", "name": "living" },
+      { "type": "attribute", "name": "Tenacity", "operator": ">=", "value": 2 }
+    ],
+    "book": "From Shadows pg.115"
+  },
+  {
+    "name": "Coded Speech",
+    "displayedReqs": "Requirement: Literacy 2 or higher",
+    "narative": "The Ten Thunders use many different methods to conceal their communications with one another. A favored tactic is using flowery and confusing language to hide true meaning. By establishing code words, grammatical rules, and associating different nouns with new names or ideas, anyone can have a conversation without anyone else knowing what they’re saying.",
+    "description": "This character creates a special coded language, which only she can understand. This might include hand movements, unique phrases, metaphors, and other confusing elements of speech. Regardless of how it functions, nobody else will be able to understand this character without first passing a TN 16 Literacy Challenge after observing her communicate in this code for at least a cumulative hour of time.\nWhen taking this Talent, a character may select another character she knows with Literacy 2 or higher. Both characters can communicate fluently in the code. Other characters taking this Talent can select a preexisting code they have been introduced to; if they do so, they are treated as understanding it as well.",
+    "requirements": [
+      { "type": "skill", "name": "Literacy", "operator": ">=", "value": 2 }
+    ],
+    "book": "From Shadows pg.115"
+  },
+  {
+    "name": "Soul Vessel",
+    "displayedReqs": "Requirement: Construct Characteristic, 1 or more completed Destiny Steps",
+    "narative": "It has long been theorized that the Soulstones used to power constructs can leave imprints of the soul’s personality on the machine. The Ten Thunders have taken this a step further. They bless mechanical bodies and prepare them to be vessels for spirits pulled back from the aether. This process gives the construct the ability to store additional souls within its body, and use them to increase its own power.",
+    "description": "This character is able to act like a reservoir for souls, whether through alterations to her metallic body or enchantments placed upon her through ceremonies. She is always treated as having a Soulstone; because it is simply a web of magical connections, this is not an actual Soulstone, and so cannot be removed, stolen, or otherwise lost. It must still contain a charge to use any Soulstone effects. Each completed Destiny Step after the first increases the number of charges her “Soulstone” can carry by +1, to a maximum of 3.\nIf a Living character dies within [a]8 of this character, she may immediately choose to charge her own “Soulstone” instead of allowing someone closer to do it. If multiple characters have this Talent, the one with the lowest number of charges has priority when recharging the “Soulstone”. If tied for equal Charges, characters should take an Opposed Tenacity Duel to determine who receives the Charge.",
+    "requirements": [
+      { "type": "custom", "name": "construct" },
+      { "type": "custom", "name": "destiny_1plus" }
+    ],
+    "book": "From Shadows pg.115"
+  },
+  {
+    "name": "Speed is Safety",
+    "displayedReqs": "Requirement: Evade 4 or higher",
+    "narative": "This character is capable of moving at impossible speed... Hitting such a fast-moving target is difficult at the best of times, but this character avoids strikes with the ease of someone playing a novel game of tag.",
+    "description": "When being targeted by a character whose Initiative is at least 4 lower than hers, this character gains Defense +1 until the end of the acting character’s turn.\nA character loses all benefits from this Talent if her Armor value is +2 or higher.",
+    "requirements": [
+      { "type": "skill", "name": "Evade", "operator": ">=", "value": 4 }
+    ],
+    "book": "From Shadows pg.115"
+  },
+  {
+    "name": "Cultural Crafting",
+    "displayedReqs": "Requirement: Crafting 2 or higher",
+    "narative": "Goods and unique items from other cultures are often imitated and sold Earthside and across Malifaux. Nobody can make them exactly like those taught by a mentor bearing wisdom passed down through the ages. This knowledge also gives greater insight; a difficult process or step in the crafting process might be second nature to someone who grew up around it.",
+    "description": "When using a Crafting Skill to make objects from her native homeland or culture (like cuisine, medicine, weapons, art, clothing, etc.), this character considers her Skill rank to be 2 greater than its actual value.",
+    "requirements": [
+      { "type": "skill", "name": "Crafting", "operator": ">=", "value": 2 }
+    ],
+    "book": "From Shadows pg.115"
+  },
+  {
+    "name": "Backup Plan",
+    "displayedReqs": "Requirement: Intellect -1",
+    "narative": "Randomness and unpredictability are in every facet of life. Adjusting plans around known information and identifying points of uncertainty help things continue to go as smoothly as possible… but some people just wing it.",
+    "description": "When taking the Wait Action, this character may name 2 events instead of 1. When either of the named events occurs, she may resolve Wait as normal.",
+    "requirements": [
+      { "type": "attribute", "name": "Intellect", "operator": "<=", "value": -1 }
+    ],
+    "book": "From Shadows pg.116"
+  },
+  {
+    "name": "Same Mistake Twice",
+    "displayedReqs": "Requirement: Charm -2 or Tenacity -2",
+    "narative": "This character’s life hasn’t been forgiving of mistakes. She learns quickly in new situations, adjusting her process to avoid making disastrous errors… or at least make her slip-ups as minor as possible.",
+    "description": "This character can only generate a maximum of 1 Margin of Failure for each Skill she uses during an Ongoing Challenge. If a failed Skill Challenge would generate additional Margins of Failure, they are ignored. Note that if the character uses two different Skills (like Barter and Bewitch), both can each generate 1 Margin of Failure during the Ongoing Challenge.",
+    "requirements": [
+      { "type": "attribute", "name": "Charm", "operator": "<=", "value": -2 },
+      { "type": "attribute", "name": "Tenacity", "operator": "<=", "value": -2, "orGroup": true }
+    ],
+    "book": "From Shadows pg.116"
+  },
+  {
+    "name": "Teachings of Worlds Beyond",
+    "displayedReqs": "Requirement: Have met with a Shinto priest, Oni hunter, or other organization (like the Red Library) with knowledge about how to best exploit these spirits and their weaknesses.",
+    "narative": "The Shinto temples and shrines of Japan hold ancient secrets about the mysterious oni. Though established for the protection and reverence of natural spirits, the kami, the Shinto priesthood also serves as a barrier between the Beyond and other worlds. Their teachings are key to learning how to bind the oni and halt their rampages.",
+    "requirements": [
+      { "type": "custom", "name": "beyond" }
+    ],
+    "book": "From Shadows pg.116"
+  },
+  {
+    "name": "Calm Passage",
+    "displayedReqs": "Requirement: Has reached -5 Wounds or lower",
+    "narative": "Death is inevitable. This character has come to terms with that, and does not let the fatalities of others affect her. For some reason, Fate takes this into consideration. Constructs exploding, elemental beasts unraveling, and Undead leaking to pieces do not interrupt this character’s life.",
+    "description": "This character is unaffected by all Demise Talents generated by allies and enemies. She must still resolve her own Demise Talents, if she has any.",
+    "requirements": [
+      { "type": "custom", "name": "minus5" }
+    ],
+    "book": "From Shadows pg.116"
+  },
+  {
+    "name": "Oath of Nonviolence",
+    "displayedReqs": "Requirement: None",
+    "narative": "This character has sworn she will bring no pain or suffering to another being. While the world makes it difficult to keep this vow, she finds it helps her connect with the aether. Her spells flow much easier, though this blessing becomes temporarily jarred when she causes injury.",
+    "description": "At the start of this character’s turn, if she took no Attack actions and dealt no damage during her last turn, she may add +2 and any one suit to any Doctor or Magical Skill duels she takes on her current turn or gain **Defensive +1**. This bonus does not apply to any Magia or Immuto that have the potential to deal damage.",
+    "requirements": [],
+    "book": "From Shadows pg.116"
+  },
+  {
+    "name": "Don’t Look at Explosions",
+    "displayedReqs": "Requirement: None",
+    "narative": "Everyone knows… but so few actually do it.",
+    "description": "Whenever this character would suffer damage from [b], she may discard any number of cards. For each card discarded this way, she may ignore 2 damage caused and any Conditions she would gain (like Dazed or Poison) from the [b].",
+    "requirements": [],
+    "book": "From Shadows pg.116"
+  },
+  {
+    "name": "Protect the Innocent",
+    "displayedReqs": "Requirement: None",
+    "narative": "Codes of honor often include assurances the strong will protect the weakest and most vulnerable of society, especially those who find themselves in the crossfire of conflict.",
+    "description": "Once per turn, this character may discard a card to gain the following Condition until the end of Dramatic Time:\n\nProtect the Innocent +1: When an enemy within 10 yards resolves an attack action against an Innocent, she may reduce the value of this Condition by exactly 1. Before the enemy character resolves their action, this character may resolve a 1 AP action. If this is an attack, it must be resolved against the enemy character; it cannot declare Triggers. This Condition can have a maximum value of 3.\n\nAn Innocent is any character the Fated considers friendly, with a Wounds Aspect of 5 or less, who does not have any Ranged or Close Combat Skills with a value of 3+.",
+    "requirements": [],
+    "book": "From Shadows pg.116"
   }
 ]
