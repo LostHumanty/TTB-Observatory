@@ -958,7 +958,7 @@
     "narative": "This character possesses the Evil Eye, a powerful curse that is cast via a malevolent glare.",
     "description": "This character gains the following Defensive Trigger:\n\n**Df/Wp ([C]) Evil Eye**: After this character succeeds, the attacker gains the Cursed +1 Condition with a Taboo against attacking this character.",
     "requirements": [
-      { "type": "attribute", "name": "Willpower", "operator": ">=", "value": 6 }
+      { "type": "parameter", "name": "Willpower", "operator": ">=", "value": 6 }
     ],
     "book": "Under Quarantine pg.135"
   },

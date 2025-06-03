@@ -213,6 +213,11 @@ function evaluateRequirement(req, filters, destinySteps, selectedSkills, selecte
     }
   }
 
+  if (type === "parameter") {
+    const paramValue = parseInt(document.querySelector(`input[name="${name.toLowerCase()}"]`)?.value || "0");
+    return compare(paramValue, operator, value);
+  }
+
   if (type === "destiny") {
     return compare(destinySteps, operator, value);
   }
@@ -243,3 +248,47 @@ function evaluateRequirement(req, filters, destinySteps, selectedSkills, selecte
 
   return false;
 }
+
+// Parameter calculation
+document.getElementById("calculateParams")?.addEventListener("click", () => {
+  const getAspect = name => parseInt(document.querySelector(`input[name="${name}"]`)?.value) || 0;
+  const getSkill = name => parseInt(document.querySelector(`.skill-selector[data-name="${name}"]`)?.dataset.selected || 0);
+
+  const evade = getSkill("Evade");
+  const speed = getAspect("speed");
+  const tenacity = getAspect("tenacity");
+  const centering = getSkill("Centering");
+  const resilience = getAspect("resilience");
+  const toughness = getSkill("Toughness");
+  const notice = getSkill("Notice");
+
+  const df = 2 + Math.max(evade, speed);
+  const wp = 2 + Math.max(centering, tenacity);
+  const wk = 4 + Math.ceil(speed / 2);
+  const ch = Math.max(4 + speed, 4 + speed); // same as walk unless logic changes
+  const wd = 4 + toughness + (resilience > 0 ? Math.ceil(resilience / 2) : 0);
+  const init = speed + notice;
+
+  document.querySelector(`input[name="df"]`).value = df;
+  document.querySelector(`input[name="wp"]`).value = wp;
+  document.querySelector(`input[name="wk"]`).value = wk;
+  document.querySelector(`input[name="ch"]`).value = ch;
+  document.querySelector(`input[name="wd"]`).value = wd;
+  document.querySelector(`input[name="init"]`).value = init;
+});
+
+// Show all talents button
+document.getElementById("showAllTalents")?.addEventListener("click", () => {
+  const resultsDiv = document.getElementById("results");
+  resultsDiv.innerHTML = "";
+  allTalents.forEach(t => {
+    const div = document.createElement("div");
+    div.classList.add("talent-block");
+    div.innerHTML = `
+      <strong>${t.name}</strong>
+      ${t.displayedReqs ? `<p><em>${formatTextWithSymbols(t.displayedReqs)}</em></p>` : ""}
+      <p>${formatTextWithSymbols(t.description)}</p>
+      ${t.book ? `<div class="talent-book">${t.book}</div>` : ""}`;
+    resultsDiv.appendChild(div);
+  });
+});

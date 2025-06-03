@@ -12,40 +12,61 @@
 
     <!-- ASPECTS -->
     <div class="top_tab">
-        <div class="aspects">
-            <div class="section physical_tab">
-                <h2>PHYSICAL ASPECTS</h2>
-                <div class="grid">
-                    <label>Might <input type="number" name="might" /></label>
-                    <label>Grace <input type="number" name="grace" /></label>
-                    <label>Speed <input type="number" name="speed" /></label>
-                    <label>Resilience <input type="number" name="resilience" /></label>
+        <div class="left-side">
+            <div class="top-left">
+                <div class="aspects">
+                    <div class="section physical_tab">
+                        <h2>PHYSICAL ASPECTS</h2>
+                        <div class="grid">
+                            <label>Might <input type="number" name="might" /></label>
+                            <label>Grace <input type="number" name="grace" /></label>
+                            <label>Speed <input type="number" name="speed" /></label>
+                            <label>Resilience <input type="number" name="resilience" /></label>
+                        </div>
+                    </div>
+
+                    <div class="section mental_tab">
+                        <h2>MENTAL ASPECTS</h2>
+                        <div class="grid">
+                            <label>Intellect <input type="number" name="intellect" /></label>
+                            <label>Charm <input type="number" name="charm" /></label>
+                            <label>Cunning <input type="number" name="cunning" /></label>
+                            <label>Tenacity <input type="number" name="tenacity" /></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mid-section">
+                    <!-- DESTINY STEPS -->
+                    <div class="section destiny_tab">
+                        <h2>Destiny Steps</h2>
+                        <div class="step-selector" data-name="destiny_steps"></div>
+                    </div>
+                    <div class="special">
+                        <label><input type="checkbox" name="reqNoneOnly" value="reqNoneOnly" /> Show talents without requirements</label>
+                        <button type="button" id="toggleRare">Show rare requirements ▼</button>
+                    </div>
                 </div>
             </div>
+            <div class="bot-left">
+                <div class="param-bar">
+                <div class="param-group">
+                    <label>Df <input type="number" name="df" /></label>
+                    <label>Wp <input type="number" name="wp" /></label>
+                    <label>Wk <input type="number" name="wk" /></label>
+                    <label>Ch <input type="number" name="ch" /></label>
+                    <label>Wd <input type="number" name="wd" /></label>
+                    <label>Initiative <input type="number" name="init" /></label>
+                </div>
 
-            <div class="section mental_tab">
-                <h2>MENTAL ASPECTS</h2>
-                <div class="grid">
-                    <label>Intellect <input type="number" name="intellect" /></label>
-                    <label>Charm <input type="number" name="charm" /></label>
-                    <label>Cunning <input type="number" name="cunning" /></label>
-                    <label>Tenacity <input type="number" name="tenacity" /></label>
+                <div class="button-group">
+                    <button type="button" id="calculateParams">Calculate Parameters</button>
+                    <button type="button" id="showAllTalents">Show All Talents</button>
+                    <label>Gifts <input type="number" name="god" id="godInput" min="0" value="0" /></label>
+                </div>
                 </div>
             </div>
         </div>
-
-        <div class="mid-section">
-            <!-- DESTINY STEPS -->
-            <div class="section destiny_tab">
-                <h2>Destiny Steps</h2>
-                <div class="step-selector" data-name="destiny_steps"></div>
-            </div>
-            <div class="special">
-                <label><input type="checkbox" name="reqNoneOnly" value="reqNoneOnly" /> Show talents without requirements</label>
-                <button type="button" id="toggleRare">Show rare requirements ▼</button>
-            </div>
-        </div>
-
         <!-- TRAITS -->
         <div class="section traits_tab">
         <h2>Traits</h2>
