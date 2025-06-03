@@ -201,7 +201,16 @@ function evaluateRequirement(req, filters, destinySteps, selectedSkills, selecte
   const { type, name, operator, value, category } = req;
 
   if (type === "attribute") {
-    return compare(filters[name.toLowerCase()] ?? 0, operator, value);
+    if (name === "Any" && req.count) {
+      const aspectKeys = ["might", "grace", "speed", "resilience", "intellect", "charm", "cunning", "tenacity"];
+      const matchCount = aspectKeys.reduce((acc, attr) => {
+        const val = filters[attr] ?? 0;
+        return acc + (compare(val, operator, value) ? 1 : 0);
+      }, 0);
+      return matchCount >= req.count;
+    } else {
+      return compare(filters[name.toLowerCase()] ?? 0, operator, value);
+    }
   }
 
   if (type === "destiny") {

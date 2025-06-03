@@ -4,15 +4,11 @@ to do:
 
 - добавить кнопку "показать все таланты"
 
-- сделать чтоб работало требование к:
-    - Cursed Existence
-
 - сделать возможность переключения между короткими и большими версиями
     - оформить эти версии как целый кусок досье и порванный.
 
 - сделать полный json
-    - зажирнить focused +1 +2..., poison +1..., burning, Defensive, conditions, slow, paralyzed, df/wp 
-    - добить full первых талантов
+    - зажирнить focused +1 +2..., poison +1..., burning, crazy, Defensive, conditions, slow, fast, paralyzed, df/wp Dazed Reactivate
 
 - Добавить в трейты:
 Non-Kin (сделать переключатель с Kin)
