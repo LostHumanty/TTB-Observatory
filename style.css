@@ -285,15 +285,10 @@ button {
   gap: 6px;
 }
 
-#calculateParams::before {
-  content: "🧮";
-}
 
 #showAllTalents {
   font-size: 14px;
   padding: 6px 12px;
-  background: white;
-  border: 2px solid black;
   cursor: pointer;
 }
 

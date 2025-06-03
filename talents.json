@@ -952,7 +952,7 @@
     ],
     "book": "Under Quarantine pg.134"
   },
-    {
+  {
     "name": "Evil Eye",
     "displayedReqs": "Requirement: Willpower 6 or higher",
     "narative": "This character possesses the Evil Eye, a powerful curse that is cast via a malevolent glare.",
@@ -2143,5 +2143,31 @@
     "description": "Once per turn, this character may discard a card to gain the following Condition until the end of Dramatic Time:\n\n**Protect the Innocent +1**: When an enemy within 10 yards resolves an attack action against an Innocent, she may reduce the value of this Condition by exactly 1. Before the enemy character resolves their action, this character may resolve a 1 AP action. If this is an attack, it must be resolved against the enemy character; it cannot declare Triggers. This Condition can have a maximum value of 3.\n\nAn Innocent is any character the Fated considers friendly, with a Wounds Aspect of 5 or less, who does not have any Ranged or Close Combat Skills with a value of 3+.",
     "requirements": [],
     "book": "From Shadows pg.116"
+  },
+  {
+    "name": "Intuitive Initiative",
+    "displayedReqs": "Requirement: Cunning 2+, Speed 1+",
+    "narative": "Whether it’s through experience, a sixth sense, or just plain old ingenuity, this character understands that sometimes acting on instinct is best.",
+    "description": "When flipping for Initiative, this character may treat her Initiative as any number less than or equal to the value of her flip. She may declare this at any point during the round; she does not need to state what her Initiative will be right away.\nShe may also take the Ready Weapon action as a (0) action.",
+    "requirements": [
+      { "type": "attribute", "name": "Speed", "operator": ">=", "value": 1 },
+      { "type": "attribute", "name": "Cunning", "operator": ">=", "value": 2 }
+    ],
+    "book": "Rules Update 1.2025 pg.1"
+  },
+  {
+    "name": "Specialized Skill",
+    "displayedReqs": "Requirement: Fatemaster Character or 1 or more completed Destiny Steps.",
+    "narative": "This character has honed a specific skill, allowing her to perform tricks with little effort.",
+    "description": "Choose a Skill. If this character has a [+] on a duel involving the chosen Skill, she may add any one suit to her final duel total. A character may take this Talent multiple times, but each time, a different Skill must be chosen.",
+    "requirements": [
+      {
+        "or": [
+          { "type": "custom", "name": "fmc" },
+          { "type": "destiny", "operator": ">=", "value": 1 }
+        ]
+      }
+    ],
+    "book": "Rules Update 1.2025 pg.1"
   }
 ]
