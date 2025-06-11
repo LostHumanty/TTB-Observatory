@@ -1812,7 +1812,7 @@
     "narative": "Malifaux is a place filled with magic. For those with a voracious appetite for study, creation, and learning the arcane, there is no limit to how much knowledge a single person can acquire… so long as they understand the costs and risks associated with undertaking such a task.",
     "description": "This character begins to craft her own unique Grimoire, which may take whatever form she wishes. The first time this Talent is taken, add one Magia of the appropriate Magical Skill requirement this character has to the Grimoire. This must be a Magia she has previously encountered or has otherwise spent the time learning how to produce herself. Each additional time this General Talent is chosen, this character can add one additional Magia and any one Immuto to the Grimoire. Only she may attune to this Grimoire; it is useless if any other character tries to utilize it. Finally, this Grimoire is special in that the Fated character that creates it can remain attuned to both it and one additional Grimoire; she is able to cast Magia and Immuto from both.",
     "requirements": [
-      { "type": "skill", "name": "Magical", "operator": ">=", "value": 4 }
+      { "type": "skill", "name": "any", "operator": ">=", "value": 4, "category": ["Magical"] }
     ],
     "book": "From the Nightmares pg.129"
   },
@@ -2171,5 +2171,620 @@
         }
       ]
     }
+  },
+  {
+  "name": "Ancient Knowledge",
+  "displayedReqs": "Gift of Darkness.",
+  "narative": "The ways of the Neverborn are secretive and old. Very few outside of their kind know the ways of Malifaux’s denizens. Some have a greater knowledge about their customs, and can delve more deeply into this history.",
+  "description": "This character considers her History Skill to have a value of 5 and gains [+] when taking any Challenge involving Neverborn history, society, and culture. She can also speak the Neverborn language and read Neverborn runes.",
+  "requirements": [
+    { "type": "custom", "name": "twisted" },
+    { "type": "custom", "values": ["mimic", "woe", "nephilim", "half-blood", "nightmare"] }
+  ],
+  "book": "From the Nightmares pg.68"
+  },
+  {
+    "name": "Cruelty",
+    "displayedReqs": "Gift of Darkness.",
+    "narative": "Quickly dispatching an adversary eliminates the risk of them causing problems in the future.",
+    "description": "If an enemy character falls Unconscious in this character’s engagement range, this character may immediately perform a “coup de grace” and kill that character.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "values": ["mimic", "woe", "nephilim", "half-blood", "nightmare"] }
+    ],
+    "book": "From the Nightmares pg.68"
+  },
+  {
+    "name": "Shrouded",
+    "displayedReqs": "Gift of Darkness.",
+    "narative": "The Neverborn are creatures of darkness; in shadows, they watch and wait.",
+    "description": "This character gains the following Talent:\n\n**Camouflage**: This character gains [+] to Stealth Challenges while in Cover, the wilderness, or while concealed in at least partial darkness or shadow.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "values": ["mimic", "woe", "nephilim", "half-blood", "nightmare"] }
+    ],
+    "book": "From the Nightmares pg.68"
+  },
+  {
+    "name": "Attuned to Malifaux",
+    "displayedReqs": "Gift of Darkness.",
+    "narative": "Magic infuses every root and stone in this strange world, and it runs particularly strongly in this character.",
+    "description": "Select one Transmogrification Magia; this character knows that Magia regardless of any Grimoire she carries.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "values": ["mimic", "woe", "nephilim", "half-blood", "nightmare"] }
+    ],
+    "book": "From the Nightmares pg.68"
+  },
+  {
+    "name": "Hayreddin’s Disciple",
+    "displayedReqs": "Gift of Darkness.",
+    "narative": "Nekima has recently called back the exiled Hayreddin, leader of a cult of Nephilim necromancers, though he and his followers are being kept at arm’s length. The use of death magic is still enormously taboo, but the black blood queen realizes that she must use every resource possible to help secure her throne.",
+    "description": "This character does not suffer [-] from The Dread Art when making Necromancy duels. If her Necromancy Magical Skill has a value of below 2, it increases by +1.\nAdditionally, this character only suffers [-] in all Social duels against other Mimics, Nephilim, Woes, and Nightmares (see The Dread Art, pg. 67).",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "values": ["mimic", "woe", "nephilim", "half-blood", "nightmare"] }
+    ],
+    "book": "From the Nightmares pg.68"
+  },
+  {
+    "name": "Kinship",
+    "displayedReqs": "Gift of Darkness.",
+    "narative": "Neverborn frequently travel together and find great comfort in being surrounded by others of their kind. In this way the rituals and customs of individual groups can endure and flourish.",
+    "description": "During Pursuit selection, this character may draw an extra card for every friendly character that shares her Species Characteristic. After, discard cards down to this character’s maximum hand size.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "values": ["mimic", "woe", "nephilim", "half-blood", "nightmare"] }
+    ],
+    "book": "From the Nightmares pg.68"
+  },
+  {
+    "name": "The Old Ways",
+    "displayedReqs": "Gift of Darkness.\nRequirement: 5+ Gifts of Darkness.",
+    "narative": "Normally used by the Gigants of the Far Peaks, the Old Ways uses sacrifice to gain a glimpse into the future. So long as the supplicant offers up blood, bone, or flesh, they will be granted insight regarding Fate’s strands.",
+    "description": "This character may suffer 1 irreducible damage and Cheat Fate with the top card of the Fate Deck’s discard pile. After she does so, the card is placed at the bottom of the discard pile.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "values": ["mimic", "woe", "nephilim", "half-blood", "nightmare"] },
+      { "type": "number", "name": "GoD", "operator": ">=", "value": 5 }
+    ],
+    "book": "From the Nightmares pg.68"
+  },
+  {
+    "name": "Denizen of Malifaux",
+    "displayedReqs": "Gift of Darkness.",
+    "narative": "What is one nightmare to another?",
+    "description": "This character ignores the Terrifying and Manipulative Talents from all enemy characters if their values are 10 or less and increases the final total of all Intimidate Challenges and duels they take by +2.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "values": ["mimic", "woe", "nephilim", "half-blood", "nightmare"] }
+    ],
+    "book": "From the Nightmares pg.68"
+  },
+  {
+    "name": "Terrifying (Living) (X)",
+    "displayedReqs": "Gift of Darkness.",
+    "narative": "The horrors found in the deepest corners of Malifaux can freeze blood and break minds with one look; this character happens to be one of them.",
+    "description": "While not disguised or attempting to hide the fact she is Twisted, enemy Living characters must pass a Horror Duel when they end their turn within this character’s engagement range or target this character with a harmful action. The TN is equal to the character’s Intimidate Skill +3.\nShe may select this Gift of Darkness up to 3 times; each additional time she chooses it, increase the TN of the Horror Duel by an additional +2.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "values": ["mimic", "woe", "nephilim", "half-blood", "nightmare"] }
+    ],
+    "book": "From the Nightmares pg.68"
+  },
+  {
+    "name": "Shifting Blood",
+    "displayedReqs": "Gift of Darkness.\nRequirement: 3+ Gifts of Darkness.",
+    "narative": "Thanks to her heritage, this character finds it easier to alter the body and mind with layers of magic rather than necromantic means.",
+    "description": "This character adds +[C] to her Enchanting Magical Skill.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "values": ["mimic", "woe", "nephilim", "half-blood", "nightmare"] },
+      { "type": "number", "name": "GoD", "operator": ">=", "value": 3 }
+    ],
+    "book": "From the Nightmares pg.68"
+  },
+  {
+    "name": "Imitator",
+    "displayedReqs": "Gift of Darkness. Mimic.",
+    "narative": "Imitation is the sincerest form of flattery… but sometimes it can go too far.",
+    "description": "When advancing in a non-Advanced Pursuit, this character may instead choose to advance one step in any Pursuit any friendly Fated character pursued during the session. This character must advance based on their current progression in whatever Pursuit they choose; they do not automatically gain the step of whichever friendly Fated character they choose to imitate.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "mimic" }
+    ],
+    "book": "From the Nightmares pg.69"
+  },
+  {
+    "name": "Quick Alteration",
+    "displayedReqs": "Gift of Darkness. Mimic.",
+    "narative": "This character rapidly changes some portion of herself to better suit the task at hand.",
+    "description": "This character may discard a card at the start of her activation to add one suit to a Skill she has until the end of her turn.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "mimic" }
+    ],
+    "book": "From the Nightmares pg.69"
+  },
+  {
+    "name": "Don’t Mind Me",
+    "displayedReqs": "Gift of Darkness.",
+    "narative": "Using a skein of illusion magic, this character makes herself out to be something non-threatening: an innocent bystander, and nothing more…",
+    "description": "If this character did not take any offensive actions on its last turn, or if it is the first round of Dramatic Time and this character has not yet acted, enemies targeting this character with an attack action must succeed on a Scrutiny Challenge, or be forced to choose a different target. The TN’s value is equal to 6 + this character’s Charm Aspect.\n\nAn offensive action is any that would be considered aggressive (usually with the potential to cause injury), like an attack or casting a harmful spell.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "mimic" }
+    ],
+    "book": "From the Nightmares pg.69"
+  },
+  {
+    "name": "Disguised",
+    "displayedReqs": "Gift of Darkness. Mimic.",
+    "narative": "This character has become adept at shifting different parts of her form, concealing herself with illusions to make sure nobody ever sees her as the biggest threat.",
+    "description": "This character gains the following Talent:\n\n**Disguised**: This character may not be the target of the Charge Action.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "mimic" }
+    ],
+    "book": "From the Nightmares pg.70"
+  },
+  {
+    "name": "Silvertongue",
+    "displayedReqs": "Gift of Darkness. Mimic.",
+    "narative": "Lying with every breath is standard fare for Mimics. As their entire identities are based off lies, it does a Mimic well to weave the knowledge they have about procedure and other groups into their falsehoods to make them appear more sincere.",
+    "description": "When making a Deceive Challenge or duel, this character increases her final duel total by half of her Intellect Aspect, rounding up.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "mimic" }
+    ],
+    "book": "From the Nightmares pg.70"
+  },
+  {
+    "name": "Adaptive Personality",
+    "displayedReqs": "Gift of Darkness. Mimic.",
+    "narative": "Knowing what words and behaviors will be best suited for a group ensures a Mimic can blend seamlessly in with anybody.",
+    "description": "This character may discard a card to count one Social Skill as 3 for the next round of Dramatic Time, or for 15 minutes of Narrative Time.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "mimic" }
+    ],
+    "book": "From the Nightmares pg.70"
+  },
+  {
+    "name": "Accomplice",
+    "displayedReqs": "Gift of Darkness. Mimic.\nRequires 3+ Gifts of Darkness.",
+    "narative": "Mimics know when to take advantage of a situation, especially if it involves helping out someone they consider an asset to their plans.",
+    "description": "After a friendly character ends their turn within 3 yards, this character may immediately take her turn, regardless of their Initiative. This counts as her normal turn for that round.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "mimic" },
+      { "type": "number", "name": "GoD", "operator": ">=", "value": 3 }
+    ],
+    "book": "From the Nightmares pg.70"
+  },
+  {
+    "name": "Shifting Faces",
+    "displayedReqs": "Gift of Darkness. Mimic.\nRequires 3+ Gifts of Darkness.",
+    "narative": "A familiar face is perhaps the greatest weapon, especially if the victim doesn’t realize it’s a Mimic wearing the stolen face of their loved one.",
+    "description": "This character gains the following Defensive Trigger:\n\n**Df ([m]) False Face:** When an enemy character targets this character with an Action, they must pass a Horror Duel, where the TN is 2 + this character’s Cunning Aspect + Deceive Skill. On a failure, the target does not become **Paralyzed**. Instead, this character may change the target of the Action to a legal target of its choice.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "mimic" },
+      { "type": "number", "name": "GoD", "operator": ">=", "value": 3 }
+    ],
+    "book": "From the Nightmares pg.70"
+  },
+  {
+    "name": "Talent Thief",
+    "displayedReqs": "Gift of Darkness. Mimic.\nRequires 4+ Gifts of Darkness.",
+    "narative": "Mimics survive by adapting to their surroundings. If another has something they admire, it’s well within a Mimic’s rights to copy.",
+    "description": "This character gains the following Tactical Action:\n\n**(2) Sincerest Form of Flattery:** Select a Talent on one character within 3 yards with a Rank Value of no greater than 10. This character gains that Talent for 1 minute or until Dramatic Time ends. If the Talent would be something that demands additional physical changes (like gaining wings for **Flight**), she shifts her body to produce whatever is necessary to accomplish a similar effect. The selected Talent can never allow her to produce additional characters (like the **Walking Morgue** or **Zombie Curse** Talents) or gain a benefit that is restricted to a pneumatic or mechanical object (gaining **Fly** from a jetpack, or **Armor** from a metallic body).",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "mimic" },
+      { "type": "number", "name": "GoD", "operator": ">=", "value": 4 }
+    ],
+    "book": "From the Nightmares pg.70"
+  },
+  {
+    "name": "Fluidity",
+    "displayedReqs": "Gift of Darkness. Mimic.\nRequires 5+ Gifts of Darkness.",
+    "narative": "Sometimes a situation calls for more of the same.",
+    "description": "During the Prologue, this character may pick a Talent known by any friendly character. This character gains that Talent for the remainder of the session.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "mimic" },
+      { "type": "number", "name": "GoD", "operator": ">=", "value": 5 }
+    ],
+    "book": "From the Nightmares pg.70"
+  },
+  {
+    "name": "Corrupted Innocence",
+    "displayedReqs": "Gift of Darkness. Woe.",
+    "narative": "Many Woes take the form of children. This is perfect camouflage. Nobody ever believes it’s the wide-eyed child causing their torment until it’s far too late.",
+    "description": "*Must be taken at character creation.* This character appears as a child or young adult. They increase their Charm or Cunning by +1 and may reduce their Height by -1, to a minimum of 1.\n\nThey also gain the following Talent:\n\n**Manipulative (11)**: When an enemy character targets this character with an Action, they must pass a TN 11 Willpower Challenge. On a failure, this character may change the target of the Action to a legal target of its choice.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "woe" }
+    ],
+    "book": "From the Nightmares pg.71"
+  },
+  {
+    "name": "Antagonist",
+    "displayedReqs": "Gift of Darkness. Woe.",
+    "narative": "When an open mind presents itself, Woes can’t help but poke and prod until something breaks.",
+    "description": "This character gains the following Manifested Power:\n\n**Mind Needling**  \n(*Cunning* + Deceive or Intimidate), AP 1, TN 8[t] or [m], Resist **Wp**, Range 3 yards  \n\n**Effect**: If the target fails their Willpower duel against this Manifested Power, they suffer 1 irreducible damage and this character may draw a card.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "woe" }
+    ],
+    "book": "From the Nightmares pg.71"
+  },
+  {
+    "name": "Negativity",
+    "displayedReqs": "Gift of Darkness. Woe.",
+    "narative": "Some Woes surround themselves with depressive auras, helping negative emotions flourish like weeds in a garden. Minds that spend too long in their company slowly start to slough away.",
+    "description": "When an enemy character within 3 yards of this character fails a Willpower duel, it suffers 1 damage after resolving the current action.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "woe" }
+    ],
+    "book": "From the Nightmares pg.71"
+  },
+  {
+    "name": "Distracting Whispers",
+    "displayedReqs": "Gift of Darkness. Woe.",
+    "narative": "The voice of a lost loved one, the anger of a parent, the laughter of days long gone: all are wondrous threads for a Woe to pull at the most inopportune times.",
+    "description": "Enemy characters within [a]2 of this character suffer [-] to their Willpower duels.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "woe" }
+    ],
+    "book": "From the Nightmares pg.71"
+  },
+  {
+    "name": "Pointless Existence",
+    "displayedReqs": "Gift of Darkness. Woe.",
+    "narative": "The deep blue of depression and the chalky gray of hopelessness are signals for a Woe to dive into a vulnerable mind and bring its progress to a standstill.",
+    "description": "If an enemy character fails a Willpower duel while within [a]3 of this character, they become Slow in addition to any other effects incurred by failing the duel.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "woe" }
+    ],
+    "book": "From the Nightmares pg.71"
+  },
+  {
+    "name": "Transfixing Gaze",
+    "displayedReqs": "Gift of Darkness. Woe.",
+    "narative": "The Woe’s eyes flicker with power, taking on an otherworldly color. To look into these eyes is to invite excruciating pain, but few can resist.",
+    "description": "This character gains the following Manifested Power:\n\n**Transfixing Gaze**  \n(*Cunning* + Bewitch), AP 1, TN 9[C], Resist **Wp**, Range 3 yards\n\n**Effect**: The target gains the following Condition:\n“**Transfixed**: As long as this character remains in line of sight to the character that gave them this Condition and does not suffer damage from any source, they are **Paralyzed**. If the character that gave them this Condition takes any action other than Walk or becomes distracted and breaks eye contact, end this Condition immediately. At the start of their turn, a character with this Condition can attempt an Opposed Willpower Duel with the character that applied this Condition. If they successfully do so, they end the **Paralyzed** Condition and may take their turn as normal.”",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "woe" }
+    ],
+    "book": "From the Nightmares pg.72"
+  },
+  {
+    "name": "Flickering Form",
+    "displayedReqs": "Gift of Darkness. Woe.\nRequires 3+ Gifts of Darkness.",
+    "narative": "Many Woes have become so mentally fragmented that their bodies lose a grip on reality.",
+    "description": "This character gains the following Talent: \n\n**Flickering Form:** This character may discard a card at any time to gain **Incorporeal** for one round.\n\n(\"**Incorporeal**: This character ignores, and is ignored by, other characters and terrain during any movement. Reduce all damage this character suffers from Ranged and Close Combat attacks by half.\")",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "woe" },
+      { "type": "number", "name": "GoD", "operator": ">=", "value": 3 }
+    ],
+    "book": "From the Nightmares pg.72"
+  },
+  {
+    "name": "Dark Thoughts",
+    "displayedReqs": "Gift of Darkness. Woe.\nRequires 4+ Gifts of Darkness.",
+    "narative": "It usually takes little urging to bring truly awful thoughts out of the subconscious. In Malifaux, it becomes almost painfully easy.",
+    "description": "This character gains the following Manifested Power:\n\n**Dark Thoughts**  \n(*Charm* + Bewitch), AP 1, TN 12[m], Resist **Wp**, Range 5 yards\n\n**Effect**: The caster makes the target take a 1 AP Action of her choice. The Action can force the target to attack itself, divulge information, or take actions against her own nature or that are incredibly foolish (like walking off a cliff).",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "woe" },
+      { "type": "number", "name": "GoD", "operator": ">=", "value": 4 }
+    ],
+    "book": "From the Nightmares pg.72"
+  },
+  {
+    "name": "Overwhelmed with Emotion",
+    "displayedReqs": "Gift of Darkness. Woe.\nRequires 4+ Gifts of Darkness.",
+    "narative": "A Woe’s primary method of attack is using their magic to turn a person’s own emotions against them. Those who survive this barrage of feeling are left drained and dazed while the Woe bears down on them.",
+    "description": "This character gains the following Manifested Power:\n\n**Outburst**  \n(*Cunning* + Bewitch or Intimidate), AP 1, TN 11[m], Resist **Wp**, Range 6 yards\n\n**Effect**: Target suffers 2/3/3[b] damage. After succeeding, the target gains the following Condition until the end of its next turn: “**Confusing Feelings**: This character suffers a [-] on all duels in which it is the defender.”",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "woe" },
+      { "type": "number", "name": "GoD", "operator": ">=", "value": 4 }
+    ],
+    "book": "From the Nightmares pg.72"
+  },
+  {
+    "name": "No Friends Here",
+    "displayedReqs": "Gift of Darkness. Woe.\nRequires 4+ Gifts of Darkness.",
+    "narative": "The two things nobody can escape are their mind and their memories.",
+    "description": "This character gains the following Tactical Action:\n\n**(2) Awful Memories**: Select a character within 5 yards. Flip cards from the Fate Deck equal to their Willpower; for each Severe card, they suffer 1 irreducible damage. For each Joker, they suffer 2 irreducible damage. After resolving, discard the cards.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "woe" },
+      { "type": "number", "name": "GoD", "operator": ">=", "value": 4 }
+    ],
+    "book": "From the Nightmares pg.72"
+  },
+  {
+    "name": "Woeful Court",
+    "displayedReqs": "Gift of Darkness. Woe.\nRequires 5+ Gifts of Darkness.",
+    "narative": "When a powerful Woe exerts their splintered will over Sorrows, Aversions, and other specters, they can bind these weaker Neverborn into service. The most common way to keep control over such a Woe is to bind it into a pother pendant, a small piece of jewelry or a curio.",
+    "description": "Gain a subordinate Woe Minion with a Rank Value of no more than 5. This character is kept inside a physical object, like a box, pendant, bracelet, or other similar item, and cannot be summoned unless the character they are subordinate to is in possession of that item. If killed, the subordinate Woe reforms inside its container and can be called on 24 hours later. This character may take this Gift of Darkness up to two times.\n\nThis character gains the following Tactical Action:\n\n**(2) Falling Apart**: Summon a subordinate Woe Minion anywhere within 1 yard. This subordinate character remains until it is killed, Dramatic Time ends, or when recalled back to its prison with a (0) Action.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "woe" },
+      { "type": "number", "name": "GoD", "operator": ">=", "value": 5 }
+    ],
+    "book": "From the Nightmares pg.72"
+  },
+  {
+    "name": "Horns",
+    "displayedReqs": "Gift of Darkness. Nephilim Morphology.",
+    "narative": "The character grows a set of horns from their forehead.",
+    "description": "This character gains [+] on all Intimidate Challenges against non-Nephilim. Fatemasters should note this feature will make hiding the Fated’s origins more difficult without the proper clothing or disguises (incurring a [-] to all Challenges made to conceal this character’s identity or form).",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "nephilim" }
+    ],
+    "book": "From the Nightmares pg.73"
+  },
+  {
+    "name": "Cloven Hooves",
+    "displayedReqs": "Gift of Darkness. Nephilim Morphology.",
+    "narative": "Many Nephilim walk on hooves, which helps them easily traverse the wilderness.",
+    "description": "This character ignores the effects of Severe Terrain. Fatemasters should note this feature will make hiding the Fated’s origins more difficult without the proper clothing or disguises but can be hidden much more easily than horns. This inflicts a -1 penalty on all Challenges used to conceal this character’s identity or form.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "values": ["nephilim", "half-blood"] }
+    ],
+    "book": "From the Nightmares pg.73"
+  },
+  {
+    "name": "Claws and Fangs",
+    "displayedReqs": "Gift of Darkness. Nephilim Morphology.",
+    "narative": "Even when unarmed, Nephilim can always resort to using their claws and teeth as weapons.",
+    "description": "This character gains the following weapon:\n\n**Nephilim Claws and Fangs**: Rg: ([C]) 1, 2/2/3, Fistload, Martial Arts.\n\n*Special: This character always counts as wielding this weapon, and it can never be removed from the character’s profile. This inflicts a -1 penalty on all Challenges used to conceal this character’s identity or form. They may count their hands free for the purposes of doing tasks and wielding other weapons.*",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "values": ["nephilim", "half-blood"] }
+    ],
+    "book": "From the Nightmares pg.73"
+  },
+  {
+    "name": "Enhanced Eyesight",
+    "displayedReqs": "Gift of Darkness. Nephilim Morphology.",
+    "narative": "Not even the dark light of Delios can obscure a black blood’s sight.",
+    "description": "This character ignores the effects of Soft Cover when making Ranged attacks. Additionally, this character ignores all penalties suffered from trying to see in darkness.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "values": ["nephilim", "half-blood"] }
+    ],
+    "book": "From the Nightmares pg.73"
+  },
+  {
+    "name": "Wings",
+    "displayedReqs": "Gift of Darkness. Nephilim Morphology.\nRequires 3+ Nephilim Morphologies, Full Nephilim Only.",
+    "narative": "Some Nephilim grow to make full use of their wings, which provides them a distinct advantage in some situations.",
+    "description": "This character gains the following Talent:\n\n**Flight**: This character is immune to falling damage and may ignore any terrain or other characters while moving.\n\nFatemasters should note this feature will make hiding the Fated’s origins more difficult without the proper clothing or disguises (incurring a [-]/[-] to all Challenges made to conceal this character’s identity or form).",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "nephilim" },
+      { "type": "custom", "name": "3+morphologies" }
+    ],
+    "book": "From the Nightmares pg.74"
+  },
+  {
+    "name": "Natural Weapons",
+    "displayedReqs": "Gift of Darkness. Nephilim or Half-Blood.",
+    "narative": "Some Nephilim favor using their wings, horns, and sheer bulk alongside their claws and teeth when fighting.",
+    "description": "This character deals +1 damage with Martial Arts or Pugilism attacks if she has the Horns or Cloven Hooves Nephilim Morphologies.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "values": ["nephilim", "half-blood"] }
+    ],
+    "book": "From the Nightmares pg.74"
+  },
+  {
+    "name": "Black Blood Pustule",
+    "displayedReqs": "Gift of Darkness. Nephilim or Half-Blood.",
+    "narative": "Black blood flows strongly within this character’s veins, so much so that any injury results in a gout of caustic, sizzling blood spraying at all nearby attackers.",
+    "description": "The range of this character’s Black Blood Talent increases by +1 yard.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "values": ["nephilim", "half-blood"] }
+    ],
+    "book": "From the Nightmares pg.74"
+  },
+  {
+    "name": "The Strong Survive",
+    "displayedReqs": "Gift of Darkness. Nephilim or Half-Blood.",
+    "narative": "Weakness does not endure long in Malifaux. To live, one must be willing to do whatever it takes.",
+    "description": "Gain the following Defensive Trigger:\n\n**Df ([r]) We Endure**: After resolving, if this character suffered Moderate or Severe damage, she heals 1.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "values": ["nephilim", "half-blood"] }
+    ],
+    "book": "From the Nightmares pg.74"
+  },
+  {
+    "name": "Speciated",
+    "displayedReqs": "Gift of Darkness. Full Nephilim Only.",
+    "narative": "The Nephilim have been changed and mutated by magic. It is not uncommon for members of a brood to exhibit specific qualities that set them apart from their kin.",
+    "description": "This character gains one action or Talent from the Speciated Add-Ons in the Bestiary (*From Nightmares*, pg.191).\nThis Gift may be taken multiple times, and Talents from different subspecies may be selected each time. Each Talent may only be selected once.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "nephilim" }
+    ],
+    "book": "From the Nightmares pg.74"
+  },
+  {
+    "name": "Our Ways",
+    "displayedReqs": "Gift of Darkness. Nephilim or Half-Blood.\nRequires 4+ Gifts of Darkness.",
+    "narative": "Rituals passed down from generation to generation have ensured each black blood knows the ways and rites of their people.",
+    "description": "Gain the following Tactical Action:\n\n**(0) Our Ways**: This character may treat all [m] in her duels this turn as [r].",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "values": ["nephilim", "half-blood"] },
+      { "type": "number", "name": "GoD", "operator": ">=", "value": 4 }
+    ],
+    "book": "From the Nightmares pg.74"
+  },
+  {
+    "name": "Binding Form",
+    "displayedReqs": "Gift of Darkness. Full Nephilim Only.\nRequires 4+ Nephilim Gifts of Darkness and Magical Skill 3+.",
+    "narative": "Though it is a difficult process, a Nephilim can use old magic to make themselves appear human. Once the spell begins to wear off, the more fiendish Neverborn aspects begin to tear through the disguise like paper.",
+    "description": "Gain the following Manifested Power:\n\n**Bound Form** (*Cunning* + Transmogrification), AP 2, TN 14[m], Resist —, Range —\n\n**Effect:** This character takes the appearance of a human for up to 24 hours and loses the effects of all Nephilim Morphologies she has during this time. Their physical attributes and special rules disappear but return immediately after this Manifested Power ends (or if this character chooses to end it prematurely with a (0) Action).",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "nephilim" },
+      { "type": "custom", "name": "4nephilim_god" },
+      { "type": "skill", "name": "any", "operator": ">=", "value": 3, "category": ["Magical"] }
+    ],
+    "book": "From the Nightmares pg.75"
+  },
+  {
+    "name": "Blood Frenzy",
+    "displayedReqs": "Gift of Darkness. Nephilim.\nRequires 5+ Gifts of Darkness.",
+    "narative": "The smell of blood can drive some Nephilim into a rage, making them hack and cleave until either they or their prey is nothing but pulped flesh.",
+    "description": "Gain the following Trigger on all Close Combat attacks:\n\n[r] *Blood Frenzy*: After damaging, take this action again against the same target. This action may not declare Triggers.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "values": ["nephilim", "half-blood"] },
+      { "type": "number", "name": "GoD", "operator": ">=", "value": 5 }
+    ],
+    "book": "From the Nightmares pg.75"
+  },
+  {
+    "name": "Red Blood Vitality",
+    "displayedReqs": "Gift of Darkness. Nephilim.\nRequires 6+ Gifts of Darkness.",
+    "narative": "Red blood is the key component in the Nephilim growth cycle, but even older black bloods can benefit from a good meal.",
+    "description": "After killing a Living non-Nephilim character with a combat attack, this character heals 2 damage. For the next round of Dramatic Time, this character gains **Fast**.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "values": ["nephilim", "half-blood"] },
+      { "type": "number", "name": "GoD", "operator": ">=", "value": 6 }
+    ],
+    "book": "From the Nightmares pg.75"
+  },
+  {
+    "name": "For the Sake of Violence",
+    "displayedReqs": "Gift of Darkness. Nephilim.\nRequires 7+ Gifts of Darkness.",
+    "narative": "Putting as much power behind a single blow as possible has become a favored technique for some broods.",
+    "description": "After this character deals Severe damage with a Close Combat Action, their target suffers an additional amount of Weak damage from that weapon.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "values": ["nephilim", "half-blood"] },
+      { "type": "number", "name": "GoD", "operator": ">=", "value": 7 }
+    ],
+    "book": "From the Nightmares pg.75"
+  },
+  {
+    "name": "Fade Away",
+    "displayedReqs": "Gift of Darkness. Nightmare.",
+    "narative": "The realm of dreams is familiar to all Nightmares, in some form or another. It is well within their power to temporarily shift themselves to that place beyond before returning to reality elsewhere.",
+    "description": "This character gains the following Manifested Power:\n\n**Fade Away**\n(*Prestidigitation* + Cunning); AP 2; TN 12[m]; Range -\n\n**Effect**: This character is removed from reality and cannot be targeted by any means, suffers no damage, and cannot suffer the effects of Conditions. Return this character to reality within 6 yards and line of sight of her original position at the end of the round; she may discard 1 Twist Card to remain outside of reality for an additional round. While removed from reality, this character remains aware of all the time that has passed, including the events that are occurring around her original location. She can speak normally while under the effects of Fade Away but cannot otherwise interact with the physical world.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "nightmare" }
+    ],
+    "book": "From the Nightmares pg.76"
+  },
+  {
+    "name": "Insubstantial Assault",
+    "displayedReqs": "Gift of Darkness. Nightmare.",
+    "narative": "A Nightmare’s blows can easily deal damage to psyche as well as the flesh.",
+    "description": "This character gains the following Trigger on all Combat attacks:\n\n[С] *In Your Head*: After succeeding, reduce the target’s Defense or Willpower by -1 for one round for each [С] in this final duel total. Their Defense and Willpower cannot be reduced to less than 0.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "nightmare" }
+    ],
+    "book": "From the Nightmares pg.76"
+  },
+  {
+    "name": "Now You See Me…",
+    "displayedReqs": "Gift of Darkness. Nightmare.",
+    "narative": "Creatures that frequently pass between worlds have learned to act quickly, thereby making the most out of their sudden appearance.",
+    "description": "After being returned to reality (such as being Unburied or being placed from Fade Away), this character may resolve a 1 AP action. If this is a Strike, it must be resolved against the closest character.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "nightmare" }
+    ],
+    "book": "From the Nightmares pg.76"
+  },
+  {
+    "name": "Slipping Shadow",
+    "displayedReqs": "Gift of Darkness. Nightmare.",
+    "narative": "Nightmares exist on the edge of reality and imagination. They find comfort in shadow and can manipulate their bodies to move rapidly to different patches of darkness.",
+    "description": "The first time this character takes the Walk or Charge action during her turn, she increases her Walk/Charge Aspects by +1 and cannot be targeted with disengaging strikes.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "nightmare" }
+    ],
+    "book": "From the Nightmares pg.76"
+  },
+  {
+    "name": "Sleep Paralysis",
+    "displayedReqs": "Gift of Darkness. Nightmare.",
+    "narative": "Is there anything more terrifying then being unable to act while a slavering mouth hovers just above your head, consuming your dreams and locking away your mind?",
+    "description": "After resolving a Ranged or Close Combat Attack action against a character with the **Dazed**, **Paralyzed**, or **Asleep Condition**, this character may elect to end one of those Conditions to deal 2 damage; this character then heals 1 damage.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "nightmare" }
+    ],
+    "book": "From the Nightmares pg.76"
+  },
+  {
+    "name": "The Horror Within",
+    "displayedReqs": "Gift of Darkness. Nightmare.",
+    "narative": "The Neverborn are practiced at blending in with humanity when they must… but some are far more monstrous beneath their false faces and adopted skins.",
+    "description": "Select one of the horrors below and add it to this character; this represents their monstrous form as it appears outside of the realm of dreams. This Gift of Darkness can be taken up to three times; each time it is taken beyond the first, select a different horror for this character to gain. The second time it is taken, she must have at least 5 Gifts of Darkness. The third time it is taken, she must have at least 8 Gifts of Darkness. Fatemasters can also allow players to come up with their own ideas and craft appropriate benefits (similar to creating Manifested Powers).\n\nIf a Nightmare has the **Bundled Up** Condition, they lose access to all of the Talents, actions, and Triggers this Gift provides. These are immediately restored when this character elects to reveal its monstrous form and vice versa (if the Nightmare uses one of the Talents, actions, or Triggers below, it loses the **Bundled Up** Condition).\n\n**_Tendrils_**: Strange tentacles emerge from part of this character’s body, either helping provide mobility or acting as crushingly powerful limbs.\nIncrease this character’s Grappling Skill by +1. This character gains the following action:\n\n**(1) Tendrils (Melee or Grappling):** Rg: [y]2 Resist: **Df**\nTarget suffers 2/3/3[b] damage.\n\n[m] *Entangle:* After damaging, the target gains **Slow.**\n\n**_Hidden Maw_**: Part of this character’s body is actually a mouth that can distend to become impossibly large, ringed with fanged teeth. This character gains the following action:\n\n**(1) Hidden Maw (Heavy Melee):** Rg: y1 Resist: **Df**\nTarget suffers 3/4/6 damage.\n\n[m] *Cognitive Dissonance:* After damaging, if the target has a Condition, this character may elect to end it and inflict a Severe Critical Effect.\n\n**_Slithery Tongue_**: A disturbingly long tongue emerges from this character’s mouth, acting almost like a whip. This character gains the following action:\n\n**(1) Slithery Tongue (Flexible):** Rg: z4 Resist: **Wp**\nTarget suffers 1/2/3 damage that ignores **Armor.**\n\n[c] Taste Secrets: After damaging, this character learns one secret about the target. This should be useful information, and not something the victim would otherwise willingly give up.\n\n[m] Rock-a-bye: After damaging, the target gains the **Asleep** Condition.\n\n**_Too Many Eyes_**: Portions of this character’s form are covered in clusters of eyes. These constantly scan and observe the environment for new prey and can see glimpses into the realm of dreams. This character cannot be surprised during Dramatic Time, and gains [+] to all Notice Challenges.\nAdditionally, this character may select one Magia from a Magical Skill that she has at least 2 Skill Points in; she knows this Magia regardless of whatever Grimoire she carries. If this character chooses a Magia in this way, she gains **Crazy +2.**",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "nightmare" }
+    ],
+    "book": "From the Nightmares pg.76"
+  },
+  {
+    "name": "Lucid Dreaming",
+    "displayedReqs": "Gift of Darkness. Nightmare.\nRequires 4+ Gifts of Darkness.",
+    "narative": "By pulling a bit of dream-stuff together and igniting it with magic, a Nightmare can summon a coterie of lesser creatures. While they don’t last long outside of the realm of dreams, their enthusiasm for spreading malice and fear more than makes up for their brief existence.",
+    "description": "This character gains the following Tactical Action:\n\n**(1) Lucid Dreaming:** Summon one Nightmare with a Rank Value of no more than 4 within 1 yard of this character. It is treated as a subordinate character and lasts for 1 minute or until the end of Dramatic Time. If this character uses this action again, the previously summoned Nightmare is immediately removed as a casualty before the new Nightmare is summoned.\n\nA character may select this Gift of Darkness a second time if she has at least 6 Gifts of Darkness. If she does, she may elect to increase this action’s cost by +1 AP to summon a Nightmare that has a Rank Value of up to 8.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "nightmare" },
+      { "type": "number", "name": "GoD", "operator": ">=", "value": 4 }
+    ],
+    "book": "From the Nightmares pg.77"
+  },
+  {
+    "name": "Monster Under My Bed",
+    "displayedReqs": "Gift of Darkness. Nightmare.\nRequires 4+ Gifts of Darkness.",
+    "narative": "Those with imaginations are the perfect candidates to host a Nightmare. Their dreams sparkle in the realm beyond and act like beacons for the creatures that dwell there.",
+    "description": "When this character is returned to reality (from becoming Unburied, placed via the Fade Away Manifested Power, and the like), she may choose to be placed within 1 yard of any character within line of sight instead of being placed normally.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "nightmare" },
+      { "type": "number", "name": "GoD", "operator": ">=", "value": 4 }
+    ],
+    "book": "From the Nightmares pg.77"
+  },
+  {
+    "name": "Slumber Party",
+    "displayedReqs": "Gift of Darkness. Nightmare.\nRequires 5+ Gifts of Darkness.",
+    "narative": "For some, sleep can be a refuge. For others, it becomes a prison inescapable.",
+    "description": "Gain the following Manifested Power:\n\n**Deep Sleep**\n(*Prestidigitation* + Intellect or Centering); AP 2; TN 13[m]; Range [a]4\n\n**Effect**: All characters within range must take a TN 15 Centering Duel (TN 12 for this character) or immediately gain **Asleep**.\n\n**Asleep**: This character is Prone, counts as **Paralyzed**, and is otherwise unaware of the world around her. She can be woken if startled by a loud noise, when targeted by an offensive action, or if another character within 1 yard spends 1 AP to wake them (characters capable of speech or other methods of rousing, like throwing a small stone, can increase this distance to 10 yards). After any of these things occur, this Condition immediately ends. This character gains Slow but may act as normal during her turn.",
+    "requirements": [
+      { "type": "custom", "name": "twisted" },
+      { "type": "custom", "name": "nightmare" },
+      { "type": "number", "name": "GoD", "operator": ">=", "value": 5 }
+    ],
+    "book": "From the Nightmares pg.77"
   }
 ]

@@ -26,6 +26,7 @@ function formatTextWithSymbols(text) {
   formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   formatted = formatted.replace(/\*(.*?)\*/g, '<em>$1</em>');
   formatted = formatted.replace(/\n/g, '<br>');
+  formatted = formatted.replace(/_(.*?)_/g, '<u>$1</u>');
 
   return formatted;
 }
@@ -276,7 +277,15 @@ function evaluateRequirement(req, filters, destinySteps, selectedSkills, selecte
   }
 
   if (type === "custom") {
-    return selectedFlags.has(name);
+    if (name) {
+      return selectedFlags.has(name.toLowerCase());
+    }
+
+    if (Array.isArray(req.values)) {
+      return req.values.some(val => selectedFlags.has(val.toLowerCase()));
+    }
+
+    return false;
   }
 
   if (type === "number") {
