@@ -2,6 +2,15 @@
 
 to do:
 
+Подсказки:
+    - гифт Terrifying (Living) (X) и манипулейтив у вое. Подсказка Stacking fear 
+
+оформление
+    - в аспектах выровнять окна как в скиллах
+    - добавить адаптацию (разделить grid)
+
+- добавить отступы при новых строках
+
 - сделать возможность переключения между короткими и большими версиями
     - оформить эти версии как целый кусок досье и порванный.
 
@@ -13,10 +22,6 @@ Non-Kin (сделать переключатель с Kin)
 Guild Training (сделать выпадающее меню с дивизионом)
 
 - добавить фильтр по книгам
-
-- добавить адаптацию
-
-- сделать кнопку переключения между разными версиями SPECIALIZED SKILL
 
 - Сделать чтобы Appraise 3 было равно Notice 3
     - потенцаильно сделать опцию "выставить Appraise отдельно" с подсказкой что по дефолту это нотис и лидершип.
@@ -38,9 +43,16 @@ Guild Training (сделать выпадающее меню с дивизион
     - Учитывание взятых талантов для требований других талантов (например Infiltration для Personal Soulstone)
 
 
-    DONE:
 
-    - Добавить таланты из апдейта правил, мб опцию выбора Specialized Skill
+
+
+
+    DONE:
+    - add ^ button
+
+    - сделать кнопку переключения между разными версиями SPECIALIZED SKILL
+
+    - Добавить таланты из апдейта правил
 
     - Добавить в редкие:
 Must have the Brilliance Condition.
@@ -59,5 +71,10 @@ Must be a Guild employee or have the Infiltration Talent.
 Have met with a Shinto priest, Oni hunter, or other organization (like the Red Library) with knowledge about how to best exploit these spirits and their weaknesses.
 Have pneumatic limbs
 Fatemaster's Character
+
+потенциально в редкие -
+    - 3+ Nephilim Morphologies
+    - 4+ Nephilim Gifts of Darkness
+
 
 
