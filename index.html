@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TTB Observatory</title>
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -12,66 +13,177 @@
 
     <!-- ASPECTS -->
     <div class="top_tab">
-        <div class="aspects">
-            <div class="section physical_tab">
-                <h2>PHYSICAL ASPECTS</h2>
-                <div class="grid">
-                <label>Might <input type="number" name="might" /></label>
-                <label>Grace <input type="number" name="grace" /></label>
-                <label>Speed <input type="number" name="speed" /></label>
-                <label>Resilience <input type="number" name="resilience" /></label>
+        <div class="left-side">
+            <div class="top-left">
+                <div class="aspects">
+                    <div class="section physical_tab">
+                        <h2>PHYSICAL ASPECTS</h2>
+                        <div class="grid">
+                            <label>Might <input type="number" name="might" /></label>
+                            <label>Grace <input type="number" name="grace" /></label>
+                            <label>Speed <input type="number" name="speed" /></label>
+                            <label>Resilience <input type="number" name="resilience" /></label>
+                        </div>
+                    </div>
+
+                    <div class="section mental_tab">
+                        <h2>MENTAL ASPECTS</h2>
+                        <div class="grid">
+                            <label>Intellect <input type="number" name="intellect" /></label>
+                            <label>Charm <input type="number" name="charm" /></label>
+                            <label>Cunning <input type="number" name="cunning" /></label>
+                            <label>Tenacity <input type="number" name="tenacity" /></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mid-section">
+                    <!-- DESTINY STEPS -->
+                    <div class="section destiny_tab">
+                        <h2>Destiny Steps</h2>
+                        <div class="step-selector" data-name="destiny_steps"></div>
+                    </div>
+                    <div class="special">
+                        <label><input type="checkbox" name="reqNoneOnly" value="reqNoneOnly" /> Show talents without requirements</label>
+                    </div>
                 </div>
             </div>
+            <div class="bot-left">
+                <div class="param-bar">
+                <div class="param-group">
+                    <label>Df <input type="number" name="df" /></label>
+                    <label>Wp <input type="number" name="wp" /></label>
+                    <label>Wk <input type="number" name="wk" /></label>
+                    <label>Ch <input type="number" name="ch" /></label>
+                    <label>Wd <input type="number" name="wd" /></label>
+                    <label>In <input type="number" name="init" /></label>
+                </div>
 
-            <div class="section mental_tab">
-                <h2>MENTAL ASPECTS</h2>
-                <div class="grid">
-                <label>Intellect <input type="number" name="intellect" /></label>
-                <label>Charm <input type="number" name="charm" /></label>
-                <label>Cunning <input type="number" name="cunning" /></label>
-                <label>Tenacity <input type="number" name="tenacity" /></label>
+                <div class="button-group">
+                    <button type="button" id="calculateParams">Calculate Parameters</button>
+                    <label>Gifts <input type="number" name="GoD" id="godInput" min="0" value="0" /></label>
+                </div>
                 </div>
             </div>
         </div>
-
-        <!-- <div class="left-half"> -->
-            <!-- DESTINY STEPS -->
-            <div class="section destiny_tab">
-                <h2>Destiny Steps</h2>
-                <div class="step-selector" data-name="destiny_steps"></div>
-            </div>
-
         <!-- TRAITS -->
-            <div class="section traits_tab">
-            <h2>Traits</h2>
-                <div class="checkbox-grid">
-                    <label><input type="checkbox" name="traits" value="Guild Training" /> Guild Training</label>
-                    <label><input type="checkbox" name="traits" value="Stitched" /> Stitched</label>
-                    <label><input type="checkbox" name="traits" value="Invested" /> Invested</label>
-                    <label><input type="checkbox" name="traits" value="Kin" /> Kin</label>
-                    <label><input type="checkbox" name="traits" value="Construct" /> Construct</label>
-                    <label><input type="checkbox" name="traits" value="Mimic" /> Mimic</label>
-                    <label><input type="checkbox" name="traits" value="Woe" /> Woe</label>
-                    <label><input type="checkbox" name="traits" value="Nephilim" /> Nephilim</label>
-                    <label><input type="checkbox" name="traits" value="Half-Blood" /> Half-Blood</label>
-                    <label><input type="checkbox" name="traits" value="Nightmare" /> Nightmare</label>
-                </div>
+        <div class="section traits_tab">
+        <h2>Traits</h2>
+            <div class="checkbox-grid">
+                <label><input type="checkbox" name="traits" value="fated" /> Fated</label>
+                <label><input type="checkbox" name="traits" value="twisted" /> Twisted</label>
+                <label><input type="checkbox" name="traits" value="living" /> Living</label>
+                <label><input type="checkbox" name="traits" value="mimic" /> Mimic</label>
+                <label><input type="checkbox" name="traits" value="magical" /> Magical Theory</label>
+                <label><input type="checkbox" name="traits" value="woe" /> Woe</label>
+                <label><input type="checkbox" name="traits" value="guild" /> Guild Training</label>
+                <label><input type="checkbox" name="traits" value="nephilim" /> Nephilim</label>
+                <label><input type="checkbox" name="traits" value="heavy_chassis" /> Heavy Chassis</label>
+                <label><input type="checkbox" name="traits" value="half-blood" /> Half-Blood</label>
+                <label><input type="checkbox" name="traits" value="light_chassis" /> Light Chassis</label>
+                <label><input type="checkbox" name="traits" value="nightmare" /> Nightmare</label>
+                <label><input type="checkbox" name="traits" value="invested" /> Invested</label>
+                <label><input type="checkbox" name="traits" value="3+morphologies" /> 3+ Nephilim Morphologies</label>               
+                <label><input type="checkbox" name="traits" value="construct" /> Construct</label>
+                <label><input type="checkbox" name="traits" value="4nephilim_god" /> 4+ Nephilim Gifts of Darkness</label>
+                <label><input type="checkbox" name="traits" value="stitched" /> Stitched</label>
+                <label><input type="checkbox" name="traits" value="kin" /> Kin</label>
+                <label><input type="checkbox" name="traits" value="undead" /> Undead</label>
+                <label><input type="checkbox" name="traits" value="nonkin" /> Non-Kin</label>
             </div>
-        <!-- </div> -->
+        </div>
     </div>
 
+
         <!-- SKILLS -->
-        <div class="section skills_tab">
-        <h2>Skills</h2>
-        <div id="skillsContainer"></div>
+        <div class="skills-toggle-area">
+            <button type="button" id="toggleSkills">Skills ▼</button>
+            <button type="button" id="toggleRare">Show rare requirements ▼</button>
         </div>
 
-        <button type="submit">Apply Filter</button>
-    </form>
+        <div class="section skills_tab hidden">
+            <div id="skillsContainer"></div>
+        </div>
 
+        <div class="section rare-requirements hidden" id="rareRequirements">
+            <h2>Rare Requirements</h2>
+            <div class="checkbox-grid">
+                <label><input type="checkbox" name="rare[]" value="fmc" />
+                Fatemaster's Character.
+                </label>           
+                <label><input type="checkbox" name="rare[]" value="pneumatic_limbs" />
+                Have pneumatic limbs.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="brilliance" />
+                Must have the Brilliance Condition.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="blood_sickness" />
+                Must have the Blood Sickness Condition.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="haunted" />
+                Must have the Haunted Condition.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="crazy" />
+                Must have had the Crazy +4 or greater Condition at some point during a session.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="burning_5_resolved" />
+                Must have had the Burning +5 or greater Condition resolve against her.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="burning_10_applied" />
+                Must have applied 10 or more ranks of the Burning Condition to her enemies during a single combat.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="died_or_minus10" />
+                Has either died or been at -10 Wounds or below.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="minus5" />
+                Has reached -5 Wounds or lower.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="unconscious" />
+                Must have failed an Unconsciousness Challenge while at negative Wounds.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="black_blood" />
+                Survived a Nephilim attack after being brought down to negative Wounds.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="beyond" />
+                Have met with a Shinto priest, Oni hunter, or other organization (like the Red Library) with knowledge about how to best exploit these spirits and their weaknesses.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="infiltration" />
+                Must be a Guild employee or have the Infiltration Talent.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="sloth" />
+                Sloth Vice.
+                </label>
+                <label><input type="checkbox" name="rare[]" value="enchanter" />
+                Enchant Item Talent.
+                </label>
+            </div>
+        </div>
+
+        <div class="filter-buttons">
+            <button type="submit">Apply Filter</button>
+            <button type="button" id="showAllTalents">Show All Talents</button>
+        </div>
+    </form>
+    <button id="scrollTopBtn" title="Porter">
+    </button>
     <div id="results"></div>
 </div>
 
   <script src="script.js"></script>
+    <script>
+        const btn = document.getElementById('scrollTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+            btn.classList.add('show');
+            } else {
+            btn.classList.remove('show');
+            }
+        });
+
+        btn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
