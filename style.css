@@ -4,6 +4,80 @@
   font-display: swap;
 }
 
+body.dark {
+  background-color: #181a1b;
+  color: #f1f1f1;
+}
+
+.dark input,
+.dark select,
+.dark button {
+  background-color: #282c2f;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+.dark button:hover {
+  background-color: #383d40;
+}
+
+.dark h1, .dark h2, .dark h3 {
+  color: #eaeaea;
+} 
+
+.dark .talent-block {
+  background-color: #202324;
+  border-left: 4px solid #bebeba;
+}
+
+.dark .talent-book {
+  color: #a0a0a0;
+}
+
+.dark .talent-req em,
+.dark .talent-narrative,
+.dark p {
+  color: #dddddd;
+}
+
+.dark .round-button {
+  background-color: #282c2f;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+.dark .round-button.active {
+  background-color: #f1f1f1;
+  color: #000;
+  border-color: #f1f1f1;
+}
+
+.dark input[type="number"] {
+  background-color: #2a2e30;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+.dark .search-wrapper input {
+  background-color: transparent;
+  color: #fff;
+}
+
+.dark .search-wrapper button {
+  background: none;
+  color: #ccc;
+}
+
+.dark .search-wrapper button:hover {
+  color: #fff;
+}
+
+.dark .talent-narrative {
+  color: #ccccccc6;
+  font-style: italic;
+}
+
+
 .malifaux-symbol {
   font-family: 'MalifauxSymbols', sans-serif;
   font-size: 1.2em;
