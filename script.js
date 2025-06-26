@@ -1,5 +1,18 @@
 let allTalents = [];
 
+const bookLinks = {
+  "Core Book": "https://giveusyourmoneypleasethankyou-wyrd.com/collections/through-the-breach/products/through-the-breach-2nd-edition",
+  "Into the Steam": "https://giveusyourmoneypleasethankyou-wyrd.com/collections/through-the-breach/products/into-the-steam",
+  "Under Quarantine": "https://giveusyourmoneypleasethankyou-wyrd.com/collections/through-the-breach/products/under-quarantine",
+  "Above the Law": "https://giveusyourmoneypleasethankyou-wyrd.com/collections/through-the-breach/products/above-the-law",
+  "From Shadows": "https://giveusyourmoneypleasethankyou-wyrd.com/collections/through-the-breach/products/from-shadows",
+  "From the Nightmares": "https://giveusyourmoneypleasethankyou-wyrd.com/collections/through-the-breach/products/from-nightmares",
+  "Rules Update 1.2025": "https://static1.squarespace.com/static/54fe412ce4b0c449f7369857/t/6787d7391b29cf777f969608/1736955705681/Through-the-Breach_Rules-Update_1.2025.pdf",
+  "Into the Bayou": "https://giveusyourmoneypleasethankyou-wyrd.com/collections/through-the-breach/products/into-the-bayou",
+  "Onward": "https://giveusyourmoneypleasethankyou-wyrd.com/collections/through-the-breach/products/from-shadows-copy"
+};
+
+
 const skillCategories = {
   "Academic": ["Bureaucracy", "Engineering", "History", "Literacy", "Mathematics", "Music"],
   "Close Combat": ["Flexible", "Grappling", "Heavy Melee", "Martial Arts", "Melee", "Pneumatic", "Pugilism"],
@@ -209,7 +222,12 @@ document.getElementById("filterForm").addEventListener("submit", function (e) {
         ${t.displayedReqs ? `<p class="talent-req"><em>${formatTextWithSymbols(t.displayedReqs)}</em></p>` : ""}
         ${t.narative ? `<p class="talent-narrative">${formatTextWithSymbols(t.narative)}</p>` : ""}
         <p>${formatTextWithSymbols(t.description)}</p>
-        ${t.book ? `<div class="talent-book">${t.book}</div>` : ""}
+        ${t.book ? (() => {
+        const [name, page] = t.book.split(" pg.");
+        const url = bookLinks[name];
+        return `<div class="talent-book">` +
+              (url ? `<a href="${url}" target="_blank">${t.book}</a>` : `${t.book}`) +
+              `</div>`;})() : ""}
         ${t.legacy ? `
           <button class="toggle-legacy">Show old version ▼</button>
           <div class="legacy-content hidden">
@@ -342,7 +360,12 @@ document.getElementById("showAllTalents")?.addEventListener("click", () => {
       ${t.displayedReqs ? `<p class="talent-req"><em>${formatTextWithSymbols(t.displayedReqs)}</em></p>` : ""}
       ${t.narative ? `<p class="talent-narrative">${formatTextWithSymbols(t.narative)}</p>` : ""}
       <p>${formatTextWithSymbols(t.description)}</p>
-      ${t.book ? `<div class="talent-book">${t.book}</div>` : ""}
+      ${t.book ? (() => {
+      const [name, page] = t.book.split(" pg.");
+      const url = bookLinks[name];
+      return `<div class="talent-book">` +
+            (url ? `<a href="${url}" target="_blank">${t.book}</a>` : `${t.book}`) +
+            `</div>`;})() : ""}
       ${t.legacy ? `
         <button class="toggle-legacy">Show old version ▼</button>
         <div class="legacy-content hidden">
