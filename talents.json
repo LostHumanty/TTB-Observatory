@@ -2700,7 +2700,7 @@
     "name": "Insubstantial Assault",
     "displayedReqs": "Gift of Darkness. Nightmare.",
     "narative": "A Nightmare’s blows can easily deal damage to psyche as well as the flesh.",
-    "description": "This character gains the following Trigger on all Combat attacks:\n\n[С] *In Your Head*: After succeeding, reduce the target’s Defense or Willpower by -1 for one round for each [С] in this final duel total. Their Defense and Willpower cannot be reduced to less than 0.",
+    "description": "This character gains the following Trigger on all Combat attacks:\n\n[C] *In Your Head*: After succeeding, reduce the target’s Defense or Willpower by -1 for one round for each [C] in this final duel total. Their Defense and Willpower cannot be reduced to less than 0.",
     "requirements": [
       { "type": "custom", "name": "twisted" },
       { "type": "custom", "name": "nightmare" }

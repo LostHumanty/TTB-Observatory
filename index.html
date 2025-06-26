@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TTB Observatory</title>
+    <link rel="icon" href="./assets/icons/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="./assets/icons/site.webmanifest">
     <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="narrative-hidden">
   <div class="main">
     <h1>Talent Filter</h1>
     <form id="filterForm">
@@ -44,7 +49,8 @@
                         <div class="step-selector" data-name="destiny_steps"></div>
                     </div>
                     <div class="special">
-                        <label><input type="checkbox" name="reqNoneOnly" value="reqNoneOnly" /> Show talents without requirements</label>
+                        <label><input type="checkbox" name="reqNoneOnly" value="reqNoneOnly" checked /> Show talents without requirements</label>
+                        <label><input type="checkbox" id="showNarrative" />Show narrative text</label>
                     </div>
                 </div>
             </div>
@@ -166,6 +172,10 @@
     </form>
     <button id="scrollTopBtn" title="Porter">
     </button>
+    <div id="searchBar" class="hidden">
+        <input type="text" id="searchInput" placeholder="Search talents...">
+        <button id="clearSearch" type="button" aria-label="Clear search">×</button>
+    </div>
     <div id="results"></div>
 </div>
 

@@ -1,4 +1,70 @@
 let allTalents = [];
+let currentRenderedTalents = [];
+let lastRenderedTalents = [];
+let originalRenderedTalents = [];
+
+
+function renderTalents(list) {
+  originalRenderedTalents = [...list];
+  currentRenderedTalents = [...list];
+  lastRenderedTalents = [...list];
+  const resultsDiv = document.getElementById("results");
+  resultsDiv.innerHTML = "";
+
+  list.forEach(t => {
+    const div = document.createElement("div");
+    div.classList.add("talent-block");
+    div.innerHTML = `
+      <strong class="talent-name">${t.name}</strong>
+      ${t.displayedReqs ? `<p class="talent-req"><em>${formatTextWithSymbols(t.displayedReqs)}</em></p>` : ""}
+      ${t.narative ? `<p class="talent-narrative">${formatTextWithSymbols(t.narative)}</p>` : ""}
+      <p>${formatTextWithSymbols(t.description)}</p>
+      ${t.book ? (() => {
+        const [name, page] = t.book.split(" pg.");
+        const url = bookLinks[name];
+        return `<div class="talent-book">` +
+          (url ? `<a href="${url}" target="_blank">${t.book}</a>` : `${t.book}`) +
+          `</div>`;
+      })() : ""}
+      ${t.legacy ? `
+        <button class="toggle-legacy">Show old version ▼</button>
+        <div class="legacy-content hidden">
+          ${t.legacy.displayedReqs ? `<p class="talent-req"><em>${formatTextWithSymbols(t.legacy.displayedReqs)}</em></p>` : ""}
+          <p>${formatTextWithSymbols(t.legacy.description)}</p>
+          ${t.legacy.book ? `<div class="talent-book">${t.legacy.book}</div>` : ""}
+        </div>
+      ` : ""}
+    `;
+    resultsDiv.appendChild(div);
+  });
+
+  document.querySelectorAll(".toggle-legacy").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const legacy = btn.nextElementSibling;
+      legacy.classList.toggle("hidden");
+      btn.textContent = legacy.classList.contains("hidden")
+        ? "Show old version ▼"
+        : "Hide old version ▲";
+    });
+  });
+
+  const searchBar = document.getElementById("searchBar");
+  if (searchBar) searchBar.classList.remove("hidden");
+}
+
+
+const bookLinks = {
+  "Core Book": "https://giveusyourmoneypleasethankyou-wyrd.com/collections/through-the-breach/products/through-the-breach-2nd-edition",
+  "Into the Steam": "https://giveusyourmoneypleasethankyou-wyrd.com/collections/through-the-breach/products/into-the-steam",
+  "Under Quarantine": "https://giveusyourmoneypleasethankyou-wyrd.com/collections/through-the-breach/products/under-quarantine",
+  "Above the Law": "https://giveusyourmoneypleasethankyou-wyrd.com/collections/through-the-breach/products/above-the-law",
+  "From Shadows": "https://giveusyourmoneypleasethankyou-wyrd.com/collections/through-the-breach/products/from-shadows",
+  "From the Nightmares": "https://giveusyourmoneypleasethankyou-wyrd.com/collections/through-the-breach/products/from-nightmares",
+  "Rules Update 1.2025": "https://static1.squarespace.com/static/54fe412ce4b0c449f7369857/t/6787d7391b29cf777f969608/1736955705681/Through-the-Breach_Rules-Update_1.2025.pdf",
+  "Into the Bayou": "https://giveusyourmoneypleasethankyou-wyrd.com/collections/through-the-breach/products/into-the-bayou",
+  "Onward": "https://giveusyourmoneypleasethankyou-wyrd.com/collections/through-the-breach/products/from-shadows-copy"
+};
+
 
 const skillCategories = {
   "Academic": ["Bureaucracy", "Engineering", "History", "Literacy", "Mathematics", "Music"],
@@ -101,20 +167,75 @@ document.addEventListener("DOMContentLoaded", () => {
     (i < half ? col1 : col2).appendChild(box);
   });
 
-  container.appendChild(col1);
-  container.appendChild(col2);
-
-  // ✅ Навешиваем обработчик toggleSkills ПОСЛЕ создания DOM
-  const toggleSkillsBtn = document.getElementById("toggleSkills");
-  const skillsTab = document.querySelector(".skills_tab");
-  if (toggleSkillsBtn && skillsTab) {
-    toggleSkillsBtn.addEventListener("click", () => {
-      skillsTab.classList.toggle("hidden");
-      toggleSkillsBtn.textContent = skillsTab.classList.contains("hidden")
-        ? "Skills ▼"
-        : "Skills ▲";
+  document.getElementById("showNarrative").addEventListener("change", function () {
+    document.body.classList.toggle("narrative-hidden", !this.checked);
     });
-  }
+
+    container.appendChild(col1);
+    container.appendChild(col2);
+
+    const toggleSkillsBtn = document.getElementById("toggleSkills");
+    const skillsTab = document.querySelector(".skills_tab");
+    if (toggleSkillsBtn && skillsTab) {
+      toggleSkillsBtn.addEventListener("click", () => {
+        skillsTab.classList.toggle("hidden");
+        toggleSkillsBtn.textContent = skillsTab.classList.contains("hidden")
+          ? "Skills ▼"
+          : "Skills ▲";
+      });
+    }
+
+    const searchBar = document.getElementById("searchBar");
+    const searchInput = document.getElementById("searchInput");
+    const clearSearch = document.getElementById("clearSearch");
+
+  searchInput.addEventListener("input", () => {
+    const term = searchInput.value.toLowerCase();
+
+    const filtered = originalRenderedTalents.filter(t =>
+      t.name.toLowerCase().includes(term) ||
+      (t.description && t.description.toLowerCase().includes(term)) ||
+      (t.displayedReqs && t.displayedReqs.toLowerCase().includes(term)) ||
+      (t.book && t.book.toLowerCase().includes(term))
+    );
+
+    currentRenderedTalents = filtered;
+    const resultsDiv = document.getElementById("results");
+    resultsDiv.innerHTML = "";
+
+    filtered.forEach(t => {
+      const div = document.createElement("div");
+      div.classList.add("talent-block");
+      div.innerHTML = `
+        <strong class="talent-name">${t.name}</strong>
+        ${t.displayedReqs ? `<p class="talent-req"><em>${formatTextWithSymbols(t.displayedReqs)}</em></p>` : ""}
+        ${t.narative ? `<p class="talent-narrative">${formatTextWithSymbols(t.narative)}</p>` : ""}
+        <p>${formatTextWithSymbols(t.description)}</p>
+        ${t.book ? (() => {
+          const [name, page] = t.book.split(" pg.");
+          const url = bookLinks[name];
+          return `<div class="talent-book">` +
+            (url ? `<a href="${url}" target="_blank">${t.book}</a>` : `${t.book}`) +
+            `</div>`;
+        })() : ""}
+        ${t.legacy ? `
+          <button class="toggle-legacy">Show old version ▼</button>
+          <div class="legacy-content hidden">
+            ${t.legacy.displayedReqs ? `<p class="talent-req"><em>${formatTextWithSymbols(t.legacy.displayedReqs)}</em></p>` : ""}
+            <p>${formatTextWithSymbols(t.legacy.description)}</p>
+            ${t.legacy.book ? `<div class="talent-book">${t.legacy.book}</div>` : ""}
+          </div>
+        ` : ""}
+      `;
+      resultsDiv.appendChild(div);
+    });
+  });
+
+
+  clearSearch.addEventListener("click", () => {
+    searchInput.value = "";
+    renderTalents(originalRenderedTalents);
+  });
 });
 
 
@@ -154,8 +275,6 @@ function compare(a, op, b) {
 
 document.getElementById("filterForm").addEventListener("submit", function (e) {
   e.preventDefault();
-  const resultsDiv = document.getElementById("results");
-  resultsDiv.innerHTML = "";
 
   const formData = new FormData(e.target);
   const filters = Object.fromEntries([...formData.entries()].filter(([k]) => !k.endsWith("[]")));
@@ -172,7 +291,6 @@ document.getElementById("filterForm").addEventListener("submit", function (e) {
     if (level > 0) selectedSkills[div.dataset.name.toLowerCase()] = level;
   });
 
-  // Unified boolean flags
   const selectedFlags = new Set([
     ...formData.getAll("traits"),
     ...formData.getAll("rare[]")
@@ -196,38 +314,11 @@ document.getElementById("filterForm").addEventListener("submit", function (e) {
   });
 
   if (!matched.length) {
-    resultsDiv.innerHTML = "<p>No matching talents found.</p>";
+    document.getElementById("results").innerHTML = "<p>No matching talents found.</p>";
+    document.getElementById("searchBar").classList.add("hidden");
   } else {
-    matched.forEach(t => {
-      const div = document.createElement("div");
-      div.classList.add("talent-block");
-      div.innerHTML = `
-        <strong class="talent-name">${t.name}</strong>
-        ${t.displayedReqs ? `<p class="talent-req"><em>${formatTextWithSymbols(t.displayedReqs)}</em></p>` : ""}
-        <p>${formatTextWithSymbols(t.description)}</p>
-        ${t.book ? `<div class="talent-book">${t.book}</div>` : ""}
-        ${t.legacy ? `
-          <button class="toggle-legacy">Show old version ▼</button>
-          <div class="legacy-content hidden">
-            ${t.legacy.displayedReqs ? `<p class="talent-req"><em>${formatTextWithSymbols(t.legacy.displayedReqs)}</em></p>` : ""}
-            <p>${formatTextWithSymbols(t.legacy.description)}</p>
-            ${t.legacy.book ? `<div class="talent-book">${t.legacy.book}</div>` : ""}
-          </div>
-        ` : ""}
-      `;
-      resultsDiv.appendChild(div);
-    });
+    renderTalents(matched);
   }
-  
-  document.querySelectorAll(".toggle-legacy").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const legacy = btn.nextElementSibling;
-      legacy.classList.toggle("hidden");
-      btn.textContent = legacy.classList.contains("hidden")
-        ? "Show old version ▼"
-        : "Hide old version ▲";
-    });
-  });
 });
 
 
@@ -328,34 +419,5 @@ document.getElementById("calculateParams")?.addEventListener("click", () => {
 
 // Show all talents button
 document.getElementById("showAllTalents")?.addEventListener("click", () => {
-  const resultsDiv = document.getElementById("results");
-  resultsDiv.innerHTML = "";
-  allTalents.forEach(t => {
-    const div = document.createElement("div");
-    div.classList.add("talent-block");
-    div.innerHTML = `
-      <strong class="talent-name">${t.name}</strong>
-      ${t.displayedReqs ? `<p class="talent-req"><em>${formatTextWithSymbols(t.displayedReqs)}</em></p>` : ""}
-      <p>${formatTextWithSymbols(t.description)}</p>
-      ${t.book ? `<div class="talent-book">${t.book}</div>` : ""}
-      ${t.legacy ? `
-        <button class="toggle-legacy">Show old version ▼</button>
-        <div class="legacy-content hidden">
-          ${t.legacy.displayedReqs ? `<p class="talent-req"><em>${formatTextWithSymbols(t.legacy.displayedReqs)}</em></p>` : ""}
-          <p>${formatTextWithSymbols(t.legacy.description)}</p>
-          ${t.legacy.book ? `<div class="talent-book">${t.legacy.book}</div>` : ""}
-        </div>
-      ` : ""}
-    `;
-    resultsDiv.appendChild(div);
-  });
-    document.querySelectorAll(".toggle-legacy").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const legacy = btn.nextElementSibling;
-      legacy.classList.toggle("hidden");
-      btn.textContent = legacy.classList.contains("hidden")
-        ? "Show old version ▼"
-        : "Hide old version ▲";
-    });
-  });
+  renderTalents(allTalents);
 });
