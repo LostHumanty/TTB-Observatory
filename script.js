@@ -101,10 +101,13 @@ document.addEventListener("DOMContentLoaded", () => {
     (i < half ? col1 : col2).appendChild(box);
   });
 
+document.getElementById("showNarrative").addEventListener("change", function () {
+  document.body.classList.toggle("narrative-hidden", !this.checked);
+  });
+
   container.appendChild(col1);
   container.appendChild(col2);
 
-  // ✅ Навешиваем обработчик toggleSkills ПОСЛЕ создания DOM
   const toggleSkillsBtn = document.getElementById("toggleSkills");
   const skillsTab = document.querySelector(".skills_tab");
   if (toggleSkillsBtn && skillsTab) {
@@ -204,6 +207,7 @@ document.getElementById("filterForm").addEventListener("submit", function (e) {
       div.innerHTML = `
         <strong class="talent-name">${t.name}</strong>
         ${t.displayedReqs ? `<p class="talent-req"><em>${formatTextWithSymbols(t.displayedReqs)}</em></p>` : ""}
+        ${t.narative ? `<p class="talent-narrative">${formatTextWithSymbols(t.narative)}</p>` : ""}
         <p>${formatTextWithSymbols(t.description)}</p>
         ${t.book ? `<div class="talent-book">${t.book}</div>` : ""}
         ${t.legacy ? `
@@ -336,6 +340,7 @@ document.getElementById("showAllTalents")?.addEventListener("click", () => {
     div.innerHTML = `
       <strong class="talent-name">${t.name}</strong>
       ${t.displayedReqs ? `<p class="talent-req"><em>${formatTextWithSymbols(t.displayedReqs)}</em></p>` : ""}
+      ${t.narative ? `<p class="talent-narrative">${formatTextWithSymbols(t.narative)}</p>` : ""}
       <p>${formatTextWithSymbols(t.description)}</p>
       ${t.book ? `<div class="talent-book">${t.book}</div>` : ""}
       ${t.legacy ? `

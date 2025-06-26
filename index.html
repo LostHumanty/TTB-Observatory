@@ -6,7 +6,7 @@
     <title>TTB Observatory</title>
     <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="narrative-hidden">
   <div class="main">
     <h1>Talent Filter</h1>
     <form id="filterForm">
@@ -44,7 +44,8 @@
                         <div class="step-selector" data-name="destiny_steps"></div>
                     </div>
                     <div class="special">
-                        <label><input type="checkbox" name="reqNoneOnly" value="reqNoneOnly" /> Show talents without requirements</label>
+                        <label><input type="checkbox" name="reqNoneOnly" value="reqNoneOnly" checked /> Show talents without requirements</label>
+                        <label><input type="checkbox" id="showNarrative" />Show narrative text</label>
                     </div>
                 </div>
             </div>
