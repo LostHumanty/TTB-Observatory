@@ -52,6 +52,33 @@ function renderTalents(list) {
   if (searchBar) searchBar.classList.remove("hidden");
 }
 
+if (!document.body.classList.contains("dark")) {
+  document.body.classList.add("dark");
+}
+
+const themeToggleBtn = document.createElement("button");
+themeToggleBtn.id = "themeToggleBtn";
+themeToggleBtn.title = "Toggle theme";
+themeToggleBtn.innerHTML = "🌙";
+themeToggleBtn.style.position = "fixed";
+themeToggleBtn.style.top = "10px";
+themeToggleBtn.style.right = "10px";
+themeToggleBtn.style.padding = "8px";
+themeToggleBtn.style.borderRadius = "50%";
+themeToggleBtn.style.border = "none";
+themeToggleBtn.style.cursor = "pointer";
+themeToggleBtn.style.zIndex = "1000";
+themeToggleBtn.style.fontSize = "18px";
+themeToggleBtn.style.backgroundColor = "var(--bg-button, #181a1b)";
+themeToggleBtn.style.color = "var(--fg-button, #fff)";
+document.body.appendChild(themeToggleBtn);
+
+themeToggleBtn.addEventListener("click", () => {
+  const isDark = document.body.classList.toggle("dark");
+  themeToggleBtn.innerHTML = isDark ? "🌙" : "☀️";
+  themeToggleBtn.style.backgroundColor = isDark ? "var(--bg-button, #181a1b)" : "var(--bg-button, #ffffff)";
+});
+
 
 const bookLinks = {
   "Core Book": "https://giveusyourmoneypleasethankyou-wyrd.com/collections/through-the-breach/products/through-the-breach-2nd-edition",
