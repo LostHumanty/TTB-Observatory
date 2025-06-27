@@ -67,7 +67,7 @@ themeToggleBtn.style.border = "none";
 themeToggleBtn.style.cursor = "pointer";
 themeToggleBtn.style.zIndex = "1000";
 themeToggleBtn.style.fontSize = "18px";
-themeToggleBtn.style.backgroundColor = "var(--bg-button, #181a1b)";
+themeToggleBtn.style.backgroundColor = "var(--bg-button, #0b0b0b)";
 themeToggleBtn.style.color = "var(--fg-button, #fff)";
 themeToggleBtn.style.boxShadow = "0 0 8px rgba(251, 251, 251, 0.31)";
 themeToggleBtn.style.display = "inline-block";
@@ -79,7 +79,7 @@ document.body.appendChild(themeToggleBtn);
 themeToggleBtn.addEventListener("click", () => {
   const isDark = document.body.classList.toggle("dark");
   themeToggleBtn.innerHTML = isDark ? "🌚" : "🌞";
-  themeToggleBtn.style.backgroundColor = isDark ? "var(--bg-button, #181a1b)" : "var(--bg-button, #ffffff)";
+  themeToggleBtn.style.backgroundColor = isDark ? "var(--bg-button, #0b0b0b)" : "var(--bg-button, #ffffff)";
   themeToggleBtn.style.boxShadow = isDark ? "0 0 8px rgba(251, 251, 251, 0.31)" : "0 0 8px rgba(0, 0, 0, 0.5)";
 });
 
