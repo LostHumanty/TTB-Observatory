@@ -4,12 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TTB Observatory</title>
+    <link rel="icon" href="./assets/icons/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="./assets/icons/site.webmanifest">
     <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <div class="main">
-    <h1>Talent Filter</h1>
-    <form id="filterForm">
+    <body class="narrative-hidden">
+        <!-- HEADER -->
+        <header class="site-header">
+            <h1 class="site-title">TTB Talent Filter</h1>
+            <button class="header__burger burger" id="burgerMenu" aria-label="Menu">
+                <img src="./assets/images/settings.png" alt="Settings"> 
+            </button>
+        </header>
+        <nav class="header-nav" id="headerNav">
+            <div class="nav-top">
+                <button id="themeToggleBtn" title="Toggle theme">🌙</button>
+                <label><input type="checkbox" id="showNarrative" /> Show narrative text</label>
+                <label><input type="checkbox" name="reqNoneOnly" checked /> Show talents without requirements</label>
+            </div>
+
+            <div class="nav-bottom">
+            <a href="https://ko-fi.com/losthumanity" target="_blank" id="coffeeBtn" title="Buy me a coffee">
+                <img src="./assets/images/coffee.webp" alt="Coffee"> Buy me a coffee
+            </a>
+            </div>
+        </nav>
+        <div class="main">
+        <form id="filterForm">
 
     <!-- ASPECTS -->
     <div class="top_tab">
@@ -43,9 +67,6 @@
                         <h2>Destiny Steps</h2>
                         <div class="step-selector" data-name="destiny_steps"></div>
                     </div>
-                    <div class="special">
-                        <label><input type="checkbox" name="reqNoneOnly" value="reqNoneOnly" /> Show talents without requirements</label>
-                    </div>
                 </div>
             </div>
             <div class="bot-left">
@@ -71,25 +92,21 @@
         <h2>Traits</h2>
             <div class="checkbox-grid">
                 <label><input type="checkbox" name="traits" value="fated" /> Fated</label>
-                <label><input type="checkbox" name="traits" value="twisted" /> Twisted</label>
                 <label><input type="checkbox" name="traits" value="living" /> Living</label>
-                <label><input type="checkbox" name="traits" value="mimic" /> Mimic</label>
-                <label><input type="checkbox" name="traits" value="magical" /> Magical Theory</label>
-                <label><input type="checkbox" name="traits" value="woe" /> Woe</label>
-                <label><input type="checkbox" name="traits" value="guild" /> Guild Training</label>
-                <label><input type="checkbox" name="traits" value="nephilim" /> Nephilim</label>
-                <label><input type="checkbox" name="traits" value="heavy_chassis" /> Heavy Chassis</label>
-                <label><input type="checkbox" name="traits" value="half-blood" /> Half-Blood</label>
-                <label><input type="checkbox" name="traits" value="light_chassis" /> Light Chassis</label>
-                <label><input type="checkbox" name="traits" value="nightmare" /> Nightmare</label>
                 <label><input type="checkbox" name="traits" value="invested" /> Invested</label>
-                <label><input type="checkbox" name="traits" value="3+morphologies" /> 3+ Nephilim Morphologies</label>               
                 <label><input type="checkbox" name="traits" value="construct" /> Construct</label>
-                <label><input type="checkbox" name="traits" value="4nephilim_god" /> 4+ Nephilim Gifts of Darkness</label>
+                <label><input type="checkbox" name="traits" value="heavy_chassis" /> Heavy Chassis</label>
+                <label><input type="checkbox" name="traits" value="light_chassis" /> Light Chassis</label>
                 <label><input type="checkbox" name="traits" value="stitched" /> Stitched</label>
-                <label><input type="checkbox" name="traits" value="kin" /> Kin</label>
                 <label><input type="checkbox" name="traits" value="undead" /> Undead</label>
+                <label><input type="checkbox" name="traits" value="kin" /> Kin</label>
                 <label><input type="checkbox" name="traits" value="nonkin" /> Non-Kin</label>
+                <label><input type="checkbox" name="traits" value="twisted" /> Twisted</label>
+                <label><input type="checkbox" name="traits" value="mimic" /> Mimic</label>
+                <label><input type="checkbox" name="traits" value="nightmare" /> Nightmare</label>
+                <label><input type="checkbox" name="traits" value="woe" /> Woe</label>
+                <label><input type="checkbox" name="traits" value="nephilim" /> Nephilim</label>
+                <label><input type="checkbox" name="traits" value="half-blood" /> Half-Blood</label>
             </div>
         </div>
     </div>
@@ -108,9 +125,9 @@
         <div class="section rare-requirements hidden" id="rareRequirements">
             <h2>Rare Requirements</h2>
             <div class="checkbox-grid">
-                <label><input type="checkbox" name="rare[]" value="fmc" />
-                Fatemaster's Character.
-                </label>           
+                <label><input type="checkbox" name="traits" value="magical" />
+                Magical Theory
+                </label>
                 <label><input type="checkbox" name="rare[]" value="pneumatic_limbs" />
                 Have pneumatic limbs.
                 </label>
@@ -147,15 +164,27 @@
                 <label><input type="checkbox" name="rare[]" value="beyond" />
                 Have met with a Shinto priest, Oni hunter, or other organization (like the Red Library) with knowledge about how to best exploit these spirits and their weaknesses.
                 </label>
+                <label><input type="checkbox" name="rare[]" value="enchanter" />
+                Enchant Item Talent.
+                </label>
+                <label><input type="checkbox" name="traits" value="3+morphologies" />
+                3+ Nephilim Morphologies
+                </label>        
+                <label><input type="checkbox" name="traits" value="4nephilim_god" />
+                4+ Nephilim Gifts of Darkness
+                </label>
+                <label><input type="checkbox" name="traits" value="guild" />
+                Guild Training
+                </label>
                 <label><input type="checkbox" name="rare[]" value="infiltration" />
                 Must be a Guild employee or have the Infiltration Talent.
                 </label>
                 <label><input type="checkbox" name="rare[]" value="sloth" />
                 Sloth Vice.
                 </label>
-                <label><input type="checkbox" name="rare[]" value="enchanter" />
-                Enchant Item Talent.
-                </label>
+                <label><input type="checkbox" name="rare[]" value="fmc" />
+                Fatemaster's Character.
+                </label>   
             </div>
         </div>
 
@@ -166,6 +195,10 @@
     </form>
     <button id="scrollTopBtn" title="Porter">
     </button>
+    <div id="searchBar" class="hidden">
+        <input type="text" id="searchInput" placeholder="Search talents...">
+        <button id="clearSearch" type="button" aria-label="Clear search">×</button>
+    </div>
     <div id="results"></div>
 </div>
 
