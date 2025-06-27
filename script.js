@@ -1,3 +1,5 @@
+document.body.classList.add("dark");
+
 let allTalents = [];
 let currentRenderedTalents = [];
 let lastRenderedTalents = [];
@@ -55,34 +57,6 @@ function renderTalents(list) {
 if (!document.body.classList.contains("dark")) {
   document.body.classList.add("dark");
 }
-
-const themeToggleBtn = document.createElement("button");
-themeToggleBtn.style.position = "fixed";
-themeToggleBtn.style.top = "10px";
-themeToggleBtn.innerHTML = "🌚";
-themeToggleBtn.style.right = "10px";
-themeToggleBtn.style.padding = "8px";
-themeToggleBtn.style.borderRadius = "50%";
-themeToggleBtn.style.border = "none";
-themeToggleBtn.style.cursor = "pointer";
-themeToggleBtn.style.zIndex = "1000";
-themeToggleBtn.style.fontSize = "18px";
-themeToggleBtn.style.backgroundColor = "var(--bg-button, #0b0b0b)";
-themeToggleBtn.style.color = "var(--fg-button, #fff)";
-themeToggleBtn.style.boxShadow = "0 0 8px rgba(251, 251, 251, 0.31)";
-themeToggleBtn.style.display = "inline-block";
-themeToggleBtn.style.width = "auto";
-themeToggleBtn.style.maxWidth = "none";
-
-document.body.appendChild(themeToggleBtn);
-
-themeToggleBtn.addEventListener("click", () => {
-  const isDark = document.body.classList.toggle("dark");
-  themeToggleBtn.innerHTML = isDark ? "🌚" : "🌞";
-  themeToggleBtn.style.backgroundColor = isDark ? "var(--bg-button, #0b0b0b)" : "var(--bg-button, #ffffff)";
-  themeToggleBtn.style.boxShadow = isDark ? "0 0 8px rgba(251, 251, 251, 0.31)" : "0 0 8px rgba(0, 0, 0, 0.5)";
-});
-
 
 const bookLinks = {
   "Core Book": "https://giveusyourmoneypleasethankyou-wyrd.com/collections/through-the-breach/products/through-the-breach-2nd-edition",
@@ -269,6 +243,42 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+let burgerRotation = 0;
+
+const themeToggleBtn = document.getElementById('themeToggleBtn');
+const burgerMenu = document.getElementById('burgerMenu');
+const headerNav = document.getElementById('headerNav');
+
+burgerMenu.addEventListener('click', function () {
+  burgerRotation += 180;
+  burgerMenu.style.transform = `rotate(${burgerRotation}deg)`;
+
+  headerNav.classList.toggle('open');
+  document.body.classList.toggle('no-scroll');
+});
+
+themeToggleBtn.addEventListener("click", () => {
+  const isDark = document.body.classList.toggle("dark");
+  themeToggleBtn.textContent = isDark ? "🌙" : "☀️";
+});
+
+document.getElementById("showNarrative").addEventListener("change", function () {
+  document.body.classList.toggle("narrative-hidden", !this.checked);
+});
+
+document.addEventListener("click", (event) => {
+  const isBurger = burgerMenu.contains(event.target);
+  const isNav = headerNav.contains(event.target);
+
+  if (!isBurger && !isNav && headerNav.classList.contains("open")) {
+    headerNav.classList.remove("open");
+    burgerMenu.classList.remove("open");
+    document.body.classList.remove("no-scroll");
+
+    burgerRotation += 180;
+    burgerMenu.style.transform = `rotate(${burgerRotation}deg)`;
+  }
+});
 
 document.querySelectorAll('input[type="number"]').forEach(input => {
   input.addEventListener("wheel", e => {
