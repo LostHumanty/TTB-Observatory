@@ -5,7 +5,7 @@
 }
 
 body.dark {
-  background-color: #181a1b;
+  background-color: #0b0b0b;
   color: #f1f1f1;
 }
 
@@ -77,6 +77,17 @@ body.dark {
   font-style: italic;
 }
 
+.dark a {
+  color: var(--link-color, #4efffc84);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--link-color, #4efffc84);
+}
+
+.dark a:hover {
+  color: var(--link-hover-color, #4efffca1);
+  border-bottom: 1px solid var(--link-hover-color, #4efffca1);
+}
+
 
 .malifaux-symbol {
   font-family: 'MalifauxSymbols', sans-serif;
@@ -97,6 +108,17 @@ body {
 
 .hidden {
   display: none;
+}
+
+a {
+  color: var(--link-color, #0151ff);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--link-color, #0151ff);
+}
+
+a:hover {
+  color: var(--link-hover-color, #00b7ff);
+  border-bottom: 1px solid var(--link-hover-color, #00b7ff);
 }
 
 .skills_tab.hidden {
