@@ -319,6 +319,7 @@ button {
   padding: 8px 12px;
   background-color: var(--color-coffee-button);
   color: var(--color-text);
+  border-radius: 10px;
 }
 
 #coffeeBtn img {
