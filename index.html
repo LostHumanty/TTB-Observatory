@@ -67,10 +67,6 @@
                         <h2>Destiny Steps</h2>
                         <div class="step-selector" data-name="destiny_steps"></div>
                     </div>
-                    <!-- <div class="special">
-                        <label><input type="checkbox" name="reqNoneOnly" value="reqNoneOnly" checked /> Show talents without requirements</label>
-                        <label><input type="checkbox" id="showNarrative" />Show narrative text</label>
-                    </div> -->
                 </div>
             </div>
             <div class="bot-left">
@@ -97,8 +93,6 @@
             <div class="checkbox-grid">
                 <label><input type="checkbox" name="traits" value="fated" /> Fated</label>
                 <label><input type="checkbox" name="traits" value="living" /> Living</label>
-                <label><input type="checkbox" name="traits" value="guild" /> Guild Training</label>
-                <label><input type="checkbox" name="traits" value="magical" /> Magical Theory</label>
                 <label><input type="checkbox" name="traits" value="invested" /> Invested</label>
                 <label><input type="checkbox" name="traits" value="construct" /> Construct</label>
                 <label><input type="checkbox" name="traits" value="heavy_chassis" /> Heavy Chassis</label>
@@ -113,8 +107,6 @@
                 <label><input type="checkbox" name="traits" value="woe" /> Woe</label>
                 <label><input type="checkbox" name="traits" value="nephilim" /> Nephilim</label>
                 <label><input type="checkbox" name="traits" value="half-blood" /> Half-Blood</label>
-                <label><input type="checkbox" name="traits" value="3+morphologies" /> 3+ Nephilim Morphologies</label>        
-                <label><input type="checkbox" name="traits" value="4nephilim_god" /> 4+ Nephilim Gifts of Darkness</label>  
             </div>
         </div>
     </div>
@@ -133,9 +125,9 @@
         <div class="section rare-requirements hidden" id="rareRequirements">
             <h2>Rare Requirements</h2>
             <div class="checkbox-grid">
-                <label><input type="checkbox" name="rare[]" value="fmc" />
-                Fatemaster's Character.
-                </label>           
+                <label><input type="checkbox" name="traits" value="magical" />
+                Magical Theory
+                </label>
                 <label><input type="checkbox" name="rare[]" value="pneumatic_limbs" />
                 Have pneumatic limbs.
                 </label>
@@ -172,15 +164,27 @@
                 <label><input type="checkbox" name="rare[]" value="beyond" />
                 Have met with a Shinto priest, Oni hunter, or other organization (like the Red Library) with knowledge about how to best exploit these spirits and their weaknesses.
                 </label>
+                <label><input type="checkbox" name="rare[]" value="enchanter" />
+                Enchant Item Talent.
+                </label>
+                <label><input type="checkbox" name="traits" value="3+morphologies" />
+                3+ Nephilim Morphologies
+                </label>        
+                <label><input type="checkbox" name="traits" value="4nephilim_god" />
+                4+ Nephilim Gifts of Darkness
+                </label>
+                <label><input type="checkbox" name="traits" value="guild" />
+                Guild Training
+                </label>
                 <label><input type="checkbox" name="rare[]" value="infiltration" />
                 Must be a Guild employee or have the Infiltration Talent.
                 </label>
                 <label><input type="checkbox" name="rare[]" value="sloth" />
                 Sloth Vice.
                 </label>
-                <label><input type="checkbox" name="rare[]" value="enchanter" />
-                Enchant Item Talent.
-                </label>
+                <label><input type="checkbox" name="rare[]" value="fmc" />
+                Fatemaster's Character.
+                </label>   
             </div>
         </div>
 
