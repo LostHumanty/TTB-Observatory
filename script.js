@@ -33,7 +33,13 @@ function renderTalents(list) {
         <div class="legacy-content hidden">
           ${t.legacy.displayedReqs ? `<p class="talent-req"><em>${formatTextWithSymbols(t.legacy.displayedReqs)}</em></p>` : ""}
           <p>${formatTextWithSymbols(t.legacy.description)}</p>
-          ${t.legacy.book ? `<div class="talent-book">${t.legacy.book}</div>` : ""}
+          ${t.legacy.book ? (() => {
+            const [legacyName] = t.legacy.book.split(" pg.");
+            const url = bookLinks[legacyName];
+            return `<div class="talent-book">` +
+              (url ? `<a href="${url}" target="_blank">${t.legacy.book}</a>` : `${t.legacy.book}`) +
+            `</div>`;
+          })() : ""}
         </div>
       ` : ""}
     `;
@@ -228,7 +234,13 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="legacy-content hidden">
             ${t.legacy.displayedReqs ? `<p class="talent-req"><em>${formatTextWithSymbols(t.legacy.displayedReqs)}</em></p>` : ""}
             <p>${formatTextWithSymbols(t.legacy.description)}</p>
-            ${t.legacy.book ? `<div class="talent-book">${t.legacy.book}</div>` : ""}
+            ${t.legacy.book ? (() => {
+              const [legacyName] = t.legacy.book.split(" pg.");
+              const url = bookLinks[legacyName];
+              return `<div class="talent-book">` +
+                (url ? `<a href="${url}" target="_blank">${t.legacy.book}</a>` : `${t.legacy.book}`) +
+              `</div>`;
+            })() : ""}
           </div>
         ` : ""}
       `;
