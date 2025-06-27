@@ -123,6 +123,20 @@ body.dark .header__burger {
   font-style: italic;
 }
 
+.dark .legacy-content {
+  background: var(--color-ui-dark);
+  color: var(--color-text-dark);
+  border-left: 2px dashed var(--color-text-light);
+}
+
+.dark .legacy-content p {
+  color: var(--color-text-dark);
+}
+
+.dark .legacy-content .talent-book {
+  color: var(--color-text-light);
+}
+
 body.dark #themeToggleBtn {
   background-color: var(--color-ui-dark);
   box-shadow: 0 0 2px 2px var(--color-text-light);
