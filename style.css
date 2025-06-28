@@ -60,7 +60,7 @@ body.dark .header__burger {
 .dark button {
   background-color: var(--color-ui-darker);
   color: var(--color-text-dark);
-  border: 1px solid var(--color-border-dark);
+  border: calc(1 / 16 * 1rem) solid var(--color-border-dark);
 }
 
 .dark button:hover {
@@ -73,7 +73,7 @@ body.dark .header__burger {
 
 .dark .talent-block {
   background-color: var(--color-ui-dark);
-  border-left: 4px solid var(--color-text-lighter);
+  border-left: calc(4 / 16 * 1rem) solid var(--color-text-lighter);
 }
 
 .dark .talent-book {
@@ -89,7 +89,7 @@ body.dark .header__burger {
 .dark .round-button {
   background-color: var(--color-ui-darker);
   color: var(--color-text-dark);
-  border: 1px solid var(--color-border-dark);
+  border: calc(1 / 16 * 1rem) solid var(--color-border-dark);
 }
 
 .dark .round-button.active {
@@ -101,7 +101,7 @@ body.dark .header__burger {
 .dark input[type="number"] {
   background-color: var(--color-ui-darker);
   color: var(--color-text-dark);
-  border: 1px solid var(--color-border-dark);
+  border: calc(1 / 16 * 1rem) solid var(--color-border-dark);
 }
 
 .dark .search-wrapper input {
@@ -126,7 +126,7 @@ body.dark .header__burger {
 .dark .legacy-content {
   background: var(--color-ui-dark);
   color: var(--color-text-dark);
-  border-left: 2px dashed var(--color-text-light);
+  border-left: calc(2 / 16 * 1rem) dashed var(--color-text-light);
 }
 
 .dark .legacy-content p {
@@ -139,25 +139,25 @@ body.dark .header__burger {
 
 body.dark #themeToggleBtn {
   background-color: var(--color-ui-dark);
-  box-shadow: 0 0 2px 2px var(--color-text-light);
+  box-shadow: 0 0 calc(2 / 16 * 1rem) calc(2 / 16 * 1rem) var(--color-text-light);
   border: none;
 }
 
 body.dark #coffeeBtn {
   background-color: var(--color-coffee-button);
   color: var(--color-text);
-  border: 2px solid var(--color-coffee-border);
+  border: calc(2 / 16 * 1rem) solid var(--color-coffee-border);
 }
 
 .dark a {
   color: var(--color-accent-dark);
   text-decoration: none;
-  border-bottom: 1px dashed var(--color-accent-dark);
+  border-bottom: calc(1 / 16 * 1rem) dashed var(--color-accent-dark);
 }
 
 .dark a:hover {
   color: var(--color-accent-dark-hover);
-  border-bottom: 1px solid var(--color-accent-dark-hover);
+  border-bottom: calc(1 / 16 * 1rem) solid var(--color-accent-dark-hover);
 }
 
 .malifaux-symbol {
@@ -172,7 +172,7 @@ body.dark #coffeeBtn {
 body {
   font-family: Arial, sans-serif;
   background: var(--color-bg);
-  font-size: 16px;
+  font-size: calc(16 / 16 * 1rem);
   margin: 0;
   color: var(--color-text);
 }
@@ -188,12 +188,12 @@ body.no-scroll {
 a {
   color: var(--color-accent);
   text-decoration: none;
-  border-bottom: 1px dashed var(--color-accent);
+  border-bottom: calc(1 / 16 * 1rem) dashed var(--color-accent);
 }
 
 a:hover {
   color: var(--color-accent-hover);
-  border-bottom: 1px solid var(--color-accent-hover);
+  border-bottom: calc(1 / 16 * 1rem) solid var(--color-accent-hover);
 }
 
 .skills_tab.hidden {
@@ -201,38 +201,38 @@ a:hover {
 }
 
 .main {
-  max-width: 1000px;
+  max-width: calc(1000 / 16 * 1rem);
   margin: 0 auto;
 }
 
 h1 {
   text-align: center;
-  font-size: 28px;
-  margin-bottom: 10px;
+  font-size: calc(28 / 16 * 1rem);
+  margin-bottom: calc(10 / 16 * 1rem);
 }
 
 h2 {
-  font-size: 16px;
+  font-size: calc(16 / 16 * 1rem);
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: calc(8 / 16 * 1rem);
   align-self: center;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: calc(3 / 16 * 1rem);
 }
 
 button {
   display: block;
-  margin: 5px;
-  padding: 10px 30px;
-  font-size: 16px;
+  margin: calc(5 / 16 * 1rem);
+  padding: calc(10 / 16 * 1rem) calc(30 / 16 * 1rem);
+  font-size: calc(16 / 16 * 1rem);
   font-weight: bold;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: calc(5 / 16 * 1rem);
 }
 
 .top_tab {
@@ -244,16 +244,16 @@ button {
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 10px;
+  padding: calc(10 / 16 * 1rem);
 }
 
 /* Burger */
 .header__burger {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 50px;
-  height: 50px;
+  top: calc(10 / 16 * 1rem);
+  right: calc(10 / 16 * 1rem);
+  width: calc(50 / 16 * 1rem);
+  height: calc(50 / 16 * 1rem);
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -283,21 +283,20 @@ button {
   position: fixed;
   top: 0;
   right: 0;
-  width: 260px;
+  width: calc(260 / 16 * 1rem);
   height: 100vh;
-  height: 100svh; 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: calc(400 / 16 * 1rem);
   background-color: var(--color-bg);
   color: var(--color-text);
-  border-left: 1px solid var(--color-border);
-  padding: 16px;
+  border-left: calc(1 / 16 * 1rem) solid var(--color-border);
+  padding: calc(16 / 16 * 1rem);
   z-index: 998;
-  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: calc(-4 / 16 * 1rem) 0 calc(10 / 16 * 1rem) rgba(0, 0, 0, 0.2);
   transform: translateX(100%);
   transition: transform 0.3s ease;
-  padding-bottom: env(safe-area-inset-bottom);
+  overflow-y: auto; 
 }
 
 .header-nav.open {
@@ -307,62 +306,59 @@ button {
 .nav-top {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: calc(10 / 16 * 1rem);
 }
 
 .nav-bottom {
   display: flex;
   justify-content: center;
-  padding-bottom: 30px;
-  margin-top: auto;
-  padding-bottom: 30px;
+  padding-bottom: calc(30 / 16 * 1rem);
 }
 
 .header-nav button {
   background-color: var(--color-bg);
   color: var(--color-text);
-  border: 1px solid var(--color-border);
-  padding: 4px 8px;
-  border-radius: 6px;
+  border: calc(1 / 16 * 1rem) solid var(--color-border);
+  padding: calc(4 / 16 * 1rem) calc(8 / 16 * 1rem);
+  border-radius: calc(6 / 16 * 1rem);
   cursor: pointer;
 }
 
 #themeToggleBtn {
-  width: 50px;
-  height: 50px;
+  width: calc(50 / 16 * 1rem);
+  height: calc(50 / 16 * 1rem);
   border: none;
-  border-radius: 30px;
+  border-radius: calc(30 / 16 * 1rem);
   background-color: var(--color-bg);
-  box-shadow: 0 0 2px 2px var(--color-text-italic);
+  box-shadow: 0 0 calc(2 / 16 * 1rem) calc(2 / 16 * 1rem) var(--color-text-italic);
 }
 
 #coffeeBtn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
-  border: 2px solid var(--color-coffee-border);
-  padding: 8px 12px;
+  gap: calc(6 / 16 * 1rem);
+  border: calc(2 / 16 * 1rem) solid var(--color-coffee-border);
+  padding: calc(8 / 16 * 1rem) calc(12 / 16 * 1rem);
   background-color: var(--color-coffee-button);
   color: var(--color-text);
-  border-radius: 10px;
+  border-radius: calc(10 / 16 * 1rem);
 }
 
 #coffeeBtn img {
-  width: 18px;
-  height: 18px;
+  width: calc(18 / 16 * 1rem);
+  height: calc(18 / 16 * 1rem);
 }
 
 .aspects {
   display: flex;
   flex-direction: row;
-  gap: 40px;
+  gap: calc(40 / 16 * 1rem);
 }
 
 .grid {
   display: grid;
   grid-template-columns: max-content 1fr;
-  gap: 6px 10px;
+  gap: calc(6 / 16 * 1rem) calc(10 / 16 * 1rem);
 }
 
 .grid label {
@@ -370,17 +366,17 @@ button {
 }
 
 .grid input[type="number"] {
-  width: 40px;
+  width: calc(40 / 16 * 1rem);
   text-align: center;
   font-weight: bold;
-  font-size: 14px;
+  font-size: calc(14 / 16 * 1rem);
   justify-self: start;
 }
 
 .step-selector {
   display: flex;
   flex-direction: row;
-  gap: 8px;
+  gap: calc(8 / 16 * 1rem);
   align-items: center;
 }
 
@@ -388,14 +384,14 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px;
+  margin-top: calc(10 / 16 * 1rem);
 }
 
 .checkbox-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 6px 20px;
-  font-size: 14px;
+  gap: calc(6 / 16 * 1rem) calc(20 / 16 * 1rem);
+  font-size: calc(14 / 16 * 1rem);
 }
 
 .destiny_tab {
@@ -405,21 +401,21 @@ button {
 }
 
 .skills_tab {
-  margin-top: 20px;
+  margin-top: calc(20 / 16 * 1rem);
   display: flex;
   flex-direction: inherit;
   align-self: center;
 }
 
 .skill-category {
-  margin-bottom: 2px;
+  margin-bottom: calc(2 / 16 * 1rem);
 }
 
 .collapsible {
   font-weight: bold;
-  font-size: 16px;
+  font-size: calc(16 / 16 * 1rem);
   cursor: pointer;
-  margin: 2px 0;
+  margin: calc(2 / 16 * 1rem) 0;
 }
 
 .category-content.hidden {
@@ -429,27 +425,27 @@ button {
 .skill-selector {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin: 4px 0;
+  gap: calc(10 / 16 * 1rem);
+  margin: calc(4 / 16 * 1rem) 0;
 }
 
 .skill-selector label {
   display: inline-block;
-  width: 135px;
+  width: calc(135 / 16 * 1rem);
   font-weight: normal;
   margin: 0;
 }
 
 .round-button {
-  width: 20px;
-  height: 20px;
+  width: calc(20 / 16 * 1rem);
+  height: calc(20 / 16 * 1rem);
   border-radius: 50%;
-  border: 1px solid var(--color-text);
+  border: calc(1 / 16 * 1rem) solid var(--color-text);
   text-align: center;
-  line-height: 20px;
+  line-height: calc(20 / 16 * 1rem);
   cursor: pointer;
   background: var(--color-bg);
-  font-size: 16px;
+  font-size: calc(16 / 16 * 1rem);
   padding: 0;
   user-select: none;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
@@ -462,12 +458,12 @@ button {
 }
 
 #results {
-  margin-top: 30px;
+  margin-top: calc(30 / 16 * 1rem);
 }
 
 #skillsContainer {
   display: flex;
-  gap: 40px;
+  gap: calc(40 / 16 * 1rem);
   flex-wrap: wrap;
   justify-content: space-between;
 }
@@ -476,35 +472,35 @@ button {
   flex: 1 1 45%;
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  min-width: 300px;
+  gap: calc(2 / 16 * 1rem);
+  min-width: calc(300 / 16 * 1rem);
 }
 
 .skills-toggle-area {
   display: flex;
-  gap: 10px;
+  gap: calc(10 / 16 * 1rem);
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: calc(10 / 16 * 1rem);
 }
 
 #toggleSkills,
 #toggleRare {
-  font-size: 14px;
-  padding: 6px 12px;
+  font-size: calc(14 / 16 * 1rem);
+  padding: calc(6 / 16 * 1rem) calc(12 / 16 * 1rem);
   cursor: pointer;
 }
 
 .talent-block {
-  padding: 10px;
-  font-size: 16px;
-  margin: 10px 0;
+  padding: calc(10 / 16 * 1rem);
+  font-size: calc(16 / 16 * 1rem);
+  margin: calc(10 / 16 * 1rem) 0;
   background: var(--color-ui-light);
-  border-left: 4px solid var(--color-text);
+  border-left: calc(4 / 16 * 1rem) solid var(--color-text);
 }
 
 #toggleRare {
-  font-size: 14px;
-  padding: 6px 12px;
+  font-size: calc(14 / 16 * 1rem);
+  padding: calc(6 / 16 * 1rem) calc(12 / 16 * 1rem);
   cursor: pointer;
 }
 
@@ -513,20 +509,20 @@ button {
   font-style: italic;
   color: var(--color-text-muted);
   text-align: right;
-  margin-top: 5px;
+  margin-top: calc(5 / 16 * 1rem);
 }
 
 .filter-buttons {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 5px;
+  gap: calc(5 / 16 * 1rem);
 }
 
 .top-left {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: calc(10 / 16 * 1rem);
   justify-content: space-around;
 }
 
@@ -538,45 +534,45 @@ button {
 .left-side {
   display: flex;
   flex-direction: column;
-  max-width: 700px;
-  margin-left: 10px;
+  max-width: calc(700 / 16 * 1rem);
+  margin-left: calc(10 / 16 * 1rem);
 }
 
 .param-bar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
+  gap: calc(10 / 16 * 1rem);
   justify-content: center;
-  margin-top: 10px;
+  margin-top: calc(10 / 16 * 1rem);
 }
 
 .param-bar input[type="number"] {
-  width: 40px;
-  padding: 4px;
+  width: calc(40 / 16 * 1rem);
+  padding: calc(4 / 16 * 1rem);
   text-align: center;
   font-weight: bold;
-  font-size: 14px;
+  font-size: calc(14 / 16 * 1rem);
 }
 
 .param-bar label {
   font-weight: bold;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: calc(5 / 16 * 1rem);
 }
 
 .param-bar .param-group {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: calc(10 / 16 * 1rem);
   flex-wrap: wrap;
   align-items: center;
 }
 
 .param-bar .button-group {
   display: flex;
-  gap: 10px;
+  gap: calc(10 / 16 * 1rem);
   align-items: center;
 }
 
@@ -585,48 +581,48 @@ button {
 }
 
 #calculateParams {
-  font-size: 14px;
-  padding: 6px 12px;
+  font-size: calc(14 / 16 * 1rem);
+  padding: calc(6 / 16 * 1rem) calc(12 / 16 * 1rem);
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: calc(6 / 16 * 1rem);
 }
 
 #godInput {
-  width: 50px;
+  width: calc(50 / 16 * 1rem);
   font-weight: bold;
   text-align: center;
-  font-size: 14px;
+  font-size: calc(14 / 16 * 1rem);
 }
 
 .talent-name {
-  font-size: 20px;
+  font-size: calc(20 / 16 * 1rem);
   font-weight: bold;
-  margin-bottom: 4px;
+  margin-bottom: calc(4 / 16 * 1rem);
 }
 
 .talent-reqs {
-  font-size: 13px;
+  font-size: calc(13 / 16 * 1rem);
   font-style: italic;
-  margin-bottom: 6px;
+  margin-bottom: calc(6 / 16 * 1rem);
   color: var(--color-text-muted);
 }
 
 .talent-description {
-  font-size: 14px;
+  font-size: calc(14 / 16 * 1rem);
 }
 
 .legacy-content {
   background: var(--color-ui-light);
-  margin-top: 10px;
-  padding: 10px;
-  border-left: 2px dashed var(--color-border);
+  margin-top: calc(10 / 16 * 1rem);
+  padding: calc(10 / 16 * 1rem);
+  border-left: calc(2 / 16 * 1rem) dashed var(--color-border);
 }
 
 .talent-narrative {
   font-style: italic;
   color: var(--color-text-italic);
-  margin-bottom: 8px;
+  margin-bottom: calc(8 / 16 * 1rem);
 }
 
 .narrative-hidden .talent-narrative {
@@ -635,12 +631,12 @@ button {
 
 #scrollTopBtn {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 66px;
-  height: 66px;
+  bottom: calc(20 / 16 * 1rem);
+  right: calc(20 / 16 * 1rem);
+  width: calc(66 / 16 * 1rem);
+  height: calc(66 / 16 * 1rem);
   border-radius: 50%;
-  border: 2px solid var(--color-porter-border);
+  border: calc(2 / 16 * 1rem) solid var(--color-porter-border);
   background-image: url('./assets/images/porter.png');
   background-size: cover;
   background-position: center;
@@ -664,30 +660,30 @@ button {
 #searchBar {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: calc(20 / 16 * 1rem);
   position: relative;
-  max-width: 400px;
+  max-width: calc(400 / 16 * 1rem);
   margin-inline: auto;
 }
 
 #searchInput {
   width: 100%;
-  padding: 8px 32px 8px 12px;
-  font-size: 16px;
-  border: 2px solid var(--color-text);
-  border-radius: 10px;
+  padding: calc(8 / 16 * 1rem) calc(32 / 16 * 1rem) calc(8 / 16 * 1rem) calc(12 / 16 * 1rem);
+  font-size: calc(16 / 16 * 1rem);
+  border: calc(2 / 16 * 1rem) solid var(--color-text);
+  border-radius: calc(10 / 16 * 1rem);
   outline: none;
   box-sizing: border-box;
 }
 
 #clearSearch {
   position: absolute;
-  right: 8px;
+  right: calc(8 / 16 * 1rem);
   top: 40%;
   transform: translateY(-50%);
   background: none;
   border: none;
-  font-size: 18px;
+  font-size: calc(18 / 16 * 1rem);
   cursor: pointer;
   color: var(--color-text-muted);
   padding: 0;
@@ -701,15 +697,15 @@ button {
 /* 768px - 1199px */
 @media (min-width: 768px) and (max-width: 1199px) {
   body {
-    font-size: 15px;
+    font-size: calc(15 / 16 * 1rem);
   }
 
   h1 {
-    font-size: 24px;
+    font-size: calc(24 / 16 * 1rem);
   }
 
   .talent-block {
-    font-size: 15px;
+    font-size: calc(15 / 16 * 1rem);
   }
 
   .top_tab {
@@ -718,37 +714,37 @@ button {
   }
 
   .skill-selector label {
-    width: 120px;
+    width: calc(120 / 16 * 1rem);
   }
 
   .checkbox-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 8px 12px;
+    gap: calc(8 / 16 * 1rem) calc(12 / 16 * 1rem);
   }
 
   #scrollTopBtn {
-    width: 60px;
-    height: 60px;
-    bottom: 7.5px;
-    right: 7.5px;
+    width: calc(60 / 16 * 1rem);
+    height: calc(60 / 16 * 1rem);
+    bottom: calc(7.5 / 16 * 1rem);
+    right: calc(7.5 / 16 * 1rem);
   }
 }
 
 /* 320px - 767px */
 @media (max-width: 767px) {
   body {
-    font-size: 14px;
-    padding: 10px;
+    font-size: calc(14 / 16 * 1rem);
+    padding: calc(10 / 16 * 1rem);
   }
 
   h1 {
-    font-size: 20px;
+    font-size: calc(20 / 16 * 1rem);
     text-align: center;
   }
 
   .talent-block {
-    font-size: 14px;
+    font-size: calc(14 / 16 * 1rem);
   }
 
   .top-left {
@@ -757,11 +753,11 @@ button {
 
   .top_tab {
     flex-direction: column;
-    gap: 10px;
+    gap: calc(10 / 16 * 1rem);
   }
 
   .skill-selector label {
-    width: 111px;
+    width: calc(111 / 16 * 1rem);
   }
 
   .aspects,
@@ -785,9 +781,9 @@ button {
   }
 
   .round-button {
-    width: 18px;
-    height: 18px;
-    font-size: 14px;
+    width: calc(18 / 16 * 1rem);
+    height: calc(18 / 16 * 1rem);
+    font-size: calc(14 / 16 * 1rem);
   }
 
   .checkbox-grid {
@@ -799,10 +795,10 @@ button {
   }
 
   #scrollTopBtn {
-    bottom: 1px;
-    right: 1px;
-    width: 50px;
-    height: 50px;
+    bottom: calc(1 / 16 * 1rem);
+    right: calc(1 / 16 * 1rem);
+    width: calc(50 / 16 * 1rem);
+    height: calc(50 / 16 * 1rem);
   }
 
   #scrollTopBtn:hover {
@@ -812,7 +808,7 @@ button {
   .checkbox-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px 12px;
+    gap: calc(8 / 16 * 1rem) calc(12 / 16 * 1rem);
   }
 
   #clearSearch {
@@ -820,25 +816,25 @@ button {
   }
 
   .site-title {
-    font-size: 18px;
+    font-size: calc(18 / 16 * 1rem);
   }
 
   #coffeeBtn {
-    padding: 8px;
-    border-radius: 6px;
+    padding: calc(8 / 16 * 1rem);
+    border-radius: calc(6 / 16 * 1rem);
     justify-content: center;
-    font-size: 14px;
+    font-size: calc(14 / 16 * 1rem);
     width: auto;
   }
 
   #coffeeBtn img {
-    width: 20px;
-    height: 20px;
+    width: calc(20 / 16 * 1rem);
+    height: calc(20 / 16 * 1rem);
   }
 
   #themeToggleBtn {
-    width: 40px;
-    height: 40px;
-    border-radius: 30px;
+    width: calc(40 / 16 * 1rem);
+    height: calc(40 / 16 * 1rem);
+    border-radius: calc(30 / 16 * 1rem);
   }
 }
