@@ -1,18 +1,18 @@
-const suits = ['bj', 'rj', 'r', 'c', 't', 'm'];
+const suits = ['BJ', 'RJ', 'R', 'C', 'T', 'M'];
 const cardImages = [
-  'bj.png', '1c.png', '1t.png', '1m.png', '1r.png',
-  '2c.png', '2t.png', '2m.png', '2r.png',
-  '3c.png', '3t.png', '3m.png', '3r.png',
-  '4c.png', '4t.png', '4m.png', '4r.png',
-  '5c.png', '5t.png', '5m.png', '5r.png',
-  '6c.png', '6t.png', '6m.png', '6r.png',
-  '7c.png', '7t.png', '7m.png', '7r.png',
-  '8c.png', '8t.png', '8m.png', '8r.png',
-  '9c.png', '9t.png', '9m.png', '9r.png',
-  '10c.png', '10t.png', '10m.png', '10r.png',
-  '11c.png', '11t.png', '11m.png', '11r.png',
-  '12c.png', '12t.png', '12m.png', '12r.png',
-  '13c.png', '13t.png', '13m.png', '13r.png', 'rj.png'
+  'BJ.png', '1C.png', '1T.png', '1M.png', '1R.png',
+  '2C.png', '2T.png', '2M.png', '2R.png',
+  '3C.png', '3T.png', '3M.png', '3R.png',
+  '4C.png', '4T.png', '4M.png', '4R.png',
+  '5C.png', '5T.png', '5M.png', '5R.png',
+  '6C.png', '6T.png', '6M.png', '6R.png',
+  '7C.png', '7T.png', '7M.png', '7R.png',
+  '8C.png', '8T.png', '8M.png', '8R.png',
+  '9C.png', '9T.png', '9M.png', '9R.png',
+  '10C.png', '10T.png', '10M.png', '10R.png',
+  '11C.png', '11T.png', '11M.png', '11R.png',
+  '12C.png', '12T.png', '12M.png', '12R.png',
+  '13C.png', '13T.png', '13M.png', '13R.png', 'RJ.png'
 ];
 
 let deck = [...cardImages];
