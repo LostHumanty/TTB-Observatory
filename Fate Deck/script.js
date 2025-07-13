@@ -28,6 +28,9 @@ const closePopupBtn = document.getElementById('close-popup');
 const shuffleBtn = document.getElementById('shuffle-btn');
 const drawCountInput = document.getElementById('draw-count');
 const drawCountValue = document.getElementById('draw-count-value');
+const deckCount = document.getElementById('deck-count');
+const discardCount = document.getElementById('discard-count');
+
 
 drawCountInput.addEventListener('input', () => {
   drawCountValue.textContent = drawCountInput.value;
@@ -84,6 +87,9 @@ deckEl.addEventListener('click', () => {
     img.src = `../assets/images/cards/${card}`;
     drawnEl.appendChild(img);
   });
+
+  updateCounters();
+
 });
 
 
@@ -120,7 +126,15 @@ shuffleBtn.addEventListener('click', () => {
   discardPile = [];
   drawnEl.innerHTML = '';
   shuffle(deck);
+  updateCounters();
 });
+
+// Счетчик картонок
+function updateCounters() {
+  deckCount.textContent = deck.length;
+  discardCount.textContent = discardPile.length;
+}
+
 
 // Функция тасовки
 function shuffle(array) {
@@ -181,6 +195,7 @@ confirmPeek.addEventListener('click', () => {
     deck[deck.length - 1 - i] = newOrder[i];
   }
   peekPopup.style.display = 'none';
+  updateCounters();
 });
 
 const discardPeekBtn = document.getElementById('discard-peek');
@@ -197,6 +212,7 @@ discardPeekBtn.addEventListener('click', () => {
   // Очистить визуально
   peekCardsContainer.innerHTML = '';
   peekPopup.style.display = 'none';
+  updateCounters();
 });
 
 closePeek.addEventListener('click', () => {

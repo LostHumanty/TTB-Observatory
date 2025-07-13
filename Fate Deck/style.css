@@ -364,12 +364,6 @@ body.dark #themeToggleBtn {
   border: none;
 }
 
-/* .dark button {
-  background-color: var(--color-ui-darker);
-  color: var(--color-text-dark);
-  border: calc(1 / 16 * 1rem) solid var(--color-border-dark);
-} */
-
 /* DARK / LIGHT COLORS */
 :root {
   --color-bg: #ffffff;

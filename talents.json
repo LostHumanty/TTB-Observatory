@@ -1663,8 +1663,12 @@
     "narative": "This character tends to do things according to her own schedule. Whether lethargic, listless, or just plain lazy, this character still manages to get things done... eventually, at least.",
     "description": "When this character takes the Wait Action, the AP cost is equal to the AP cost of the named Action (instead of the AP cost of the named Action +1).",
     "requirements": [
-      { "type": "custom", "name": "sloth" },
-      { "type": "attribute", "name": "Speed", "operator": "<=", "value": -2 }
+      {
+        "or": [
+        { "type": "custom", "name": "sloth" },
+        { "type": "attribute", "name": "Speed", "operator": "<=", "value": -2 }
+        ]
+      }
     ],
     "book": "Above the Law pg.144"
   },
