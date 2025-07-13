@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -12,30 +12,40 @@
     <link rel="manifest" href="./assets/icons/site.webmanifest">
     <link rel="stylesheet" href="style.css" />
 </head>
-    <body class="narrative-hidden">
-        <!-- HEADER -->
-        <header class="site-header">
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-left">
             <h1 class="site-title">TTB Talent Filter</h1>
-            <button class="header__burger burger" id="burgerMenu" aria-label="Menu">
-                <img src="./assets/images/settings.png" alt="Settings"> 
-            </button>
-        </header>
+            <a href="./Fate Deck/index.html" class="header-link">Fate Deck Flipper</a>
+        </div>
+        <button class="header__burger burger" id="burgerMenu" aria-label="Menu">
+            <img src="./assets/images/settings.png" alt="Settings">
+        </button>
         <nav class="header-nav" id="headerNav">
-            <div class="nav-top">
-                <button id="themeToggleBtn" title="Toggle theme">🌙</button>
+            <button id="themeToggleBtn" title="Toggle theme">🌙</button>
+            <div class="nav-bottom">
+                <span class="burger-label">More options:</span>
                 <label><input type="checkbox" id="showNarrative" /> Show narrative text</label>
                 <label><input type="checkbox" name="reqNoneOnly" checked /> Show talents without requirements</label>
             </div>
-
-            <div class="nav-bottom">
-            <a href="https://ko-fi.com/losthumanity" target="_blank" id="coffeeBtn" title="Buy me a coffee">
-                <img src="./assets/images/coffee.webp" alt="Coffee"> Buy me a coffee
-            </a>
+            <div class="nav-top">
+                <span class="burger-label">Other tools:</span>
+                <a href="./Fate Deck/index.html" class="header-link">Fate Deck Flipper</a>
+            </div>
+            <div class="donate">
+                <span class="burger-label">Buy me a coffee:</span>
+                <a href="https://ko-fi.com/losthumanity" target="_blank" class="donate-icon">
+                    <img src="./assets/images/xcoffee.png" alt="Coffee">
+                </a>
+                <a href="https://boosty.to/losthumanity/donate" target="_blank" class="donate-icon">
+                    <img src="./assets/images/xboosty.png" alt="Boosty">
+                </a>
             </div>
         </nav>
-        <div class="main">
-        <form id="filterForm">
-
+    </header>
+    <body class="narrative-hidden">
+    <div class="main">
+    <form id="filterForm">
     <!-- ASPECTS -->
     <div class="top_tab">
         <div class="left-side">
