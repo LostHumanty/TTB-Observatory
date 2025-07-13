@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTB Observatory</title>
+    <link rel="icon" href="../assets/icons/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/icons/site.webmanifest">
+    <link rel="stylesheet" href="style.css" />
+</head>
+    <header class="site-header">
+        <div class="header-left">
+            <h1 class="site-title">Fate Deck Flipper</h1>
+            <a href="../index.html" class="header-link">TTB Talent Filter</a>
+        </div>
+        <button class="header__burger burger" id="burgerMenu" aria-label="Menu">
+            <img src="../assets/images/settings.png" alt="Settings">
+        </button>
+        <nav class="header-nav" id="headerNav">
+            <button id="themeToggleBtn" title="Toggle theme">🌙</button>
+            <!-- <div class="nav-bottom">
+                <span class="burger-label">More options:</span>
+            </div> -->
+            <div class="nav-top">
+                <span class="burger-label">Other tools:</span>
+                <a href="../index.html" class="header-link">TTB Talent Filter</a>
+            </div>
+            <div class="donate">
+                <span class="burger-label">Buy me a coffee:</span>
+                <a href="https://ko-fi.com/losthumanity" target="_blank" class="donate-icon">
+                    <img src="../assets/images/xcoffee.png" alt="Coffee">
+                </a>
+                <a href="https://boosty.to/losthumanity/donate" target="_blank" class="donate-icon">
+                    <img src="../assets/images/xboosty.png" alt="Boosty">
+                </a>
+            </div>
+        </nav>
+    </header>
+<body>
+  <div class="game-area">
+    <div class="deck-controls">
+      <div class="fate-deck">
+        <div class="extra buttons">
+          <button id="peek-btn">🔍</button>
+        </div>
+        <div class="deck" id="deck">
+          <h3>Fate Deck</h3>
+          <img src="../assets/images/cards/cardback.png" alt="Deck" />
+          <label for="draw-count">Cards to Draw:</label>
+          <input type="range" min="1" max="4" value="1" id="draw-count" />
+          <span id="draw-count-value">1</span>
+        </div>
+      </div>
+
+      <div class="discard-pile" id="discard-pile">
+        <button id="shuffle-btn">Shuffle</button>
+        <h3>Discard Pile</h3>
+        <img src="../assets/images/cards/cardback.png" alt="Discard Pile" />
+      </div>
+    </div>
+
+    <div class="drawn-cards" id="drawn-cards"></div>
+  </div>
+
+  <!-- POPUPS -->      
+  <div class="popup" id="peek-popup">
+    <div class="popup-content">
+      <h3>Next 3 Cards</h3>
+      <div id="peek-cards" class="sortable"></div>
+      <button id="confirm-peek">Confirm Order</button>
+      <button id="discard-peek">Send to Discard</button>
+      <button id="close-peek">Cancel</button>
+    </div>
+  </div>
+   
+  <div class="popup" id="discard-popup">
+    <div class="popup-content">
+      <h3>Discard Pile</h3>
+      <div id="discard-cards"></div>
+      <button id="close-popup">Close</button>
+    </div>
+  </div>
+
+  <div class="popup" id="reshuffle-popup">
+    <div class="popup-content">
+      <p>The deck was reshuffled</p>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
